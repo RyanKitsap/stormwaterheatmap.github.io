@@ -1,7 +1,9 @@
 title: "Stormwater Heatmap Technical Reference"
 book_filename: "StormwaterHeatmapTechReference"
+output_dir: "reference"
 delete_merged_file: True
 language:
   ui:
     chapter_name: "Chapter "  
 abstract: "abstract here"
+always_allow_html: true
