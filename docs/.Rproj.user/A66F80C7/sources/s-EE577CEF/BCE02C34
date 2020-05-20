@@ -1,0 +1,26 @@
+{
+    "id": "BCE02C34",
+    "path": "~/repos/stormwaterheatmap.github.io/docs/03-hydrology.Rmd",
+    "project_path": "03-hydrology.Rmd",
+    "type": "r_markdown",
+    "hash": "3050082341",
+    "contents": "",
+    "dirty": false,
+    "created": 1589946735250.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "cursorPosition": "111,515",
+        "scrollLine": "112",
+        "source_window_id": "",
+        "ignored_words": "hydrolgic\n"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1590002799,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1590003162810,
+    "read_only": false,
+    "read_only_alternatives": []
+}

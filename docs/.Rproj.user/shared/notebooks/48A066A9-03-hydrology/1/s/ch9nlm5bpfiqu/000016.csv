@@ -1,0 +1,26 @@
+"0",""
+"0","df.flowIndex <- read_csv(""data/flow_index_out.csv"")"
+"2","Missing column names filled in: 'X1' [1]"
+"2","Parsed with column specification:
+cols(
+  X1 = [32mcol_double()[39m,
+  compare_to = [31mcol_character()[39m,
+  grid = [31mcol_character()[39m,
+  hru = [31mcol_character()[39m,
+  Qtotal.x = [32mcol_double()[39m,
+  soil = [31mcol_character()[39m,
+  slope = [31mcol_character()[39m,
+  landcover = [31mcol_character()[39m,
+  Qtotal.y = [32mcol_double()[39m,
+  rev_hru = [31mcol_character()[39m,
+  flowRegimeIndex = [32mcol_double()[39m,
+  flowRegimeIndexLog = [32mcol_double()[39m
+)
+"
+"0","ggplot(subset(df.flowIndex, df.flowIndex$landcover != ""forest""))+"
+"0",""
+"0","geom_histogram(aes(x=flowRegimeIndexLog,fill=soil))+facet_wrap(vars(landcover),scales=""free_y"")+"
+"0","  labs(x=""Flow Index"", y=""Land Cover"","
+"0","       title=""Puget Sound Wide Flow Index"","
+"0","       subtitle=""1970-1999 Modeling Results"")+scale_color_ipsum()+scale_fill_ipsum()"
+"0",""

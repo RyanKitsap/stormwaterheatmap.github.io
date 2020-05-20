@@ -1,4 +1,9 @@
-# High-resolution Land Cover 
+# High-resolution Land Cover {#Landcover}
+```{r include=FALSE}
+library(readr)
+library(tidyverse)
+library(kableExtra)
+```
 
 ## Overview
 
@@ -111,24 +116,19 @@ Using those ground-truth points and our seven-class land cover product, we calcu
 - The **Six-class** derivative includes all classes, but the two impervious classes are remapped to one single Impervious class. These classes are equivalent to the six classes labeled in the ground-truthed points data and the NOAA 10-m Puget Sound land cover dataset.
 - The **Four-class** derivative includes only the Fine Vegetation, Coarse Vegetation, Water, and Impervious (Built) classes.
 
-Table 2. Accuracy and kappa statistics for three derivatives of the seven-class land cover product.
 
-|   | _Impervious_ | _Six Classes_ | _Four Classes_ |
-| --- | --- | --- | --- |
-| _County_ | _Accuracy_ | _Kappa_ | _Accuracy_ | _Kappa_ | _Accuracy_ | _Kappa_ |
-| Clallam | 0.985 | 0.947 | 0.702 | 0.631 | 0.915 | 0.885 |
-| Island | 0.987 | 0.942 | 0.537 | 0.447 | 0.912 | 0.877 |
-| Jefferson | 0.977 | 0.931 | 0.698 | 0.629 | 0.911 | 0.880 |
-| King | 0.971 | 0.898 | 0.635 | 0.567 | 0.929 | 0.904 |
-| Kitsap | 0.976 | 0.923 | 0.725 | 0.655 | 0.946 | 0.926 |
-| Lewis | 1.000 | 1.000 | 0.612 | 0.443 | 0.964 | 0.934 |
-| Mason | 0.977 | 0.919 | 0.686 | 0.612 | 0.926 | 0.897 |
-| Pierce | 0.973 | 0.912 | 0.626 | 0.548 | 0.888 | 0.848 |
-| San Juan | 0.976 | 0.899 | 0.591 | 0.511 | 0.829 | 0.771 |
-| Skagit | 0.983 | 0.926 | 0.655 | 0.585 | 0.911 | 0.880 |
-| Snohomish | 0.958 | 0.860 | 0.646 | 0.581 | 0.926 | 0.901 |
-| Thurston | 0.975 | 0.919 | 0.641 | 0.573 | 0.906 | 0.875 |
-| Whatcom | 0.987 | 0.944 | 0.637 | 0.566 | 0.869 | 0.823 |
+```{r landcovertable, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+
+accuracy <- read_csv("data/accuracy.csv")
+kable(accuracy, col.names = c("County", "Accuracy", "Kappa",
+                              "Accuracy", "Kappa",
+                              "Accuracy", "Kappa"), 
+                              caption = "Accuracy and kappa statistics for three derivatives of the seven-class 
+                              land cover product.")%>%
+add_header_above(c(" "=1, "Impervious"=2,"Six Classes"=2,"Four Classes"=2))
+```
+
+
 
 While the Impervious and Four-class derivatives test extremely well with both Accuracy and Kappa statistics, the Six-class derivative tests considerably lower. The Error (Confusion) matrices produced with the Six-class derivative dataset indicate that the Medium Vegetation and Dirt/Barren classes do not match well between our land cover product and the ground-truth points. Inspection of those matrices tells us that the Medium Vegetation ground-truth points were often labeled Fine or Coarse Vegetation in our predicted set. Similarly, the Dirt ground-truth points were often labeled Built or Fine Vegetation.
 

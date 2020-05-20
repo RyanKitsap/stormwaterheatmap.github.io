@@ -1,0 +1,8 @@
+"0",""
+"0","accuracy <- read_csv(""data/accuracy.csv"")"
+"0","kable(accuracy, col.names = c(""County"", ""Accuracy"", ""Kappa"","
+"0","                              ""Accuracy"", ""Kappa"","
+"0","                              ""Accuracy"", ""Kappa""), "
+"0","                              caption = ""Accuracy and kappa statistics for three derivatives of the seven-class "
+"0","                              land cover product."")%>%"
+"0","add_header_above(c("" ""=1, ""Impervious""=2,""Six Classes""=2,""Four Classes""=2))"
