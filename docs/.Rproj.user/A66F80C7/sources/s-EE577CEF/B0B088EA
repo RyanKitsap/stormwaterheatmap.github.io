@@ -3,13 +3,16 @@
     "path": "~/repos/stormwaterheatmap.github.io/docs/09-references.Rmd",
     "project_path": "09-references.Rmd",
     "type": "r_markdown",
-    "hash": "1944872880",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1590010267538.0,
     "source_on_save": false,
     "relative_order": 2,
-    "properties": {},
+    "properties": {
+        "cursorPosition": "2,0",
+        "scrollLine": "0"
+    },
     "folds": "",
     "lastKnownWriteTime": 1588550935,
     "encoding": "UTF-8",

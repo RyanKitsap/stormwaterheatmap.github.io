@@ -6,4 +6,3 @@ language:
   ui:
     chapter_name: "Chapter "  
 abstract: "abstract here"
-always_allow_html: true
