@@ -1,0 +1,32 @@
+{
+    "id": "5F93EFFF",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1589927767310.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "expression": "madsen_wwhm_daily",
+        "caption": "madsen_wwhm_daily",
+        "totalObservations": "22280",
+        "displayedObservations": "22280",
+        "variables": "4",
+        "cacheKey": "309F24C9",
+        "object": "madsen_wwhm_daily",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=madsen_wwhm_daily&cache_key=309F24C9&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7232619822028644206,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1589927767310,
+    "read_only": false,
+    "read_only_alternatives": []
+}

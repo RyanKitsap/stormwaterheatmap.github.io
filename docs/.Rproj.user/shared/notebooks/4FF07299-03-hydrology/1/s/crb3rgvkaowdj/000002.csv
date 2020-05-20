@@ -1,0 +1,3 @@
+"0",""
+"0","plot <- ggplot(subset(Q, Landuse %in% c(""Impervious"")),)+geom_boxplot(aes(x=Landuse,y=MeanQ, fill = Slope),alpha=0.5)+facet_wrap(vars(Soil))+scale_y_log10()+ylab(""Mean Annual Runoff (mm/year) 1970-1999"")+theme_ipsum_rc()"
+"0","plot"

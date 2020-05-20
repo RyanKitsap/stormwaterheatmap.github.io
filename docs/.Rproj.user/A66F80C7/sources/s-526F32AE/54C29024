@@ -1,0 +1,24 @@
+{
+    "id": "54C29024",
+    "path": "~/repos/stormwaterheatmap-master/docs/StormwaterHeatmapTechReference.Rmd",
+    "project_path": "StormwaterHeatmapTechReference.Rmd",
+    "type": "r_markdown",
+    "hash": "3312914394",
+    "contents": "",
+    "dirty": false,
+    "created": 1589988632105.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "cursorPosition": "546,0",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1589989680,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1589989747128,
+    "read_only": false,
+    "read_only_alternatives": []
+}

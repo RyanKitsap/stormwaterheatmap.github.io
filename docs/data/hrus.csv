@@ -1,0 +1,31 @@
+﻿name ,Soil,Landuse,Slope
+hru000,Outwash,Forest,Flat
+hru001,Outwash,Forest,Moderate
+hru002,Outwash,Forest,Steep
+hru010,Outwash,Pasture,Flat
+hru011,Outwash,Pasture,Moderate
+hru012,Outwash,Pasture,Steep
+hru020,Outwash,Lawn ,Flat
+hru021,Outwash,Lawn ,Moderate
+hru022,Outwash,Lawn ,Steep
+hru100,Till,Forest,Flat
+hru101,Till,Forest,Moderate
+hru102,Till,Forest,Steep
+hru110,Till,Pasture,Flat
+hru111,Till,Pasture,Moderate
+hru112,Till,Pasture,Steep
+hru120,Till,Lawn ,Flat
+hru121,Till,Lawn ,Moderate
+hru122,Till,Lawn ,Steep
+hru200,Saturated,Forest,Flat
+hru201,Saturated,Forest,Moderate
+hru202,Saturated,Forest,Steep
+hru210,Saturated,Pasture,Flat
+hru211,Saturated,Pasture,Moderate
+hru212,Saturated,Pasture,Steep
+hru220,Saturated,Lawn ,Flat
+hru221,Saturated,Lawn ,Moderate
+hru222,Saturated,Lawn ,Steep
+hru250,Impervious,Impervious,Flat
+hru251,Impervious,Impervious,Moderate
+hru252,Impervious,Impervious,Steep
