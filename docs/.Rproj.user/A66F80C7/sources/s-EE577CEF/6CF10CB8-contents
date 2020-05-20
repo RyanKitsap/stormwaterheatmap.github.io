@@ -14,6 +14,9 @@ biblio-style: apalike
 link-citations: yes
 github-repo: "stormwaterheatmap"
 url: 'https\://stormwaterheatmap.github.io/'
+header-includes:
+   - \usepackage{lineno}
+   - \linenumbers
 ---
 
 # Abstract {-} 

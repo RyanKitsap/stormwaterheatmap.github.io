@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.5.18)  20 MAY 2020 12:31
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.5.18)  20 MAY 2020 14:33
  restricted system commands enabled.
 **StormwaterHeatmapTechReference.tex
 (./StormwaterHeatmapTechReference.tex
@@ -576,46 +576,65 @@ Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legacy
 )
 Package grffile Info: This package is an empty stub for compatibility on input l
 ine 40.
+)
+(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lineno/lineno.st
+y
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count289
+\output=\toks24
+\linenoprevgraf=\count290
+\linenumbersep=\dimen168
+\linenumberwidth=\dimen169
+\c@linenumber=\count291
+\c@pagewiselinenumber=\count292
+\c@LN@truepage=\count293
+\c@internallinenumber=\count294
+\c@internallinenumbers=\count295
+\quotelinenumbersep=\dimen170
+\bframerule=\dimen171
+\bframesep=\dimen172
+\bframebox=\box53
+LaTeX Info: Redefining \\ on input line 3056.
 ) (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.st
 y
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen168
-\ar@mcellbox=\box53
-\extrarowheight=\dimen169
-\NC@list=\toks24
+\col@sep=\dimen173
+\ar@mcellbox=\box54
+\extrarowheight=\dimen174
+\NC@list=\toks25
 \extratabsurround=\skip57
 \backup@length=\skip58
-\ar@cellbox=\box54
+\ar@cellbox=\box55
 )
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multiro
 w.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip59
-\multirow@cntb=\count289
+\multirow@cntb=\count296
 \multirow@dima=\skip60
-\bigstrutjot=\dimen170
+\bigstrutjot=\dimen175
 )
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.
 sty
-\wrapoverhang=\dimen171
-\WF@size=\dimen172
-\c@WF@wrappedlines=\count290
-\WF@box=\box55
-\WF@everypar=\toks25
+\wrapoverhang=\dimen176
+\WF@size=\dimen177
+\c@WF@wrappedlines=\count297
+\WF@box=\box56
+\WF@everypar=\toks26
 Package: wrapfig 2003/01/31  v 3.6
 ) (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.st
 y
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count291
-\float@exts=\toks26
-\float@box=\box56
-\@float@everytoks=\toks27
-\@floatcapt=\box57
+\c@float@type=\count298
+\float@exts=\toks27
+\float@box=\box57
+\@float@everytoks=\toks28
+\@floatcapt=\box58
 )
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortb
 l.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks28
+\everycr=\toks29
 \minrowclearance=\skip61
 )
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflsc
@@ -633,38 +652,38 @@ Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidt
 h.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box58
-\sift@deathcycles=\count292
-\@vwid@loff=\dimen173
-\@vwid@roff=\dimen174
+\@vwid@box=\box59
+\sift@deathcycles=\count299
+\@vwid@loff=\dimen178
+\@vwid@roff=\dimen179
 )
-\c@taburow=\count293
-\tabu@nbcols=\count294
-\tabu@cnt=\count295
-\tabu@Xcol=\count296
-\tabu@alloc=\count297
-\tabu@nested=\count298
-\tabu@target=\dimen175
-\tabu@spreadtarget=\dimen176
-\tabu@naturalX=\dimen177
-\tabucolX=\dimen178
-\tabu@Xsum=\dimen179
-\extrarowdepth=\dimen180
-\abovetabulinesep=\dimen181
-\belowtabulinesep=\dimen182
-\tabustrutrule=\dimen183
-\tabu@thebody=\toks29
-\tabu@footnotes=\toks30
-\tabu@box=\box59
-\tabu@arstrutbox=\box60
-\tabu@hleads=\box61
-\tabu@vleads=\box62
+\c@taburow=\count300
+\tabu@nbcols=\count301
+\tabu@cnt=\count302
+\tabu@Xcol=\count303
+\tabu@alloc=\count304
+\tabu@nested=\count305
+\tabu@target=\dimen180
+\tabu@spreadtarget=\dimen181
+\tabu@naturalX=\dimen182
+\tabucolX=\dimen183
+\tabu@Xsum=\dimen184
+\extrarowdepth=\dimen185
+\abovetabulinesep=\dimen186
+\belowtabulinesep=\dimen187
+\tabustrutrule=\dimen188
+\tabu@thebody=\toks30
+\tabu@footnotes=\toks31
+\tabu@box=\box60
+\tabu@arstrutbox=\box61
+\tabu@hleads=\box62
+\tabu@vleads=\box63
 \tabu@cellskip=\skip62
 )
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/t
 hreeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box63
+\@tempboxb=\box64
 )
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/
 threeparttablex.sty
@@ -681,61 +700,60 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \TPTL@width=\skip63
 ) (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.st
 y
-\UL@box=\box64
-\UL@hyphenbox=\box65
+\UL@box=\box65
+\UL@hyphenbox=\box66
 \UL@skip=\skip64
-\UL@hook=\toks31
-\UL@height=\dimen184
-\UL@pe=\count299
-\UL@pixel=\dimen185
-\ULC@box=\box66
+\UL@hook=\toks32
+\UL@height=\dimen189
+\UL@pe=\count306
+\UL@pixel=\dimen190
+\ULC@box=\box67
 Package: ulem 2019/11/18
-\ULdepth=\dimen186
+\ULdepth=\dimen191
 )
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecel
 l.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen187
-\c@nlinenum=\count300
-\TeXr@lab=\toks32
-)
-No file StormwaterHeatmapTechReference.aux.
-
+\rotheadsize=\dimen192
+\c@nlinenum=\count307
+\TeXr@lab=\toks33
+) (./StormwaterHeatmapTechReference.aux)
 \openout1 = StormwaterHeatmapTechReference.aux
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 96.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 96.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 96.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 96.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 96.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 96.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 96.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 98.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -770,7 +788,7 @@ e;script=math;language=dflt;"
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 96.
+(Font)              scaled to size 10.0pt on input line 98.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -814,17 +832,17 @@ e;script=math;language=dflt;"
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 96.
+(Font)              scaled to size 10.0pt on input line 98.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 96.
+(Font)              `operators' in the math version `normal' on input line 98.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input 
-line 96.
+line 98.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 96.
+(Font)              `operators' in the math version `bold' on input line 98.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input
- line 96.
+ line 98.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -914,15 +932,15 @@ modern-math.otf]:mode=base;script=math;language=dflt;+ssty=1;"
 (fontspec)             21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 96.
+(Font)              `symbols' in the math version `normal' on input line 98.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input
- line 96.
+ line 98.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 96.
+(Font)              `symbols' in the math version `bold' on input line 98.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input
- line 96.
+ line 98.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -994,43 +1012,43 @@ e;script=math;language=dflt;"
 (fontspec)             \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 96
+(Font)              `largesymbols' in the math version `normal' on input line 98
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input
- line 96.
+ line 98.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 96.
+(Font)              `largesymbols' in the math version `bold' on input line 98.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input
- line 96.
+ line 98.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 96.
+(Font)              scaled to size 7.0pt on input line 98.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 96.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 96
+(Font)              scaled to size 5.0pt on input line 98.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 98
 .
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 96.
+(Font)              scaled to size 10.00092pt on input line 98.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 96.
+(Font)              scaled to size 7.00064pt on input line 98.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 96.
+(Font)              scaled to size 5.00046pt on input line 98.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 96.
+(Font)              scaled to size 9.99893pt on input line 98.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 96.
+(Font)              scaled to size 6.99925pt on input line 98.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 96.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+(Font)              scaled to size 4.99947pt on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
 
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
 
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1046,8 +1064,8 @@ opdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring OFF on input line 96.
+\AtBeginShipoutBox=\box68
+Package hyperref Info: Link coloring OFF on input line 98.
 
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref
 .sty
@@ -1061,71 +1079,67 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 /gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count301
+\c@section@level=\count308
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
-LaTeX Info: Redefining \nameref on input line 96.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
+LaTeX Info: Redefining \nameref on input line 98.
+(./StormwaterHeatmapTechReference.out) (./StormwaterHeatmapTechReference.out)
 \@outlinefile=\write3
 
 \openout3 = StormwaterHeatmapTechReference.out
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 98.
+(Font)              scaled to size 8.0pt on input line 100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 98.
+(Font)              scaled to size 6.0pt on input line 100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 98.
+(Font)              scaled to size 12.0011pt on input line 100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 98.
+(Font)              scaled to size 8.00073pt on input line 100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 98.
+(Font)              scaled to size 6.00055pt on input line 100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 98.
+(Font)              scaled to size 11.99872pt on input line 100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 98.
+(Font)              scaled to size 7.99915pt on input line 100.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 98.
+(Font)              scaled to size 5.99936pt on input line 100.
 [1
 
 {c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdft
-ex.map}]
-\tf@toc=\write4
-
-\openout4 = StormwaterHeatmapTechReference.toc
-
+ex.map}] (./StormwaterHeatmapTechReference.toc
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
-] [2
+])
+\tf@toc=\write4
+
+\openout4 = StormwaterHeatmapTechReference.toc
+[2] [3
 
 ]
 Chapter 1.
-[3
+[4
 
-] [4] [5] [6]
-Underfull \hbox (badness 2828) in paragraph at lines 165--165
+] [5] [6] [7]
+Underfull \hbox (badness 2828) in paragraph at lines 167--167
 []\TU/lmr/bx/n/14.4 Build-ing an in-ter-ac-tive tool to ser-vice
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-
- []
-
-
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 200--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--210
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
 
  []
 
@@ -1140,50 +1154,258 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--214
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--234
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
-[8] [9]
+
+Underfull \hbox (badness 10000) in paragraph at lines 234--236
+
+ []
+
+[9] [10]
 Chapter 2.
+[11
 
-Package longtable Warning: Column widths have changed
-(longtable)                in table 2.1 on input line 270.
-
-[10
+] [12
+Missing character: There is no ⅓ (U+2153) in font [lmroman10-regular]:+tlig;!
+Missing character: There is no ⅓ (U+2153) in font [lmroman10-regular]:+tlig;!
+] [13] [14] [15
+warning  (pdf backend): ignoring duplicate destination with the name 'table.2.2'
 
 ]
-! Missing $ inserted.
-<inserted text> 
-$
-l.306 
-    
+Chapter 3.
+[16
+
+]
+<images/hspf_perlnd.png, id=297, 397.485pt x 271.76532pt>
+File: images/hspf_perlnd.png Graphic file (type png)
+<use images/hspf_perlnd.png>
+Package luatex.def Info: images/hspf_perlnd.png  used on input line 447.
+(luatex.def)             Requested size: 397.50221pt x 271.77708pt.
+
+Overfull \hbox (52.50221pt too wide) in paragraph at lines 447--447
+[][]
+ []
+
+[17
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.1
+'
+<./images/hspf_perlnd.png>] [18]
+<qgis/for_figure.pdf, id=330, 449.39896pt x 395.10521pt>
+File: qgis/for_figure.pdf Graphic file (type pdf)
+<use qgis/for_figure.pdf>
+Package luatex.def Info: qgis/for_figure.pdf  used on input line 492.
+(luatex.def)             Requested size: 449.40471pt x 395.11028pt.
+
+Overfull \hbox (104.40471pt too wide) in paragraph at lines 492--492
+[][]
+ []
+
+[19] [20
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.2
+'
+<./qgis/for_figure.pdf>] [21
+Missing character: There is no ⅛ (U+215B) in font [lmroman10-regular]:+tlig;!
+] [22]
+<StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf, id=402, 469.
+755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf Graphic 
+file (type pdf)
+<use StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf>
+Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/madse
+nFig-1.pdf  used on input line 656.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+LaTeX Warning: Reference `fig:precipCompare' on page 23 undefined on input line 
+660.
+
+<StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf, id=403, 
+469.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf Grap
+hic file (type pdf)
+<use StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf>
+Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/preci
+pCompare-1.pdf  used on input line 661.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+
+Underfull \hbox (badness 1558) in paragraph at lines 660--664
+[]\TU/lmr/m/n/10 Both the WWHM and PyH-SPF re-sults un-der-pre-dict ac-tual stre
+am-flow
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 660--664
+\TU/lmr/m/n/10 pri-marly be-cause base-flow was not sim-u-lated. This is ex-pect
+ed, since
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 660--664
+\TU/lmr/m/n/10 both mod-els ex-clude ground-wa-ter con-tri-bu-tions. How-ever, 
+the re-sults
+ []
+
+
+Underfull \hbox (badness 3354) in paragraph at lines 660--664
+\TU/lmr/m/n/10 show good agree-ment be-tween both sim-u-lated datasets over the full
+ []
+
+
+Underfull \hbox (badness 1668) in paragraph at lines 660--664
+\TU/lmr/m/n/10 du-ra-tion of sim-u-la-tions. Note that the sim-u-la-tions use di
+f-fer-ent pre-
+ []
+
+
+Underfull \hbox (badness 2088) in paragraph at lines 660--664
+\TU/lmr/m/n/10 cip-i-ta-tion (see Fig-ure [] ) datasets and are not ex-pected to
+ match.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 660--664
+[]
+ []
+
+[23] [24
+warning  (pdf backend): ignoring duplicate destination with the name 'table.3.2'
+
+] [25
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.3
+'
+<./StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf, id=428, 4
+69.755pt x 578.16pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf Graph
+ic file (type pdf)
+<use StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf>
+Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/annua
+lQplots-1.pdf  used on input line 674.
+(luatex.def)             Requested size: 344.997pt x 424.61166pt.
+[26<./StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf>] [
+27<./StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf, id=453, 469.755
+pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf Graphic fil
+e (type pdf)
+<use StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf>
+Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/fdrfi
+g-1.pdf  used on input line 693.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[28
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.4
+'
+<./StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf, id=469, 4
+69.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf Graph
+ic file (type pdf)
+<use StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf>
+Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/flowI
+ndexfig-1.pdf  used on input line 709.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[29
+warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.5
+'
+<./StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf>]
+Chapter 4.
+[30
+
+] [31
+
+]
+Overfull \hbox (51.03996pt too wide) in paragraph at lines 816--837
+ [][] 
+ []
+
+[32
+
+
+warning  (pdf backend): ignoring duplicate destination with the name 'table.4.1'
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 853--854
+\TU/lmr/m/n/10 google.com/bigquery/docs/reference/standard-sql/geography_functio
+ns$[] for
+ []
+
+
+Overfull \hbox (50.35999pt too wide) in alignment at lines 857--861
+ [][][][][] 
+ []
+
+
+Overfull \hbox (50.35999pt too wide) in alignment at lines 861--867
+ [][][][][] 
+ []
+
+[33]
+Chapter 5.
+[34
+
+] [35] [36]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 985.
+[37]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 985.
+(./StormwaterHeatmapTechReference.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 985.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 985.
+Package rerunfilecheck Info: File `StormwaterHeatmapTechReference.out' has not c
+hanged.
+(rerunfilecheck)             Checksum: 24D51E21FB7EE83CA0A8D97A9AAF1288;4445.
+
+LaTeX Warning: There were undefined references.
+
+)
 
 Here is how much of LuaTeX's memory you used:
- 18804 strings out of 480883
- 125171,794899 words of node,token memory allocated
- 18720 words of node memory still in use:
-   124 hlist, 6 vlist, 17 rule, 131 disc, 11 local_par, 2 dir, 14 math, 446 glue
-, 118 kern, 70 penalty, 1 choice, 4 noad, 4 sub_box, 1522 glyph, 161 attribute, 
-60 glue_spec, 161 attribute_list, 1 temp, 3 write, 1 pdf_start_link, 1 pdf_end_l
-ink, 8 pdf_dest, 1 pdf_action, 14 pdf_colorstack nodes
-   avail lists: 1:3,2:9,3:25,4:24,5:157,6:11,7:2401,8:46,9:3,10:21,11:266
- 35800 multiletter control sequences out of 65536+600000
- 79 fonts using 16344843 bytes
- 53i,8n,118p,1604b,436s stack positions out of 5000i,500n,10000p,200000b,100000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 19323 strings out of 480883
+ 125171,953878 words of node,token memory allocated
+ 679 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 glyph, 24 attribute, 61 glue_spec
+, 24 attribute_list, 1 write, 6 pdf_action nodes
+   avail lists: 1:2,2:3019,3:139,4:114,5:1269,6:33,7:9644,8:85,9:4055,10:21,11:3
+97
+ 36125 multiletter control sequences out of 65536+600000
+ 82 fonts using 16618023 bytes
+ 53i,12n,118p,1604b,439s stack positions out of 5000i,500n,10000p,200000b,100000s
+<c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lm
+mono10-regular.otf><c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/op
+entype/public/lm-math/latinmodern-math.otf><c:/Users/cnilsen/AppData/Roaming/Tin
+yTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf><c:/Users/cni
+lsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-itali
+c.otf><c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public
+/lm/lmroman8-regular.otf><c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fo
+nts/opentype/public/lm/lmroman6-regular.otf><c:/Users/cnilsen/AppData/Roaming/Ti
+nyTeX/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf><c:/Users/cnilsen
+/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.o
+tf><c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm
+/lmroman10-bold.otf><c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/o
+pentype/public/lm/lmroman12-bold.otf><c:/Users/cnilsen/AppData/Roaming/TinyTeX/t
+exmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><c:/Users/cnilsen/AppDa
+ta/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmsans8-regular.otf><c:/U
+sers/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman
+17-regular.otf>
+Output written on StormwaterHeatmapTechReference.pdf (38 pages, 4330032 bytes).
+
+PDF statistics: 641 PDF objects out of 1000 (max. 8388607)
+ 537 compressed objects within 6 object streams
+ 179 named destinations out of 1000 (max. 131072)
+ 177 words of extra memory for PDF output out of 10000 (max. 100000000)
+

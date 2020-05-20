@@ -31,27 +31,30 @@ Our first step was to create a 1-meter resolution land cover layer of the Puget 
 - Hillshade: produced from the USGS National Elevation Dataset (⅓ arc-second) (U.S. Geological Survey, 2015).
 - GNDVI: Green Normalized Difference Vegetation Index calculated with NAIP imagery as:
 
-\begin{equation}
+$$
 \frac{\left(NIR-Green\right)}{\left(NIR\ +\ Green\right)}
-\end{equation}
+$$
+
+
+
 
 - MSAVI: Modified Soil Adjusted Vegetation Index calculated with NAIP imagery as:
-\begin{equation}
+
+$$
 \frac{\left(2\cdot NIR+1\right)-\sqrt{\left(2\cdot NIR+1\right)^2-8\left(NIR-RED\right)}}{2}
-\end{equation}
+$$
 
 
 
 - Binary MSAVI: a Boolean selection of MSAVI where:
 
-\begin{equation}
-
-   Binary MSAVI = 
+$$
+Bin_{MSAVI} =
 \begin{cases}
-    1,& \text{if  }0.5\ \le\ \ MSAVI\ <0.9\\
+    1, & 0.5\ \le\ \ MSAVI\ <0.9\\
     0,              & \text{otherwise}
 \end{cases}
-\end{equation}
+$$
 
 
 
@@ -64,26 +67,26 @@ The Naïve Bayes classification result was then smoothed with a dilation process
 
 To improve the labels in those inconsistent locations, we used a decision rule and replacement approach using NOAA`;s 10-meter CCAP land cover dataset (NOAA C-CAP, 2018a), which covers western Washington including the Puget Sound. While this dataset tested high in accuracy already, 10-meters is not an adequate spatial resolution to inform many site-level analyses used in our subsequent stormwater modeling, particularly in highly urbanized areas where vegetation is present but dispersed. However, the CCAP product does well to capture land cover existing at large, continuous extents throughout the landscape, such as forests, vegetated fields, broad sandy beaches, waterbodies, and large parking lots. Recognizing this, we chose to substitute pixels of certain classes from the 1-m classification with the 10-m CCAP. We also used the CCAP water and dirt classes to help clean up shoreline areas using a 10-m focal maximum algorithm to grow the class landward. The decision and replacement approach is as follows for each 1-m pixel, where label ID numbers are listed in Table 1 above
 
-**Classification Psuedocode**    
+**Classification Psuedocode**
 
->|  **IF** `Rooftop`: 
->|     `label = 7`
->|  **ELSE IF** `Dirt Road`: 
->|     `label =  4`
->|  **ELSE IF** `Road`  **OR** `Over-Water Structure`:
->|    `label =  6`
->|  **ELSE IF** `Inland waterbody` or `County shoreline`: 
->|    `label = 5`
->|  **ELSE IF**`1-m Naïve Bayes label` in `(Fine vegetation, Medium vegetation, Coarse vegetation)`:
->|  `label =  (1, 2, 3)` respectively
->|  **ELSE IF**` 1-m Naïve Bayes` label = `10-m C-CAP label`: 
->|    `label = C-CAP label`
->|  **ELSE IF** 10-m radius focal max of `10-m C-CAP` in `(4, 5)`: 
->|   `label = (4,5)` respectively
->|  **ELSE IF** `1-m Naïve Bayes` = `Dirt/Barren`:
->|    replace with `10-m C-CAP` 
->|  **ELSE**
->|   `10-m C-CAP`
+<!-- >|  **IF** `Rooftop`: -->
+<!-- >|     `label = 7` -->
+<!-- >|  **ELSE IF** `Dirt Road`: -->
+<!-- >|     `label =  4` -->
+<!-- >|  **ELSE IF** `Road`  **OR** `Over-Water Structure`: -->
+<!-- >|    `label =  6` -->
+<!-- >|  **ELSE IF** `Inland waterbody` or `County shoreline`: -->
+<!-- >|    `label = 5` -->
+<!-- >|  **ELSE IF**`1-m Naïve Bayes label` in `(Fine vegetation, Medium vegetation, Coarse vegetation)`: -->
+<!-- >|  `label =  (1, 2, 3)` respectively -->
+<!-- >|  **ELSE IF**` 1-m Naïve Bayes` label = `10-m C-CAP label`: -->
+<!-- >|    `label = C-CAP label` -->
+<!-- >|  **ELSE IF** 10-m radius focal max of `10-m C-CAP` in `(4, 5)`: -->
+<!-- >|   `label = (4,5)` respectively -->
+<!-- >|  **ELSE IF** `1-m Naïve Bayes` = `Dirt/Barren`: -->
+<!-- >|    replace with `10-m C-CAP` -->
+<!-- >|  **ELSE** -->
+<!-- >|   `10-m C-CAP` -->
 
 
 Our final step with the land cover creation was to limit the data to areas below 1,500-meters elevation to exclude permanent ice, e.g. glaciers on Mt. Rainier, which was not classified or necessary for our stormwater model.
@@ -95,17 +98,17 @@ We validated the predicted land cover dataset in Earth Engine by producing confu
 
 We produced our ground-truth dataset of 34,699 points using a dataset of points and polygons provided by WDFW (Pierce, Jr., 2015). The original points data consisted of 44,882 randomly distributed locations across the Puget Sound which were assigned class names through visual inspection of 2013 NAIP imagery for the purpose of ground-truthing land cover data. The polygons data represent land cover in 2015 and were developed with a segmentation and decision tree approach. We prepared the validation points data with the following process:
 
-**Data preparation:**    
+**Data preparation:**
 
 1. Subset the points by filtering out unlabeled points, points located outside our classification area (e.g. marine water), and points with labels that did not match labels of 2015 land cover polygons. This filtering retained 34,699 of the original 44,882 points.
 2. Relabel names to six classes:
 
-    1. `FinalFineVegetation` & `FinalFineVegetation` → `Fine Vegetation`
-    2. `FinalMedium` → `Medium Vegetation`
-    3. `FinalCoarseVegetation` → `Coarse Vegetation`
-    4. `FinalDirt` → `Barren/Dirt`
-    5. `FinalWaterFinalWater` → `Water`
-    6.  `BuiltConflict` & `FinalBuilt` &  `FinalBuiltBrownRed` → `Impervious Developed`
+<!--     1. `FinalFineVegetation` & `FinalFineVegetation` → `Fine Vegetation` -->
+<!--     2. `FinalMedium` → `Medium Vegetation` -->
+<!--     3. `FinalCoarseVegetation` → `Coarse Vegetation` -->
+<!--     4. `FinalDirt` → `Barren/Dirt` -->
+<!--     5. `FinalWaterFinalWater` → `Water` -->
+<!--     6.  `BuiltConflict` & `FinalBuilt` &  `FinalBuiltBrownRed` → `Impervious Developed` -->
 3. In Earth Engine, remap the point labels to produce a second set of point features labeled Pervious and Impervious to also validate the dataset for its ability to map impervious surface.
 4. We randomly selected 3,000 points to use from each of the six classes in the ground-truthed points data to reduce bias towards one or more classes.
 5. At this point, the two datasets were ready for analysis. We refer to them respectively as: Ground-truthed Land Cover and Ground-truthed Impervious Surface.
@@ -122,8 +125,8 @@ Using those ground-truth points and our seven-class land cover product, we calcu
 accuracy <- read_csv("data/accuracy.csv")
 kable(accuracy, col.names = c("County", "Accuracy", "Kappa",
                               "Accuracy", "Kappa",
-                              "Accuracy", "Kappa"), 
-                              caption = "Accuracy and kappa statistics for three derivatives of the seven-class 
+                              "Accuracy", "Kappa"),
+                              caption = "Accuracy and kappa statistics for three derivatives of the seven-class
                               land cover product.")%>%
 add_header_above(c(" "=1, "Impervious"=2,"Six Classes"=2,"Four Classes"=2))
 ```

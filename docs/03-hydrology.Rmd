@@ -38,15 +38,15 @@ opts_chunk$set(echo=FALSE,
 opts_knit$set(warning = FALSE,message = FALSE,echo=FALSE)
 
 ## ggploting theme
-theme_set(hrbrthemes::theme_ipsum_rc())
-hrbrthemes::import_roboto_condensed()
-hrbrthemes::update_geom_font_defaults()
+#theme_set(hrbrthemes::theme_ipsum_rc())
+#hrbrthemes::import_roboto_condensed()
+#hrbrthemes::update_geom_font_defaults()
 ```
 # Hydrology
 
 ## Overview 
 
-This document provides an overview of hydrology simulation methods and results for the Puget Sound Stormwater heatmap. Continuous hydrology simulation of was performed using regional pre-calibrated parameters. Batched simulations were run for combinations of land cover, soils, and slopes across the Puget Sound domain. Results are stored in a cloud-based database.  It is intended to be used in conjunction with data derived from the stormwaterheatmap or other geospatial data sources to quickly model rainfall-runoff relationships across Puget Sound.
+This document provides an overview of hydrology simulation methods and results for the Puget Sound Stormwater heatmap. Continuous hydrology simulation  was performed using regional pre-calibrated parameters. Batched simulations were run for combinations of land cover, soils, and slopes across the Puget Sound domain. Results are stored in a cloud-based database.  It is intended to be used in conjunction with data derived from the stormwaterheatmap or other geospatial data sources to quickly model rainfall-runoff relationships across Puget Sound.
 
 ## Modeling approach
 The hydrologic modeling approach was developed to replicate as much as feasible, commonly applied continuous simulation hydrologic analysis for stormwater in Puget Sound. Ecology developed guidance for continuous simulation modeling as described in the Stormwater Manual for Western Washington [@DepartmentofEcology2014].  
@@ -60,9 +60,9 @@ knitr::include_graphics('images/hspf_perlnd.png')
 ```
 
 ### Hydrologic Response Units 
-Modeling was performed on discretized landscape units based on common soils, land cover, and slope charcateristics known as hydrologic response units (HRUs). The HRU approach provides a computationally efficient method of pre-computing hydrolgic response for later use. Results for a particular watershed can be calculated by on summing or averaging the results for individual HRUs. 
+Modeling was performed on discretized landscape units based on common soils, land cover, and slope charcateristics known as hydrologic response units (HRUs). The HRU approach provides a computationally efficient method of pre-computing hydrolgic response for later use. Results for a particular watershed can be calculated by  summing or averaging the results for individual HRUs. 
 
-Each combination of parameters were modeled in separate batched simulations. HRUs were designated by a three-digit number according to the following convention: 
+Each combination of parameters was modeled in separate batched simulations. HRUs were designated by a three-digit number according to the following convention: 
 
 * **First digit:** Hydrologic Soil Group Number *(0 = A/B, 1 = C, 2 = Saturated)*
 * **Second digit:** Land cover *(0=Forest, 1=Pasture, 2=Lawn, 5=Impervious),* 
@@ -73,20 +73,12 @@ For example, a site with Type C soils, with forested land cover, on a moderate s
 
 ### Regional Calibrated Parameters
 
-Regional calibration factors for the Puget Lowlands Ecoregion were developed the USGS in the 1990s [@Dinicola1990] and updated by Clear Creek Solutions for use within WWHM [@DepartmentofEcology2014]. These parameters, referred to as the 'default parameters' by Ecology were used in this study and applied to individual HRUs. 
+Regional calibration factors for the Puget Lowlands Ecoregion were developed the USGS in the 1990s [@Dinicola1990] and updated by Clear Creek Solutions for use within WWHM [@DepartmentofEcology2014]. These parameters, referred to as the 'default parameters' by Ecology were used in this study and applied to individual HRUs. Parameters are provided in Appendix A. 
 
-```{r}
-
-soilsparams <- read_csv("data/soilsparams.csv")%>%
-  pivot_wider(names_from = Veg, values_from = Value)
-DT::datatable(soilsparams)
-
-
-```
 
 ### Python Implementation 
 
-To allow for parallel computations, we used a Python adaption of HSPF developed by David Lambert with funding from the United States Department of Energy, Energy Efficiency & Renewable Energy, Bioenergy Technologies Office [@Lampert2019]. PyHSPF is able to generated HSPF input files, run simulations, and provide HSPF compatible output.  Similar to WWHM, we provided separate output files for three flow-paths. Surface flow, interflow, and groundwater flow. In HSPF, these output classes are referred to as ```SURO```, ```INFW```, and ```AGWO``` respectively. We developed and ran individual HSPY models for each combination of HRU and Precipitation grid and generated output for each flow patch component. This resulted in 27,990 individual output files. 
+To allow for parallel computations, we used a Python adaption of HSPF (PyHSPF^[https://github.com/djlampert/PyHSPF]) developed by David Lambert with funding from the United States Department of Energy, Energy Efficiency & Renewable Energy, Bioenergy Technologies Office [@Lampert2019]. PyHSPF is able to generated HSPF input files, run simulations, and provide HSPF compatible output.  Similar to WWHM, we provided separate output files for three flow-paths: surface flow, interflow, and groundwater flow. In HSPF, these output classes are referred to as ```SURO```, ```INFW```, and ```AGWO``` respectively. We developed and ran individual PyHSPF models for each combination of HRU and Precipitation grid and generated output for each flow patch component. This resulted in 27,990 individual output files. 
 
 ## Data Sources 
 
@@ -94,9 +86,6 @@ To allow for parallel computations, we used a Python adaption of HSPF developed 
 
 A region-wide, simulated precipitation dataset was provided by the University of Washington Climate Impacts Group. Methodology used to develop this dataset is documented in [@Jr2018].The dataset contains modeled hourly precipitation using the GFDL CM3 global climate model and the  Representative Concentration Pathways (RCP) 8.5 scenario. 
 
-GCM selection based on stormwater applications. Emphasized winter storm drivers. 
-Downscaled from GFDL CM3. RCP 8.5 (High emissions) "High-High”
-Hourly precipitation developed through application of regional weather model, the Weather Research and Forecasting (WRF, Skamarock et al. 2005). 
 
 The GFDL model was chosen by CIG to due to its ability to accurately model winter storm drivers, important for stormwater applications. Combined with the higher emissions scenario, this modeling scenario represents the upper end of expected future climate changes effects. 
 
@@ -109,7 +98,7 @@ knitr::include_graphics('qgis/for_figure.png')
 
 ### Potential Evaporation 
 
-Gridded potential evaporation estimates were acquired from the forcing data for the North American Land Data Assimilation System (NLDAS2) [@NASAGoddardEarthSciencesDataandInformationServicesCenterGESDISC2019]. This dataset combines multiple sources of observations to produce estimates of surface climate variables. Evaporation data was derived from the NCEP North American Regional Reanalysis, consisting of a retrospective dataset beginning January 1979 through December 2005. Data were acquired in in 1/8th-degree grid spacing; at an hourly temporal resolution. Average monthly potential evaporation rates were calculated and resampled for each grid cell in the heatmap model domain. 
+Gridded potential evaporation estimates were acquired from the forcing data for the North American Land Data Assimilation System (NLDAS2) [@NASAGoddardEarthSciencesDataandInformationServicesCenterGESDISC2019]. This dataset combines multiple sources of observations to produce estimates of surface climate variables. Evaporation data was derived from the NCEP North American Regional Reanalysis, consisting of a retrospective dataset beginning January 1979 through December 2005. Data were acquired in ⅛ degree grid spacing; at an hourly temporal resolution. Average monthly potential evaporation rates were calculated and resampled for each grid cell in the heatmap model domain. 
 
 
  
@@ -138,7 +127,7 @@ Gridded potential evaporation estimates were acquired from the forcing data for 
 
 Land cover was derived from the Nature Conservancy's high-resolution land cover data set. See Section 2 for details on land cover derivation. 
 
-Land cover values were remapped to equivalent HSPF land cover factors as shown below. 
+Land cover values were remapped to equivalent HSPF land cover classes as shown below. 
 
 | Derived Land Cover| HSPF Land cover class|
 | --- | --- |
@@ -195,24 +184,24 @@ Slope values were calculated from the USGS National Elevation Dataset. Elevation
 * Moderate: 5-15%   
 * Steep: > 15%   
 
-## Verficiation of Results 
+## Verification of Results 
 
 Results were verified by comparing simulations to measured streamflow for a gaged watershed in King County. King County operates a stream gage on Madsen Creek, near Renton. The watershed above the gage site is approximately 2,000 acres, with about 25% imperviousness. 
 
 Daily streamflow data for the Madsen Creek watershed was provided by King County^[https://green2.kingcounty.gov/hydrology/SummaryDataGraphs.aspx?G_ID=98] for the period 1991-2010. We delineated the watershed above the gaging site using the USGS NHDPLus flow-conditioned raster [@moore2019user]. 
 Using this watershed boundary, we extracted HRUs and associated areas from the stormwater heatmap HRU layer on Google Earth Engine. HRU results and areas are shown in Table \@ref(tab:madsent).
 
-```{r madsent}
+```{r madsent, paged.print=TRUE}
 
 madsen <- read_csv("data/madsen.csv", col_types = cols(hruName_1 = col_skip(), 
     X8 = col_skip(), X9 = col_skip(), X10 = col_skip(), 
     X11 = col_skip()))
-DT::datatable(madsen)
+kable(madsen,caption = "Summary of HRUs and areas in Madsen Creek Watershed")
 ```
 
-Modeling results were then queried and aggregated from the BigQuery dataset as described in Appendix A. The same HRU values were also run in WWHM for comparison. Both the WWHM and BigQuery results were truncated to have the same period of record as the streamflow data. Only the surface runoff and interflow components were used in this analysis. 
+Modeling results were then queried and aggregated from the BigQuery dataset as described in Appendix B. The same HRU values were also run in WWHM for comparison. Both the WWHM and BigQuery results were truncated to have the same period of record as the streamflow data. Only the surface runoff and interflow components were used in this analysis. 
 
-Figure \@ref(fig:madsenFig) shows a comparison of the observed and simulation flow-durations for the Madsen Creek watershed.  .
+Figure \@ref(fig:madsenFig) shows a comparison of the observed and simulation flow-durations for the Madsen Creek watershed.
 
 ```{r madsenFig, fig.cap = "Observed and simulated flow-duration curves for Madsen Creek, King County, WA"}
 #madsen creek 
@@ -243,13 +232,13 @@ madsen_wwhm_daily$date_formatted <- (gsub(",","",madsen_wwhm_daily$Date))%>%
 #result <- merge(dates, test, by.y = "date", by.x = "date", all.x = TRUE)
 allQs <- merge(kc_daily,BQ_daily,by.x = "Collect Date (local)",by.y = "date",all.x = TRUE) %>%
   merge(madsen_wwhm_daily,by.x = "Collect Date (local)",by.y = "date_formatted",all.x = TRUE)%>%
-  dplyr::select(c(measured = `Discharge (cfs)`,wwhm=X801.cfs,hspy=cfs))
+  dplyr::select(c(measured = `Discharge (cfs)`,wwhm=X801.cfs,PyHSPF=cfs))
 
 fcdVals <- fdc(allQs, ylim = c(2,100),xlim=c(0.005,0.3),log="y",lQ.thr = 0.5,main = "Flow Duration Curve- Madsen Creek, King County", ylab="Q, (cfs)",yat=c(2,5,10),thr.shw=FALSE)
 
 ```
 
-Both the WWHM and HSPY results underpredict actual streamflow primarly because baseflow was not simulated. This is expected, since both models exclude groundwater contributions. However, the results show good agreement between both simulated datasets over the full duration of simulations. Note that the simulations use different precipitation (see Figure \@ref(fig:precipCompare) ) datasets and are not expected to match. 
+Both the WWHM and PyHSPF results underpredict actual streamflow primarly because baseflow was not simulated. This is expected, since both models exclude groundwater contributions. However, the results show good agreement between both simulated datasets over the full duration of simulations. Note that the simulations use different precipitation (see Figure \@ref(fig:precipCompare) ) datasets and are not expected to match. 
 ```{r precipCompare, fig.cap = "Comparison of precipitation data used in verification"}
 precipCompare = function(wwhm_subset, Cig_precip) {
   
@@ -286,12 +275,12 @@ Cig_renton_Precip <- read_csv("data/ID17_V7_precip_1991_2010.csv")
 Cig_renton_Precip$year <- seatac_subset$year
 precipCompare(seatac_subset,Cig_renton_Precip)+
   labs(title = "Precipitation datasets used for verification",
-              caption = "WWHM = Seatac precipitaiton gage from WWHM \n CIG = Gridded precipitation used in this study")
+              caption = "WWHM = Seatac precipitation gage from WWHM \n CIG = Gridded precipitation used in this study")
 
 
 ```
 ## Spatially Aggregated Results 
-Since the HSPY model is a lumped parameter model, results can be calculated for HRU/precipitation grids individually and then aggregated after calculation. 
+Since the PyHSPF model is a lumped parameter model, results can be calculated for HRU/precipitation grids individually and then aggregated after calculation. 
 
 The stormwater heatmap contains two spatial aggregates of hydrology results: Mean Annual Runoff for the historic period (1970-1999) and a new index, termed the Flow Duration Index. 
 
@@ -462,10 +451,10 @@ Where q~current~ is the simulated discharge for current or altered conditions an
 df.flowIndex <- read_csv("data/flow_index_out.csv")
 ggplot(subset(df.flowIndex, df.flowIndex$landcover != "forest"))+
 
-geom_histogram(aes(x=flowRegimeIndexLog,fill=soil))+facet_wrap(vars(landcover),scales="free_y")+
+geom_histogram(binwidth = 0.05, aes(x=flowRegimeIndexLog,fill=soil))+facet_grid(landcover~.,scales="free_y")+
   labs(x="Flow Index", y="Land Cover",
-       title="Puget Sound Wide Flow Index",
-       subtitle="1970-1999 Modeling Results")+scale_color_ipsum()+scale_fill_ipsum()
+       title="Histogram of Flow Duration Index - All Puget Sound Locations",
+       subtitle="1970-1999 Modeling Results")+scale_color_ipsum()+scale_fill_ipsum()+ylab("Count of Grids")+scale_x_continuous(breaks=scales::pretty_breaks(n=10))
 
 ```
 

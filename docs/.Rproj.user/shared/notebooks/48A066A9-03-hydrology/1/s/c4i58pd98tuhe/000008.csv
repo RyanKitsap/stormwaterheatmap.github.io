@@ -1,7 +1,0 @@
-"0",""
-"0","madsen <- read_csv(""data/madsen.csv"", col_types = cols(hruName_1 = col_skip(), "
-"0","    X8 = col_skip(), X9 = col_skip(), X10 = col_skip(), "
-"0","    X11 = col_skip()))"
-"2","Missing column names filled in: 'X8' [8], 'X9' [9], 'X10' [10], 'X11' [11]"
-"2","Duplicated column names deduplicated: 'hruName' => 'hruName_1' [7]"
-"0","DT::datatable(madsen)"

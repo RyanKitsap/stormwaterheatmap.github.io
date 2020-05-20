@@ -1,0 +1,10 @@
+# Appendix A {-}
+**Regional HSPF Calibration Factors**
+
+```{r}
+library(readr)
+soilsparams <- read_csv("data/soilsparams.csv")%>%
+  pivot_wider(names_from = Veg, values_from = Value)
+kable(soilsparams)
+
+```

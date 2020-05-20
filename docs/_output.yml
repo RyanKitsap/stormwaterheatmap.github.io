@@ -8,4 +8,5 @@ bookdown::gitbook:
     download: "pdf" 
 bookdown::pdf_book:
   latex_engine: lualatex
+...
   #citation_package: natbib  \ln\left(\frac{\sum_{ }^{ }q\Delta t}{\sum_{ }^{ }q_{forest}\Delta t}\right);\ \left(q_{low}\le q_t\ <q_{high}\right)
