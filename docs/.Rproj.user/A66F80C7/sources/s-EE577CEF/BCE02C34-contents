@@ -38,9 +38,9 @@ opts_chunk$set(echo=FALSE,
 opts_knit$set(warning = FALSE,message = FALSE,echo=FALSE)
 
 ## ggploting theme
-#theme_set(hrbrthemes::theme_ipsum_rc())
-#hrbrthemes::import_roboto_condensed()
-#hrbrthemes::update_geom_font_defaults()
+theme_set(hrbrthemes::theme_ipsum_rc())
+hrbrthemes::import_roboto_condensed()
+hrbrthemes::update_geom_font_defaults()
 ```
 # Hydrology
 

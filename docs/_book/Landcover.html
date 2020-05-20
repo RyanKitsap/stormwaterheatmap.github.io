@@ -52,6 +52,14 @@
 
 
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.9/datatables.js"></script>
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.19/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.19/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 
@@ -605,6 +613,25 @@ Whatcom
 <p>Some of the discrepancies likely occur because vegetation green-up (particularly in fine vegetation such as grass) can occur differently from year to year and cause mislabeling when comparing data from different periods. Where grass is green in one year’s input imagery, it may appear as dirt or barren in another year’s imagery if captured during a particularly dry period. These issues may result from error in the land cover labeling, ground-truth labeling, or actual changes in land cover that occurred between the input data dates (i.e. 2013 to 2017). Furthermore, dirt is often mistaken for impervious surfaces (and vice versa) because those surfaces are often built with dirt and stone, thus creating similar spectral reflectance.</p>
 <p>Overall, we find the discrepancies to be low concern for the purpose of our stormwater modeling. The horizontal area of the Medium Vegetation and the Dirt/Barren classes in our land cover data is considerably smaller than the other classes, and their respective labeling discrepancies are to classes that are treated similarly to each of them respectively in the stormwater hydrology modeling (e.g. Medium Vegetation is subsequently remapped to Coarse Vegetation).</p>
 
+<!-- Citations
+Citation Syntax
+Citations go inside square brackets and are separated by semicolons. Each citation must have a key, composed of ‘@’ + the citation identifier from the database, and may optionally have a prefix, a locator, and a suffix. Here are some examples:
+
+Blah blah [see @doe99, pp. 33-35; also @smith04, ch. 1].
+
+Blah blah [@doe99, pp. 33-35, 38-39 and *passim*].
+
+Blah blah [@smith04; @doe99].
+A minus sign (-) before the @ will suppress mention of the author in the citation. This can be useful when the author is already mentioned in the text:
+
+Smith says blah [-@smith04].
+You can also write an in-text citation, as follows:
+
+@smith04 says blah.
+
+@smith04 [p. 33] says blah.
+ 
+-->
 </div>
 </div>
             </section>
