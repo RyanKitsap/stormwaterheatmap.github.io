@@ -1,0 +1,146 @@
+"0","```r
+
+results = c()
+plots = c()
+vifs = c()
+tabs = c()
+for (i in 1:length(params)){
+coc = params[i]
+df.coc <- (base::subset(s8data.wPredictors,
+                parameter == coc)) 
+plots[[coc]] <- plot_s8(coc)
+model_info <- check_vif(coc)
+vifs[[coc]] <- model_info$vif
+
+results[[coc]] = forward_selection(TRUE,coc,model_info$predictors)}
+```"
+"1","package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+Model failed to converge with max|grad| = 0.00302464 (tol = 0.002, component 1)package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+Model failed to converge with max|grad| = 0.00295017 (tol = 0.002, component 1)package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+boundary (singular) fit: see ?isSingular
+boundary (singular) fit: see ?isSingular
+package ‘lmerTest’ was built under R version 3.6.2
+Attaching package: ‘lmerTest’
+
+The following object is masked from ‘package:lme4’:
+
+    lmer
+
+The following object is masked from ‘package:stats’:
+
+    step
+
+boundary (singular) fit: see ?isSingular
+boundary (singular) fit: see ?isSingular
+boundary (singular) fit: see ?isSingular
+Model failed to converge with max|grad| = 0.00316495 (tol = 0.002, component 1)boundary (singular) fit: see ?isSingular
+Error in as_lmerModLmerTest(model) : 
+  model not of class 'lmerMod': cannot coerce to class 'lmerModLmerTest
+"

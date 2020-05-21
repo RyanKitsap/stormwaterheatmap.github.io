@@ -1,0 +1,25 @@
+{
+    "id": "012BB069",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1588360612183.0,
+    "source_on_save": false,
+    "relative_order": 11,
+    "properties": {
+        "id": "30422e42bd47454696147e1440cd0bb3",
+        "name": "fit",
+        "title": "fit"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7018897540630192138,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1588360612183,
+    "read_only": false,
+    "read_only_alternatives": []
+}

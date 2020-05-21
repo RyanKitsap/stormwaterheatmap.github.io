@@ -1,0 +1,26 @@
+{
+    "id": "1BA8309F",
+    "path": "~/repos/stormwaterheatmap-master/R-scripts/HighwayRegression/HwyRegressionAnalysis.Rmd",
+    "project_path": "HwyRegressionAnalysis.Rmd",
+    "type": "r_markdown",
+    "hash": "3392292683",
+    "contents": "",
+    "dirty": false,
+    "created": 1587147624786.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "cursorPosition": "432,0",
+        "scrollLine": "418",
+        "docOutlineVisible": "1",
+        "docOutlineSize": "128"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1587343013,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1587584781847,
+    "read_only": false,
+    "read_only_alternatives": []
+}

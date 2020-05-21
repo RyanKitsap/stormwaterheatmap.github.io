@@ -1,0 +1,23 @@
+"0","```r
+#Select Parameters
+params <- c('Zinc - Water - Total',
+ 'Copper - Water - Total',
+ 'Nitrite-Nitrate - Water - Dissolved',
+ 	'Lead - Water - Total',
+ 'Total Phosphorus - Water - Total',
+ 'Total Suspended Solids - Water - Total',
+ 'Total Phthalate - Water - Total',
+'Total PAH - Water - Total',
+#'Chrysene - Water - Total',
+'CPAH - Water - Total',
+'HPAH - Water - Total', 
+'Total Kjeldahl Nitrogen - Water - Total'
+#'Total Kjeldahl Nitrogen - Water - Total',
+#'Total PCB - Water - Total'
+)
+
+#save a list of all the parameters in case we want to use mor. 
+params.all <- data.frame(unique(all.S8.data$parameter))
+s8data <- all.S8.data 
+kable(params,col.names = \"Constituents of concern\")
+```"

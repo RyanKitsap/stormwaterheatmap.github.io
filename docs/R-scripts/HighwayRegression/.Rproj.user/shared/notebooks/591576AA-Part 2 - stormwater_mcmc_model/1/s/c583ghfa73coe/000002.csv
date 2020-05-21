@@ -1,0 +1,16 @@
+"0","```r
+
+scatter_cocs <- function(df.coc,title) {
+ p <- ggplot(df.coc, aes(1, concentration)) + geom_jitter() + labs(
+  title = title,
+  subtitle = \"Data collected 2009-2013\",
+  caption =
+    \" Data source: Ecology, 2015\",
+  x = \"Observations\"
+  #y = y.title
+)  
+p + facet_wrap( ~ parameter, ncol=3, scales = 'free') 
+}
+
+scatter_cocs(s8data[which(s8data$parameter %in% params),],'All Observations')
+```"

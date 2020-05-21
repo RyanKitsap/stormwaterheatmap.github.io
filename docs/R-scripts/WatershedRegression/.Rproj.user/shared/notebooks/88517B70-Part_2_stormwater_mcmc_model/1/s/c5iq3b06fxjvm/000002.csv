@@ -1,0 +1,75 @@
+"0","rm(list = ls())"
+"0","library(knitr)"
+"0","knitr::include_graphics"
+"1","function (path, auto_pdf = getOption(""knitr.graphics.auto_pdf"", 
+"
+"1","    FALSE), dpi = NULL, error = TRUE) 
+"
+"1","{
+"
+"1","    path = native_encode(path)
+"
+"1","    if (auto_pdf && is_latex_output()) {
+"
+"1","        path2 = with_ext(path, ""pdf"")
+"
+"1","        i = file.exists(path2)
+"
+"1","        path[i] = path2[i]
+"
+"1","    }
+"
+"1","    if (error && length(p <- path[!is_web_path(path) & !file.exists(path)])) 
+"
+"1","        stop(""Cannot find the file(s): "", paste0(""\"""", 
+"
+"1","            p, ""\"""", collapse = ""; ""))
+"
+"1","    structure(path, class = c(""knit_image_paths"", ""knit_asis""), 
+"
+"1","        dpi = dpi)
+"
+"1","}
+"
+"1","<bytecode: 0x0000022f86b5aaf0>
+"
+"1","<environment: namespace:knitr>
+"
+"0","library(rmdformats)"
+"0","library(tibble)"
+"0","library(tidyverse)"
+"0","library(ggplot2)"
+"0","library(caret)"
+"0","library(psych)"
+"0","library(DataExplorer)"
+"0","library(dplyr)"
+"0","library(car)"
+"0","library(lme4)"
+"0","library(nlme)"
+"0","library(hrbrthemes)"
+"0","library(sjPlot)"
+"0","#library(ggplot2); "
+"0","library(MCMCglmm)"
+"0","library(plotMCMC)"
+"0","library(modelsummary)"
+"0","#library(lmec)"
+"0","#library(Metrics)"
+"0","#library(ggstatsplot)"
+"0","#install.packages('modelsummary')"
+"0","#library(modelsummary)"
+"0","#library('emmeans')"
+"0","#library('tidybayes')"
+"0","theme_set(theme_ipsum_rc())"
+"0",""
+"0","#detach(""package:datasets"", unload=TRUE)"
+"0","## Global options"
+"0","options(max.print=""75"")"
+"0","opts_chunk$set(cache=TRUE,"
+"0","               prompt=FALSE,"
+"0","               tidy=TRUE,"
+"0","               comment=NA,"
+"0","               message=FALSE,"
+"0","               warning=FALSE)"
+"0","opts_knit$set(width=75)"
+"0",""
+"0","set.seed(50)"

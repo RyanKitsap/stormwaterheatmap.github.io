@@ -1,0 +1,14 @@
+"0","```r
+# #Calculate variance-inflation factors. 
+# 
+# calc_vif_base <- function(coc) {
+#   df.coc <- (base::subset(s8data.wPredictors,
+#                 parameter == coc))
+#   base_formula <- getBaseFormula(df.coc)#returns a formula with all predictors
+#   model.1 <<- lmer(base_formula, data = df.coc, na.action = na.omit)
+#   v <- sort(vif(model.1),decreasing=TRUE)
+#   return(v)
+#   #kable(v,caption=\"Variance Inflation Factors - not filtered\") #display the vif of the dataset
+# }
+
+```"

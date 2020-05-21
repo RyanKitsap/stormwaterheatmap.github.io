@@ -1,0 +1,5 @@
+"0","coc = 'Total Phosphorus - Water - Total'"
+"0","TPModel <- mcmc_calc('Total Phosphorus - Water - Total',c('rev_logTraffic'),'log')"
+"2","Error in mcmc_calc(""Total Phosphorus - Water - Total"", c(""rev_logTraffic""),  : 
+  unused argument (""log"")
+"

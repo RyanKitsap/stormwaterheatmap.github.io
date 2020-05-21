@@ -1,0 +1,40 @@
+"0","```r
+mcmc_calc <- function(coc.local, fixed_list, lhs) {
+  
+  df <- (subset(s8data.wPredictors, parameter == coc.local))
+
+   data <-
+  df %>%
+  add_surv()
+#make the prior_structures 
+prior.1<-list(R=list(V=1, fix=1), G=list(G1=list(V=1, nu=0.002)))
+prior.2<-list(R=list(V=2, fix=1), G=list(G1=list(V=1, nu=0)))
+
+  
+  if (lhs == 'log') {
+    mcmc_formula <-
+      as.formula(paste(
+        \"cbind(cenMin_log, cenMax_log) ~ \",
+        paste0(fixed_list , collapse = \"+\")
+      ))
+  }
+  else {
+    mcmc_formula <-
+      as.formula(paste(
+        \"cbind(cenMin, cenMax) ~ \",
+        paste0(fixed_list , collapse = \"+\")
+      ))
+  }
+  
+  mcmc_results <-
+    MCMCglmm(
+      mcmc_formula,
+      random = ~ Location,
+      data =  data,
+      family = \"cengaussian\", 
+      verbose = FALSE, prior = prior.1, singular.ok = TRUE,
+      nitt = 60000, thin = 13, burnin = 10000
+    )
+    return((mcmc_results))
+}
+```"

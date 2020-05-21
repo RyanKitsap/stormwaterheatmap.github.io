@@ -1,0 +1,9 @@
+"1","
+ Location effects: cbind(cenMin_log, cenMax_log) ~ impervious 
+
+            post.mean l-95% CI u-95% CI eff.samp   pMCMC    
+(Intercept)     3.644    3.239    4.067     3847 <0.0003 ***
+impervious      0.714    0.414    1.015     3847 <0.0003 ***
+---
+Signif. codes:  0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
+"

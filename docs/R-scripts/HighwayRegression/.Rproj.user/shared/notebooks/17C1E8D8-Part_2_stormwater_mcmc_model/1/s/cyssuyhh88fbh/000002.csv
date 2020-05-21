@@ -1,0 +1,13 @@
+"0","```r
+summary(mod)
+
+```"
+"1","
+ Iterations = 10001:59999
+ Thinning interval  = 13
+ Sample size  = 3847 
+
+ DIC: 928 
+
+ G-structure:  ~Location
+"

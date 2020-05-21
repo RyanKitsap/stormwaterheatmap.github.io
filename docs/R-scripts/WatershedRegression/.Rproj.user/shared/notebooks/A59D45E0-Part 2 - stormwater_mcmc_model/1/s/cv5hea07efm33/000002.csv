@@ -1,0 +1,31 @@
+"0","all.S8.data <- read_csv(""data/S8_data.csv"", "
+"0","    col_types = cols(field_collection_end_date = col_date(format = ""%m/%d/%Y""), "
+"0","        field_collection_start_date = col_date(format = ""%m/%d/%Y"")) )"
+"2","Missing column names filled in: 'X1' [1]"
+"2","10838 parsing failures.
+ row          col           expected actual               file
+2384 result_basis 1/0/T/F/TRUE/FALSE    Dry 'data/S8_data.csv'
+2385 result_basis 1/0/T/F/TRUE/FALSE    Dry 'data/S8_data.csv'
+2386 result_basis 1/0/T/F/TRUE/FALSE    Dry 'data/S8_data.csv'
+2387 result_basis 1/0/T/F/TRUE/FALSE    Dry 'data/S8_data.csv'
+2388 result_basis 1/0/T/F/TRUE/FALSE    Dry 'data/S8_data.csv'
+.... ............ .................. ...... ..................
+See problems(...) for more details.
+"
+"0","#filter out rejected data"
+"0","all.S8.data <- (filter(all.S8.data,!result_data_qualifier %in% 'REJ'))"
+"0",""
+"0","#filter out replicates "
+"0","all.S8.data <- (filter(all.S8.data,!sample_replicate_flag %in% 'Y'))"
+"0",""
+"0","#change nondetect warnings to detects"
+"0","warnings <- all.S8.data$nondetect_flag == ""WARNING"""
+"0","all.S8.data$nondetect_flag[warnings] <- FALSE "
+"0",""
+"0","#Change NA to detect"
+"0","all.S8.data$nondetect_flag[is.na(all.S8.data$nondetect_flag)] <- FALSE"
+"0",""
+"0","#Change season to factor "
+"0","all.S8.data$season <- as.factor(all.S8.data$season)"
+"0",""
+"0",""

@@ -1,0 +1,19 @@
+"0","```r
+# add custom functions to extract estimates (tidy) and goodness-of-fit (glance) information
+tidy.MCMCglmm <- function(object, ...) {
+    s <- summary(object, ...)
+    ret <- tibble::tibble(term = row.names(s$solutions),
+                          estimate = s$solutions[, 1],
+                          conf.low = s$solutions[, 2],
+                          conf.high = s$solutions[, 3])
+    ret
+}
+glance.MCMCglmm <- function(object, ...) {
+    ret <- tibble::tibble(dic = object$DIC,
+                          n = nrow(object$X))
+    ret
+}
+
+# estimate a simple model
+#model <- MCMCglmm(PO ~ 1 + plate, random = ~ FSfamily, data = PlodiaPO, verbose=FALSE, pr=TRUE)
+```"

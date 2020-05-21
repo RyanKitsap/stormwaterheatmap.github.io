@@ -1,0 +1,504 @@
+---
+title: "Highway Regression for Stormwater Heatmap"
+output:
+  html_document: 
+    highlight: zenburn
+    theme: lumen
+    fig_caption: yes
+bibliography: ../references.bib
+link-citations: yes
+---
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 10px;}
+</style>
+
+
+ Author: Christian Nilsen, Geosyntec Consultants
+ Email: cnilsen@geosyntec.com
+
+ Date Created: 2019-08-02
+
+ Copyright (c) Geosyntec Consultants, 2019
+</div>
+
+# License
+<div class = "blue">
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 3.0 
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+For a copy of the GNU General Public License 
+  see <https://www.gnu.org/licenses/>.
+
+
+
+# Introduction 
+
+This notebook performs censored Baseyian linear regression with random effects on annual traffic volumes and pollutant concentrations. It uses data from the USGS Highway-Runoff Database (HRDB)Version 1.1.0 (@granato2009highway). Bayesian analsysis is performed by fitting a generalized linear mixed model using Markov chain Monte Carlo techniques and relies heavily on the ```MCMCglmm`` package (hadfield2010mcmc). 
+
+# Background 
+
+# Methods 
+
+The HRDB was a collaboration by the U.S. Geological Survey (USGS) and the Federal Highway Administration (FHWA). It provides highway-runoff data from 242 highway sites across the country; data from 6,837 storm events; and 106,441 concentration values with data for 414 different water-quality constituents. 
+
+For purposes of this study, data were limited to those sites in Washington, Oregon, and Northern California. 
+
+
+
+```{r knitr_init, cache=FALSE, include=FALSE}
+library(knitr)
+
+knitr::opts_chunk$set(fig.width=8, fig.height=6, fig.path='Figs/',
+                      echo=TRUE, warning=FALSE, message=FALSE)
+
+opts_knit$set(width=60)
+
+
+
+```
+
+```{r Load Libraries}
+library(tidyverse)
+library(plotMCMC)
+library(dplyr)
+library (MCMCglmm)
+library(bayesplot)
+library(hrbrthemes)
+theme_set(theme_ipsum_rc())
+set.seed(50)
+
+```
+
+For purposes of this study, 
+
+```{r Get data from HWYDB}
+
+#View(HwyDBv3)
+HwyDB <- read.csv ("data/HwyDB.csv",stringsAsFactors=FALSE )
+
+##Set local parameters 
+
+units <- 'ug/L'
+#make a dataframe 
+params = list(
+
+T_Copper = 'Copper, water, unfiltered, recoverable, micrograms per liter',
+D_Copper = 'Copper, water, filtered, micrograms per liter',
+T_Zinc = 'Zinc, water, unfiltered, recoverable, micrograms per liter',
+T_Cadmium = 'Cadmium, water, filtered, micrograms per liter',
+TKN = 'Ammonia plus organic nitrogen, water, unfiltered, milligrams per liter as nitrogen (TKN)',
+T_Phosphorus = 'Phosphorus, water, unfiltered, milligrams per liter',
+Suspended_Solids = 'Solids, suspended, water, milligrams per liter')
+
+#Select lower threshold for ADT data
+lowerBound <- 5000 #highest traffic ADT in the monitoring data
+
+```
+
+```{r extract relevant data}
+#library(dplyr)
+#Extract relevant data from overall data file
+
+
+
+HwyDB <- read_csv("data/HwyDB.csv") %>%
+  dplyr::filter(`S Adt` > lowerBound) %>% 
+  rename(EMC = `S EMC Value`,parameter =`T Parameter Name`,ADT = `S Adt`,Location = `Site ID`, State = `State ID`) 
+
+HwyDB$State<-as.factor(HwyDB$State)
+HwyDB$Location <-as.factor(HwyDB$Location)
+
+hwyData <- HwyDB[which(HwyDB$parameter %in% params),]
+
+
+
+parameter_list = (unique(hwyData$parameter))
+code_list = unique(hwyData$`T Pcode`)
+codes <- data.frame(name = parameter_list,code = code_list,stringsAsFactors = FALSE)
+
+```
+
+```{r Plot vs ADT, fig.height=12}
+
+
+plot <- ggplot(data = hwyData) +geom_point(aes(x=ADT,y=EMC)) + 
+    facet_wrap(ncol = 2, vars(parameter),scales = "free") +
+    theme(plot.title = element_text(hjust = 0.5))
+
+plot
+
+
+```
+
+``` {r}
+add_surv <- function(df) {
+  df$cenMin <- ifelse(df$NonDetectFlag,-Inf, (df$EMC))
+  df$cenMax  <- (df$EMC)
+  df$cenMin_log <- ifelse(df$NonDetectFlag,-Inf, log(df$EMC))
+  df$cenMax_log  <- log(df$EMC)
+  return(df)
+}
+
+
+
+```
+
+```
+#### Gray Callout {.bs-callout .bs-callout-gray}
+```
+
+## mcmc_calc function
+``` {r}
+
+mcmc_calc <- function(coc.local,trans.bin) {
+  #get linear models
+  #selected_model <- compare_linear_models(x)[model_num][[1]]  #this runs the linear model selection
+  df <- as.data.frame(subset(hwyData, `T Pcode` == coc.local))%>% 
+    add_surv()
+
+
+#make the prior_structures 
+prior.1<-list(R=list(V=1, fix=1), G=list(G1=list(V=1, nu=0.002)))
+
+
+
+if (trans.bin) {
+mcmc_formula <-
+      as.formula(
+         "cbind(cenMin_log, cenMax_log) ~  log(ADT) "
+      )}
+else {
+  mcmc_formula <-
+      as.formula(
+         "cbind(cenMin_log, cenMax_log) ~  ADT "
+      )
+}
+
+mcmc_results <-
+    MCMCglmm(
+      mcmc_formula,
+      random = ~  Location,
+      data =  df, 
+      family = "cengaussian",
+      verbose = FALSE, prior = prior.1,  singular.ok = TRUE,
+      nitt = 40000, thin = 13, burnin = 10000
+    )
+    return((mcmc_results))
+}
+
+
+
+
+
+```
+### parameters
+```{r}
+# Zn <- mcmc_calc("p01092")
+# summary(Zn)
+# ```
+# 
+# ```{r}
+# Zn <- mcmc_calc("p01092")
+# Cu <- mcmc_calc("p01042")
+# Pb <- mcmc_calc("p01051")
+# Cd <- mcmc_calc("p01027")
+# TP <- mcmc_calc("p00665")
+# TKN <- mcmc_calc("p00625")
+# TSS <- mcmc_calc("p80154") #note TSS is in mg/L 
+
+
+```
+
+```{r}
+# add custom functions to extract estimates (tidy) and goodness-of-fit (glance) information
+tidy.MCMCglmm <- function(object, ...) {
+    s <- summary(object, ...)
+    ret <- tibble::tibble(term = row.names(s$solutions),
+                          estimate = s$solutions[, 1],
+                          conf.low = s$solutions[, 2],
+                          conf.high = s$solutions[, 3])
+    ret
+}
+glance.MCMCglmm <- function(object, ...) {
+    ret <- tibble::tibble(dic = object$DIC,
+                          n = nrow(object$X))
+    ret
+}
+
+```
+
+### Predictions
+
+```{r}
+plot_mcmc_predictions <- function(coc, mcmc_results, cocName) {
+ 
+  
+  training_predictions <- data.frame(#predicted = exp(
+    (predict(mcmc_results, interval = "confidence")))
+  
+  training_predint <-
+    cbind(df,
+          data.frame(predict(mcmc_results, interval = "prediction")))
+  
+  model.compare.predictions <-
+    cbind(df,
+          training_predictions)
+  
+  plot <- ggplot(model.compare.predictions) + geom_abline() +
+    geom_ribbon(aes(x = fit, ymin = lwr, ymax = upr), alpha = 0.1) +
+    geom_ribbon(data = training_predint,
+                aes(x = fit, ymin = lwr, ymax = upr),
+                alpha = 0.4) +
+    geom_point(aes(x = exp(fit), y = (EMC)), color = 'blue',fill='white', alpha = 0.1) + 
+    
+   #scale_y_log10()+scale_x_log10()+
+    labs(
+      x = "Predicted Concentration ( µg/L)",
+      y = "Measured Concentration ( µg/L)",
+      title =  "Predicted vs. Measured Concentrations",
+      subtitle = cocName,
+      caption = "Data from Granato, G.E., 2019, Highway-Runoff Database (HRDB) Version 1.1.0: \n U.S. Geological Survey data release, https://doi.org/10.5066/P94VL32J.")
+  return(plot)
+}
+```
+
+## show results 
+```{r}
+showResults <- function(coc,mcmc_results,cocName) {
+   df <- (subset(hwyData, `T Pcode` == coc)) %>%
+    add_surv()
+   
+  training_predictions <- data.frame(#predicted = exp(
+    (predict(mcmc_results, interval = "confidence")))
+  
+  training_predint <-
+    cbind(df,
+          data.frame(predict(mcmc_results, interval = "prediction")))
+  
+  model.compare.predictions <-
+    cbind(df,
+          training_predictions)
+  
+  predictPlot <- ggplot(model.compare.predictions) + geom_abline() +
+    geom_ribbon(aes(x = fit, ymin = lwr, ymax = upr), alpha = 0.1) +
+    geom_ribbon(data = training_predint,
+                aes(x = fit, ymin = lwr, ymax = upr),
+                alpha = 0.4) +
+    geom_point(aes(x = fit, y = log(EMC)),fill='white', alpha = 0.1) + 
+    
+   #scale_y_log10()+scale_x_log10()+
+    labs(
+      x = "Predicted Concentration ( µg/L)",
+      y = "Measured Concentration ( µg/L)",
+      title =  "Predicted vs. Measured Concentrations",
+      subtitle = cocName,
+      caption = "Data from Granato, G.E., 2019, Highway-Runoff Database (HRDB) Version 1.1.0: \n U.S. Geological Survey data release, https://doi.org/10.5066/P94VL32J.")
+
+  regression_plot <-ggplot(model.compare.predictions) + 
+    geom_boxplot(aes(y = log(EMC), x = ADT, group = Location),alpha = 0.8, outlier.alpha = 0.1) +
+    geom_point(aes(y = log(EMC), x = ADT, color = State), alpha = 0.4) +
+     
+    geom_line(aes(y = fit, x = ADT), color = 'red',alpha = 0.8) +scale_x_log10()
+    
+    
+  solution_summary<-(summary(mcmc_results))
+  
+  #bayes plots 
+  
+  #show uncertainty intervals under esimated posterior density curves 
+plot.1 <- mcmc_areas(mcmc_results$Sol,prob = 0.80, pprob_outer = 0.95,point_est="mean")+ggplot2::labs(title = coc, subtitle   = "Posterior distributions with medians and 80% intervals")
+
+#generate scatter plot of predictions 
+
+
+
+
+
+  
+  return(list(regression_plot, predictPlot, solution_summary, plot.1))
+}
+```
+
+# Summarize Results 
+```{r}
+
+# Do some predictive checks 
+
+color_scheme_set("blue")
+bayes_plots <- function(fit,coc) {
+fit <- TSS
+coc = param.code
+#coc = 'Total Suspended Solids - Water - Total'
+
+df <- (subset(hwyData, `T Pcode` == coc)) %>%
+  add_surv()
+
+
+
+
+return(list(plot.1,plot.2))
+}
+
+```
+
+
+# Generate Regressions
+
+## Metals 
+
+### Copper 
+```{r echo=FALSE}
+i = 4 
+param.code = codes[i,2]
+param.code
+param.name = codes[i,1]
+param.name
+Cu <- mcmc_calc(param.code,FALSE)
+mod <- Cu
+
+showResults(param.code,mod,param.name)
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE,main=paste('Trace plot (log)'))
+#simulate with 100 draws  
+ysim <- (simulate(mod,nsim = 100))
+
+df <- (subset(hwyData, `T Pcode` == param.code))
+#overlay of predictions 
+plot.2<- ppc_dens_overlay(log(df$EMC),t(ysim))+ggplot2::labs(x="log concentration",title = param.name, subtitle   = "Observed (y) vs. simulated draws (yrep)")
+plot.2
+```
+
+### Zinc 
+```{r echo=FALSE}
+i = 7 
+param.code = codes[i,2]
+param.code
+param.name = codes[i,1]
+param.name
+Zn <- mcmc_calc(param.code,TRUE)
+mod <- Zn
+
+showResults(param.code,mod,param.name)
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE,main=paste('Trace plot (log)'))
+#simulate with 100 draws  
+ysim <- (simulate(mod,nsim = 100))
+
+df <- (subset(hwyData, `T Pcode` == param.code))
+#overlay of predictions 
+plot.2<- ppc_dens_overlay(log(df$EMC),t(ysim))+ggplot2::labs(x="log concentration",title = param.name, subtitle   = "Observed (y) vs. simulated draws (yrep)")
+plot.2
+```
+
+### Cadmium 
+```{r echo=FALSE}
+i = 2 
+param.code = codes[i,2]
+param.code
+param.name = codes[i,1]
+param.name
+
+Cd <- mcmc_calc(param.code,TRUE)
+mod <- Cd
+
+
+showResults(param.code,mod,param.name)
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE,main=paste('Trace plot (log)'))
+#simulate with 100 draws  
+ysim <- (simulate(mod,nsim = 100))
+
+df <- (subset(hwyData, `T Pcode` == param.code))
+#overlay of predictions 
+plot.2<- ppc_dens_overlay(log(df$EMC),t(ysim))+ggplot2::labs(x="log concentration",title = param.name, subtitle   = "Observed (y) vs. simulated draws (yrep)")
+plot.2
+```
+## Nutrients 
+
+### Phosphorus
+```{r echo=FALSE}
+
+i <- 5
+
+param.code = codes[i,2]
+param.code
+param.name = codes[i,1]
+param.name
+
+TP <- mcmc_calc(param.code,FALSE)
+mod <- TP
+
+
+showResults(param.code,mod,param.name)
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE,main=paste('Trace plot (log)'))
+#simulate with 100 draws  
+ysim <- (simulate(mod,nsim = 100))
+
+df <- (subset(hwyData, `T Pcode` == param.code))
+#overlay of predictions 
+plot.2<- ppc_dens_overlay(log(df$EMC),t(ysim))+ggplot2::labs(x="log concentration",title = param.name, subtitle   = "Observed (y) vs. simulated draws (yrep)")
+plot.2
+```
+
+### TKN
+```{r echo=FALSE}
+i = 1 
+param.code = codes[i,2]
+param.code
+param.name = codes[i,1]
+param.name
+
+TKN <- mcmc_calc(param.code,TRUE)
+mod <- TKN
+
+
+showResults(param.code,mod,param.name)
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE,main=paste('Trace plot (log)'))
+#simulate with 100 draws  
+ysim <- (simulate(mod,nsim = 100))
+
+df <- (subset(hwyData, `T Pcode` == param.code))
+#overlay of predictions 
+plot.2<- ppc_dens_overlay(log(df$EMC),t(ysim))+ggplot2::labs(x="log concentration",title = param.name, subtitle   = "Observed (y) vs. simulated draws (yrep)")
+plot.2
+
+```
+
+## TSS 
+
+
+```{r echo=FALSE}
+i = 6 
+param.code = codes[i,2]
+param.code
+param.name = codes[i,1]
+param.name
+
+TSS <- mcmc_calc(param.code,FALSE)
+mod <- TSS
+
+
+showResults(param.code,mod,param.name)
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE,main=paste('Trace plot (log)'))
+#simulate with 100 draws  
+ysim <- (simulate(mod,nsim = 100))
+
+df <- (subset(hwyData, `T Pcode` == param.code))
+#overlay of predictions 
+plot.2<- ppc_dens_overlay(log(df$EMC),t(ysim))+ggplot2::labs(x="log concentration",title = param.name, subtitle   = "Observed (y) vs. simulated draws (yrep)")
+plot.2
+
+```
+    
+       
+# Bibliography
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+knitr::write_bib(c("knitr", "stringr"), "", width = 60)
+
+
+```
+

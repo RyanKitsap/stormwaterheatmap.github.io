@@ -1,0 +1,31 @@
+"0","```r
+#Spatial predcitors have been extracted and saved as a csv file. 
+#spatial_data<-read_csv(\"data/spatialPredictors_4_13.csv\", col_types = cols(X1 = col_skip()))
+spatial_data <- read_csv(\"C:/Users/cnilsen/Google Drive/repos/spatialPredictors.csv\")
+```"
+"1","Parsed with column specification:
+cols(
+  `system:index` = col_character(),
+  COM = col_double(),
+  Location = col_character(),
+  RES = col_double(),
+  depSplusN = col_double(),
+  impervious = col_double(),
+  logPopulation = col_double(),
+  nighttime_lights = col_double(),
+  pm25 = col_double(),
+  rev_logTraffic = col_double(),
+  roadDensity = col_double(),
+  .geo = col_logical()
+)
+"
+"0","```r
+#RES and COM are compositional data. Change to a ratio
+spatial_data$LU_ratio = spatial_data$COM/spatial_data$RES 
+spatial_data <- dplyr::select(spatial_data, -c(RES,COM,.geo))
+#merge spatial predictors with monitoring data 
+s8data.wPredictors <<- merge(s8data, spatial_data)%>% 
+  dplyr::select(-c(depSplusN))
+
+kable(head(s8data.wPredictors),caption = \"S8 Monitoring Data\")
+```"

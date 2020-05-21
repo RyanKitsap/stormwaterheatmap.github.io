@@ -1,0 +1,24 @@
+"1","
+ Location effects: cbind(cenMin_log, cenMax_log) ~ impervious 
+
+            post.mean l-95% CI u-95% CI eff.samp  pMCMC   
+(Intercept)     1.193    0.573    1.866     3847 0.0026 **
+impervious      0.654    0.236    1.135     3588 0.0078 **
+---
+Signif. codes:  0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
+"
+"0","```r
+df <- (subset(s8data.wPredictors, parameter == coc)) %>%
+  add_surv()
+bayes_plots(mod,coc,df)
+```"
+"1","The following arguments were unrecognized and ignored: pprob_outer`expand_scale()` is deprecated; use `expansion()` instead.
+"
+"1","[[1]]
+
+[[2]]
+
+[[3]]
+
+[[4]]
+"

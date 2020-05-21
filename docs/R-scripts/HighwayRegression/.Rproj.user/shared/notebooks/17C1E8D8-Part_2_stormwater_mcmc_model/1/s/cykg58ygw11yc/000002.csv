@@ -1,0 +1,17 @@
+"0","```r
+coc = 'Total Suspended Solids - Water - Total'
+TSSModel <- mcmc_calc('Total Suspended Solids - Water - Total','rev_logTraffic','log')
+df <- (subset(s8data.wPredictors, parameter == coc)) %>%
+  add_surv()
+bayes_plots(TSSModel,coc,df)
+```"
+"1","The following arguments were unrecognized and ignored: pprob_outer`expand_scale()` is deprecated; use `expansion()` instead.
+"
+"1","[[1]]
+
+[[2]]
+
+[[3]]
+
+[[4]]
+"

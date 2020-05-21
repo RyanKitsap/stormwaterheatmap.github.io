@@ -1,0 +1,18 @@
+"0","```r
+coc = 'HPAH - Water - Total'
+HPAHModel<- mcmc_calc('HPAH - Water - Total',c('LU_ratio'),'log') 
+mod <- HPAHModel
+df <- (subset(s8data.wPredictors, parameter == coc)) %>%
+  add_surv()
+bayes_plots(mod,coc,df)
+```"
+"1","The following arguments were unrecognized and ignored: pprob_outer`expand_scale()` is deprecated; use `expansion()` instead.
+"
+"1","[[1]]
+
+[[2]]
+
+[[3]]
+
+[[4]]
+"

@@ -1,0 +1,26 @@
+"0","```r
+s8data <- all.S8.data %>% 
+
+  dplyr::select(
+    study_name,
+    location_id,parameter,
+    type,
+    season,
+    new_result_value,
+    nondetect_flag,
+    study_id,
+    access_id,
+    field_collection_end_date,
+    field_collection_start_date,
+    type)
+
+
+#rename some columns
+colnames(s8data)[colnames(s8data) == \"location_id\"] <- \"Location\"
+colnames(s8data)[colnames(s8data) == \"new_result_value\"] <-
+  \"concentration\"
+s8data$nondetect_flag <- as.logical(s8data$nondetect_flag)
+s8data$concentration <- as.numeric(s8data$concentration)
+
+
+```"

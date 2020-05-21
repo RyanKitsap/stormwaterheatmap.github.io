@@ -1,0 +1,25 @@
+{
+    "id": "062528FB",
+    "path": null,
+    "project_path": null,
+    "type": "object_explorer",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1588289841854.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "id": "ef934e57c9114cff98830d6f1978e705",
+        "name": "fit.out",
+        "title": "fit.out"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 15199893558853724,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1588289841854,
+    "read_only": false,
+    "read_only_alternatives": []
+}

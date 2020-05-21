@@ -1,0 +1,5 @@
+"0","tableSummaryYesSeason(z)
+"
+"2","Error in eval(parse(text = x, keep.source = FALSE)[[1L]]) : 
+  object 'logseason' not found
+"

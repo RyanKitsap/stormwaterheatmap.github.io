@@ -1,0 +1,21 @@
+"0","```r
+#summarize 
+metals <- list()
+metals[['Total Copper']] <- (CuModel)
+metals[['Total Zinc']] <- (ZnModel)
+metals[['Total Cadmium']]<- (CdModel)
+metals[['Total Lead']]<- (PbModel)
+
+others <- list() 
+others[['Total Phosphorus']] <- TPModel
+others[['Total Kjeldahl Nitrogen']] <- TKNModel
+others[['Total Suspended Sediment']] <-  TSSModel
+#others['FC'] <- FCModel 
+
+
+
+
+
+msummary(metals,title='Total Metals',statistic_vertical = TRUE,statistic = 'conf.int', conf_level = 0.95)
+msummary(others,title='Nutrients and TSS',statistic_vertical = TRUE,statistic = 'conf.int', conf_level = 0.95)
+```"

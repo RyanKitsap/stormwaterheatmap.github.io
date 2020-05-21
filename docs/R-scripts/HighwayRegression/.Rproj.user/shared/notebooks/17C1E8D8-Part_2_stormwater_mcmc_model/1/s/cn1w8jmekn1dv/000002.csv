@@ -1,0 +1,10 @@
+"0","```r
+add_surv <- function(df) {
+  df$cenMin <- ifelse(df$nondetect_flag,-Inf, (df$concentration))
+  df$cenMax  <- (df$concentration)
+  df$cenMin_log <- ifelse(df$nondetect_flag,-Inf, log(df$concentration))
+  df$cenMax_log  <- log(df$concentration)
+  
+  return(df)
+}
+```"

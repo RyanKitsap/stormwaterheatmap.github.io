@@ -1,0 +1,550 @@
+---
+title: 'Watershed Regression - Part 1: Linear Mixed Models (adapted to GLS Survival Analysis) '
+author: "Christian Nilsen"
+output:
+  html_document:
+    toc: yes
+    highlight: zenburn
+    df_print: paged
+  html_notebook: 
+    toc: yes
+    highlight: zenburn
+    df_print: paged
+    fig_caption: yes
+---
+## License
+
+> Copyright (c) 2020 Geosyntec Consultants, Inc. 
+[Mozilla Public License Version 2.0](https://choosealicense.com/licenses/mpl-2.0/)
+
+
+This software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.  
+
+<!-- 
+
+To dos here: 
+
+
+
+-->
+
+
+# Description 
+
+This notebook uses spatial predictors and outfall monitoring data to develop predictive linear regression relationships. This represents the first step in the watershed regression for the stormwater heatmap. The second step is a censored bayesian model, which adds some capabilities that simple linear models do not have. This first step is necessary to select the most predictive parameters in an efficient way. 
+
+Here are the steps in the code below:
+   
+1. Code set up  
+2. Get and prepare monitoring data  
+3. Merge spatial data with monitoring data  
+4. Remove mulitcolinear predictors   
+5. Peform model selection   
+6. Select the best model (these results are then used in the Bayesian model in step 2)  
+  
+
+
+# Setup 
+
+clear workspace and load libraries. (code not shown in html file )  
+```{r knitr_init, cache=FALSE, include=FALSE}
+#rm(list = ls())
+#set the working directory 
+#setwd("~/repos/stormwaterheatmap/R-scripts/WatershedRegression")
+
+#load packages
+library(knitr)
+library(tidyverse)
+library(car)
+library(caret)
+library(psych)
+library(DataExplorer)
+library(dplyr)
+library(readr)
+library(lme4)
+library(nlme)
+library(hrbrthemes)
+library(sjPlot)
+library(Metrics)
+
+
+
+## Global options
+
+opts_chunk$set(prompt=FALSE,
+               message=FALSE,
+               warning=FALSE)
+options(scipen = 1, digits = 3)
+
+#set seed for reproducibility 
+set.seed(50)
+```
+
+
+# Get and prepare monitoring data
+
+The stormwater outfall data is available from the Department of Ecology at https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-Permit-Outfall-Data/d958-q2ci.
+
+A .csv file is saved in ```WatershedRegression/data/S8_data.csv``` 
+
+```{r echo=TRUE}
+all.S8.data <- read.csv("data/S8_data.csv",
+                        stringsAsFactors = FALSE )
+
+#filter out rejected data
+all.S8.data <- (filter(all.S8.data,!result_data_qualifier %in% 'REJ'))
+
+#filter out replicates 
+all.S8.data <- (filter(all.S8.data,!sample_replicate_flag %in% 'Y'))
+
+#change nondetect warnings to detects
+warnings <- all.S8.data$nondetect_flag == "WARNING"
+all.S8.data$nondetect_flag[warnings] <- FALSE 
+
+#Change NA to detect
+all.S8.data$nondetect_flag[is.na(all.S8.data$nondetect_flag)] <- FALSE
+
+#Change season to factor 
+all.S8.data$season <- as.factor(all.S8.data$season)
+
+
+```
+
+The chunk below makes a list of parameters we are interested in. 
+
+```{r Select Parameters: }
+#Select Parameters
+params <- c('Zinc - Water - Total',
+ 'Copper - Water - Total',
+ 'Nitrite-Nitrate - Water - Dissolved',
+ 'Lead - Water - Total',
+ 'Total Phosphorus - Water - Total',
+ 'Total Suspended Solids - Water - Total',
+ 'Total Phthalate - Water - Total',
+'Total PAH - Water - Total',
+#'Chrysene - Water - Total',
+'CPAH - Water - Total',
+'HPAH - Water - Total' 
+#'Total Kjeldahl Nitrogen - Water - Total',
+#'Total PCB - Water - Total'
+)
+
+#save a list of all the parameters in case we want to use mor. 
+params.all <- data.frame(unique(all.S8.data$parameter))
+s8data <- all.S8.data 
+kable(params,col.names = "Constituents of concern")
+#
+```
+
+Clean up extracted data and rename columns: 
+
+```{r }
+s8data <- all.S8.data %>% 
+
+  dplyr::select(
+    study_name,
+    location_id,parameter,
+    type,
+    season,
+    new_result_value,
+    nondetect_flag,
+    study_id,
+    access_id,
+    field_collection_end_date,
+    field_collection_start_date,
+    type)
+
+
+#rename some columns
+colnames(s8data)[colnames(s8data) == "location_id"] <- "Location"
+colnames(s8data)[colnames(s8data) == "new_result_value"] <-
+  "concentration"
+s8data$nondetect_flag <- as.logical(s8data$nondetect_flag)
+s8data$concentration <- as.numeric(s8data$concentration)
+
+
+```
+
+## Check for outliers
+
+Set up a jitter plot of all the data to look for outliers: 
+  
+```{r fig.height=8}
+#make a function for scatter plots 
+scatter_cocs <- function(df.coc,title) {
+ p <- ggplot(df.coc, aes(1, concentration)) + geom_jitter() + labs(
+  title = title,
+  subtitle = "Data collected 2009-2013",
+  caption =
+    " Data source: Ecology, 2015",
+  x = "Observations"
+  #y = y.title
+)+
+  theme_ipsum_rc()  
+p + facet_wrap( ~ parameter, scales = 'free')+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank()) 
+}
+
+scatter_cocs(s8data[which(s8data$parameter %in% params),],'All Observations')
+```
+   
+outliers are apprent for TSS, TP, and no2-no3. Remove these. 
+```{r remove outliers, fig.height=8}
+#remove and replot 
+
+outlierParams <- c("Total Suspended Solids - Water - Total", "Total Phosphorus - Water - Total", "Nitrite-Nitrate - Water - Dissolved")
+
+#This removes the highest values 
+outlierVals <-
+  top_n(group_by(s8data[which(s8data$parameter %in% outlierParams), ], parameter), 1, concentration)$concentration
+
+s8data <- s8data %>%
+  group_by(parameter) %>%
+  slice(which(!(
+    parameter %in% outlierParams & concentration %in% outlierVals
+  )))
+
+scatter_cocs(s8data[which(s8data$parameter %in% params),],'All Observations - Outliers Removed')
+
+```
+   
+Looks better. Move on to the next Chunk. 
+
+# Get Spatial data and merge  
+
+```{r}
+#Spatial predcitors have been extracted and saved as a csv file. 
+#spatial_data<-read_csv("data/spatialPredictors_4_13.csv", col_types = cols(X1 = col_skip()))
+spatial_data <- read_csv("data/spatialPredictors_5_14.csv")
+#RES and COM are compositional data. Change to a ratio
+spatial_data$LU_ratio = spatial_data$COM/spatial_data$RES 
+spatial_data <- dplyr::select(spatial_data, -c(RES,COM,.geo))
+#merge spatial predictors with monitoring data 
+s8data.wPredictors <<- merge(s8data, spatial_data)%>% 
+  dplyr::select(-c(depSplusN))
+
+kable(head(s8data.wPredictors),caption = "S8 Monitoring Data")
+```
+
+
+
+
+```{r functions}
+getBaseFormula <- function(df.coc) {
+  #Function to make a formula for prediction
+  predictors <- df.coc %>%
+    select_if(is.numeric) %>%
+    dplyr::select(-c(concentration, access_id)) %>%
+    colnames()
+  return(as.formula(paste(
+    "(concentration) ~",  (paste((predictors),  collapse = " + ")), " + (1|Location)"
+  )))
+  
+}
+```
+
+# Perform Linear Regression
+Below, we perform linear regression one parameter at a time. 
+
+## Functions for regression 
+We set up a series of functions to make the analysis easier. 
+
+
+#### Data dictionary for these functions
+```coc```: constituent of concern  
+```df.coc```: filtered dataframe   
+```model```: basic linear mixed model   
+```log_model```:  linear-mixed model with log-transformed concentrations    
+```model_with_seasonality```: linear-mixed model with seasonality as an added factor    
+```model_with_seasonality_log```: linear-mixed model with seasonality as an added factor with log-transformed concentrations     
+
+### Plotting function
+Basic function to plot results by location
+```{r}
+plot_s8 <- function(coc) {
+    df.coc <- (base::subset(s8data.wPredictors,
+                parameter == coc))
+  #plot the data to inspect 
+  plot <- ggplot(data=(df.coc))+geom_point(aes(x=Location,y=concentration))+scale_y_log10()+labs(
+      y = "Concentration (µg/L)",
+      x = "Location",
+      title =  "Measured Concentrations",
+      subtitle = coc ) + theme_ipsum_rc()
+  return(plot)
+}
+```
+
+## Function to remove mulitcolinear predictors in base model 
+To address multicolinearity, we calculate the variance inflation factor (VIF) and iteratively remove paramters with the highest VIF. We keep removing parameters one at a time until all VIF values are below 5.0. 
+
+```{r}
+# #Calculate variance-inflation factors. 
+# 
+# calc_vif_base <- function(coc) {
+#   df.coc <- (base::subset(s8data.wPredictors,
+#                 parameter == coc))
+#   base_formula <- getBaseFormula(df.coc)#returns a formula with all predictors
+#   model.1 <<- lmer(base_formula, data = df.coc, na.action = na.omit)
+#   v <- sort(vif(model.1),decreasing=TRUE)
+#   return(v)
+#   #kable(v,caption="Variance Inflation Factors - not filtered") #display the vif of the dataset
+# }
+
+```
+
+
+## Function to iteratively remove mulitcolinear predictors 
+Same as above, expect multicolinear predictors are removed. 
+```{r}
+## *Check VIF
+ 
+check_vif <- function(coc) {
+  df.coc <- (base::subset(s8data.wPredictors,
+                parameter == coc))
+  base_formula <- getBaseFormula(df.coc)#returns a formula with all predictors
+  model.1 <- lmer(base_formula, data = df.coc, na.action = na.omit) #make into a lmer object 
+  v <- sort(vif(model.1),decreasing=TRUE)
+  
+  #if the VIF of the highest ranked predictor is >10 then iteratively remove
+  model_object <- model.1 #start with model object as the base model (all predictors included)
+  
+  
+  for (i in 1:20) {
+    interim_v <- sort(vif(model_object), decreasing = TRUE)
+    if (max(interim_v) < 10) {
+      break
+    }
+    predictor_to_drop = as.name(names(interim_v)[which(interim_v == max(interim_v))])
+    model_object <-
+      stats::update(model_object, paste(".~ . -", predictor_to_drop))
+    }
+  
+  m1Terms <- (labels(terms(model.1)))
+  m2Terms <- labels(terms(model_object))
+  
+  #compare the terms to get a list of the dropped terms
+  droppedTerms <- setdiff(m1Terms, m2Terms)
+  
+  #make a list of selected predictors
+  predictors <- m2Terms#colnames(model.frame(model_object)) 
+
+  
+  #filter df.coc to remove dropped terms.
+  df.coc = dplyr::select(df.coc, -(droppedTerms))
+  return(list("vif" = interim_v,"dropped" = droppedTerms,"predictors" = predictors))
+  #kable(droppedTerms,caption = "These terms were dropped")
+  
+  #kable(interim_v,caption="Variance Inflation Factors - multicolinear factors dropped")
+}
+
+```
+
+## Function to perform stepwise selection and return a series of best models 
+
+```{r}
+## Stepwise Selection
+
+#forward_selection(TRUE,coc,model_info$predictors)
+
+# Extract the model that step found:
+
+#perform forward selection on model parameters. First for non-transformed data, then for log-transformed data
+forward_selection <- function(seasonal.bin, coc,predictors) {
+  #seasonal.bin = binary (T/F) if seasonal model should be used
+  library(lmerTest)
+  #make this a lmer object 
+  df.coc <- (base::subset(s8data.wPredictors,
+                parameter == coc)) 
+  model_object_formula <- as.formula(paste(
+    "concentration ~",  (paste((predictors),  collapse = " + ")), " + (1|Location)"))
+  
+  model_object <- lmer(model_object_formula,data=df.coc)
+  
+  step.2 <-  lmerTest::step(model_object,reduce.random=FALSE,data=df.coc)
+  step.2.log <- lmerTest::step(stats::update(model_object, log(concentration)~.))
+  
+  #extract the models 
+  model.3 <- get_model(step.2)
+  model.3.log <- get_model(step.2.log)
+  
+  #perform forward selection on model parameters, this time add seasonality . First for non-transformed data, then for log-transformed data
+  step.4 <- lmerTest::step(stats::update(model_object,.~.+season))
+  step.4.log <- lmerTest::step(stats::update(model_object,log(concentration) ~.+season))
+  model.4 <- get_model(step.4)
+  model.4.log <- get_model(step.4.log)
+  
+  #get formulas 
+  model.3.formula <- as.formula(model.3@call$formula)
+  model.3.log.formula <- as.formula(model.3.log@call$formula)
+  model.4.formula <- as.formula(model.4@call$formula)
+  model.4.log.formula <- as.formula(model.4.log@call$formula)
+  
+  #detach lmer test and remove the models. Keep the formulas. 
+  detach("package:lmerTest", unload=TRUE)
+  rm(model.3,model.3.log,model.4,model.4.log)
+  
+  #use lmer for performing modeling
+  #calculate base model 
+  df.coc <- (base::subset(s8data.wPredictors,
+                parameter == coc)) 
+  model.base <- lmer(model_object_formula,data=df.coc)
+  model <- lmer(model.3.formula,data=df.coc)
+  log_model<-  lmer(model.3.log.formula,data=df.coc)
+  
+  if(seasonal.bin) {
+      #if seasonal model switch is on, calc seasonal models
+    model_with_seasonality <- lmer(model.4.formula,data=df.coc)
+    model_with_seasonality_log <- lmer(model.4.log.formula,data=df.coc)
+      #add to list 
+    modelList <- c(model,log_model,model_with_seasonality,model_with_seasonality_log)
+    
+    }
+    else {
+    modelList <-c(model,log_model)
+    modelLables <-c('linear','log-linear') 
+    }
+   
+
+ 
+ return(modelList)#,show.aic = TRUE)# = FALSE, title=coc, dv.labels = modelLables) 
+  # #make a table of coefficients 
+  # tab_model(modelList,
+  #   model_log,
+  #   model_with_seasonality,
+  #   model.with_seasonality_log,
+  #   show.aic = TRUE,auto.label = FALSE, title=coc, dv.labels = c('linear','log-linear','linear seasonal','log-linear seasonal'))#file=paste0("results/",coc,".html"))
+}
+```
+
+
+
+## Run through model selection functions
+
+Now we use the functions from above to return model tables.
+We wrap a helper function to call the others.
+```{r}
+
+results = c()
+plots = c()
+vifs = c()
+tabs = c()
+for (i in 1:length(params)){
+coc = params[i]
+df.coc <- (base::subset(s8data.wPredictors,
+                parameter == coc)) 
+plots[[coc]] <- plot_s8(coc)
+model_info <- check_vif(coc)
+vifs[[coc]] <- model_info$vif
+
+results[[coc]] = forward_selection(TRUE,coc,model_info$predictors)}
+modelLabels <-c('linear','log-linear','linear seasonal','log-linear seasonal') 
+
+```
+
+Wrapper function for displaying results for individual cocs. 
+```{r}
+show_results <- function(j){
+#get parameter label 
+lab = names(results)[j]
+
+#plot observed 
+print(plots[[j]])
+
+#show variance inflation factors 
+print(kable(vifs[[j]],caption = paste("Variance inflation factors",lab),col.names = c("vif")))
+
+#show raw summary of results 
+models <- results[[j]]
+for (k in 2:2){
+  print((summary(models[[k]])))
+  #plot(models[[k]],,main=paste(lab,"\n","Resididuals"))
+  print(qqmath(models[[k]],main=paste(lab,"\n",modelLabels[k],"\n","QQ plot of resididuals")))
+}
+  
+
+#formatted table of results 
+tabs = (tab_model(models,title=lab,show.aic = TRUE,dv.labels =modelLabels))
+
+kable(tabs$knitr) #displays the table inline
+
+}
+
+
+
+```
+
+Now we can specify one parameters at a time and display the results. Generally, the model with the lowest AIC is used in Step 2 (Bayesian modeling).
+
+## Zinc
+```{r}
+(show_results(1))
+
+```
+
+
+```{r}
+show_results(2)
+
+```
+
+## Nitrite-Nitrate
+
+```{r}
+show_results(3)
+```
+
+## Lead
+
+```{r}
+show_results(4)
+```
+
+## Total Phosphorus
+
+```{r message=FALSE, warning=FALSE}
+show_results(5)
+
+```
+
+## Total Suspended Solids 
+
+```{r message=FALSE, warning=FALSE}
+show_results(6)
+
+```
+
+## Total Phthalate
+
+```{r message=FALSE, warning=FALSE}
+show_results(7)
+```
+
+
+## Total PAH
+
+```{r message=FALSE, warning=FALSE}
+show_results(8)
+```
+
+## CPAH
+```{r message=FALSE, warning=FALSE}
+show_results(9)
+```
+
+## HPAH
+```{r message=FALSE, warning=FALSE}
+show_results(10)
+```
+## Total Kjeldahl Nitrogen - Water - Total
+```{r message=FALSE, warning=FALSE}
+show_results(11)
+```
+
+
+
+
+
+
+
+

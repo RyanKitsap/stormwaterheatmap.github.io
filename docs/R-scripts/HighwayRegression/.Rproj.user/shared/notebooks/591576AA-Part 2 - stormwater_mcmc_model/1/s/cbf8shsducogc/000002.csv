@@ -1,0 +1,38 @@
+"0","```r
+coc <- params[4]
+PbModel <- mcmc_calc(params[4],c('impervious'),'log')
+
+mod <- PbModel
+summary(mod$Sol)
+```"
+"1","
+Iterations = 10001:59999
+Thinning interval = 13 
+Number of chains = 1 
+Sample size per chain = 3847 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+             Mean    SD Naive SE Time-series SE
+(Intercept) 1.193 0.327  0.00527        0.00527
+impervious  0.654 0.233  0.00375        0.00388
+
+2. Quantiles for each variable:
+
+             2.5%   25%   50%  75% 97.5%
+(Intercept) 0.545 0.991 1.196 1.39  1.84
+impervious  0.204 0.502 0.652 0.80  1.11
+"
+"0","```r
+summary(mod)
+```"
+"1","
+ Iterations = 10001:59999
+ Thinning interval  = 13
+ Sample size  = 3847 
+
+ DIC: 1040 
+
+ G-structure:  ~Location
+"

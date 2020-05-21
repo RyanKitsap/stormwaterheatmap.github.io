@@ -1,0 +1,18 @@
+"0","```r
+#remove and replot 
+
+outlierParams <- c(\"Total Suspended Solids - Water - Total\", \"Total Phosphorus - Water - Total\", \"Nitrite-Nitrate - Water - Dissolved\")
+
+#This removes the highest values 
+outlierVals <-
+  top_n(group_by(s8data[which(s8data$parameter %in% outlierParams), ], parameter), 1, concentration)$concentration
+
+s8data <- s8data %>%
+  group_by(parameter) %>%
+  slice(which(!(
+    parameter %in% outlierParams & concentration %in% outlierVals
+  )))
+
+scatter_cocs(s8data[which(s8data$parameter %in% params),],'All Observations - Outliers Removed')
+
+```"

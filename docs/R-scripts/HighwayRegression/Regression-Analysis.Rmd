@@ -1,0 +1,295 @@
+---
+title: "Highway Regression fun"
+author: "Christian Nilsen"
+output:
+  pdf_document: default
+  pdf: default
+---
+
+# Multiple Contaminants Highway Traffic Regression
+```{r Header Section}
+## Script info ---------------------------
+##
+## Script name:"Highway Database Regression"
+##
+##
+## Author: Christian Nilsen, Geosyntec Consultants
+## Email: cnilsen@geosyntec.com
+##
+## Date Created: 2019-08-02
+##
+## Copyright (c) Geosyntec Consultants, 2019
+##
+## License---------------------------
+##
+##This program is free software: you can redistribute it and/or modify
+##it under the terms of the GNU General Public License as published by
+##the Free Software Foundation, version 3.0 
+##
+##This program is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU General Public License for more details.
+##For a copy of the GNU General Public License 
+##  see <https://www.gnu.org/licenses/>.
+##
+
+```
+
+
+```{r Load Libraries}
+library(tidyverse)
+```
+
+```{r Get data}
+
+library(readr)
+HwyDB <- read.csv ("data/HwyDBv2.csv",stringsAsFactors=FALSE )
+
+
+##Set local parameters - Non-PAH Contaminants
+
+units <- 'ug/L'
+#make a dataframe 
+params = list(
+T_Copper = 'Copper, water, unfiltered, recoverable, micrograms per liter',
+D_Copper = 'Copper, water, filtered, micrograms per liter',
+T_Zinc = 'Zinc',
+Nitrite_Nitrate = 'Nitrite plus nitrate, water, unfiltered, milligrams per liter as nitrogen',
+TKN = 'Ammonia plus organic nitrogen, water, unfiltered, milligrams per liter as nitrogen (TKN)',
+T_Phosphorus = 'Phosphorus, water, unfiltered, milligrams per liter',
+Suspended_Solids = 'Solids, suspended, water, milligrams per liter')
+
+#Select lower threshold for ADT data
+lowerBound <- 5000
+
+```
+
+```{r extract relevant data}
+#library(dplyr)
+#Extract relevant data from overall data file
+
+hwyData<- HwyDB %>% 
+  dplyr::filter(`S.Adt` > lowerBound) %>% 
+  rename(EMC = `S.EMC.Value`,parameter =`T.Parameter.Name`,ADT = `S.Adt`,Location = `Site.ID` ) 
+
+parameter_list = (unique(hwyData$parameter))
+code_list = unique(hwyData$T.Pcode)
+codes <- data.frame(name = parameter_list,code = code_list,stringsAsFactors = FALSE)
+
+```
+
+```{r Plot vs ADT}
+
+library(tidyverse)
+plot <- ggplot(data = hwyData) +geom_point(aes(x=ADT,y=EMC)) + 
+    facet_wrap(vars(parameter),scales = "free") +
+    theme(plot.title = element_text(hjust = 0.5))
+
+    plot
+
+
+```
+
+``` {r}
+add_surv <- function(df) {
+  df$cenMin <- ifelse(df$NonDetectFlag,-Inf, (df$EMC))
+  df$cenMax  <- (df$EMC)
+  df$cenMin_log <- ifelse(df$NonDetectFlag,-Inf, log(df$EMC))
+  df$cenMax_log  <- log(df$EMC)
+  return(df)
+}
+hwyData <- add_surv(hwyData)
+
+```
+
+
+``` {r performs Theil-Sen line Estimator}
+library (MCMCglmm)
+mcmc_calc <- function(coc.local) {
+  #get linear models
+  #selected_model <- compare_linear_models(x)[model_num][[1]]  #this runs the linear model selection
+  df <- (subset(hwyData, `T.Pcode` == coc.local))
+
+
+#make the prior_structures 
+prior.1<-list(R=list(V=1, fix=1), G=list(G1=list(V=1, nu=0.002)))
+prior.2<-list(R=list(V=2, fix=1), G=list(G1=list(V=1, nu=0)))
+
+
+mcmc_formula <-
+      as.formula(
+         "cbind(cenMin_log, cenMax_log) ~  ADT "
+        #paste0(ADT , collapse = "+")
+      )
+mcmc_results <-
+    MCMCglmm(
+      mcmc_formula,
+      random = ~ Location,
+      data =  df, 
+      family = "cengaussian",
+      verbose = FALSE, #prior = prior.2, singular.ok = TRUE,
+      nitt = 60000, thin = 13, burnin = 10000
+    )
+    return((mcmc_results))
+}
+
+
+
+
+
+```
+### parameters
+
+
+```{r}
+Zn <- mcmc_calc("p01092")
+Cu <- mcmc_calc("p01042")
+Pb <- mcmc_calc("p01051")
+Cd <- mcmc_calc("p01027")
+TP <- mcmc_calc("p00665")
+TKN <- mcmc_calc("p00625")
+TSS <- mcmc_calc("p80154") #note TSS is in mg/L 
+
+
+```
+
+```{r}
+# add custom functions to extract estimates (tidy) and goodness-of-fit (glance) information
+tidy.MCMCglmm <- function(object, ...) {
+    s <- summary(object, ...)
+    ret <- tibble::tibble(term = row.names(s$solutions),
+                          estimate = s$solutions[, 1],
+                          conf.low = s$solutions[, 2],
+                          conf.high = s$solutions[, 3])
+    ret
+}
+glance.MCMCglmm <- function(object, ...) {
+    ret <- tibble::tibble(dic = object$DIC,
+                          n = nrow(object$X))
+    ret
+}
+
+```
+
+### Predictions
+
+```{r}
+plot_mcmc_predictions <- function(coc, mcmc_results, cocName) {
+  df <- (subset(hwyData, `T.Pcode` == coc))
+  
+  
+  predictions <-
+    data.frame(predicted = exp(predict(mcmc_results)))
+  
+  training_predictions <- data.frame(#predicted = exp(
+    (predict(mcmc_results, interval = "confidence")))
+  
+  training_predint <-
+    cbind(df,
+          data.frame(predict(mcmc_results, interval = "prediction")))
+  
+  model.compare.predictions <-
+    cbind(df,
+          training_predictions)
+  
+  plot <- ggplot(model.compare.predictions) + geom_abline() +
+    geom_ribbon(aes(x = fit, ymin = lwr, ymax = upr), alpha = 0.1) +
+    geom_ribbon(data = training_predint,
+                aes(x = fit, ymin = lwr, ymax = upr),
+                alpha = 0.4) +
+    geom_point(aes(x = fit, y = log(EMC)), color = 'blue',fill='white', alpha = 0.1) + 
+    
+   scale_y_log10()+scale_x_log10()+
+    labs(
+      x = "Predicted Concentration ( µg/L)",
+      y = "Measured Concentration ( µg/L)",
+      title =  "Predicted vs. Measured Concentrations",
+      subtitle = cocName,
+      caption = "Data from Granato, G.E., 2019, Highway-Runoff Database (HRDB) Version 1.1.0: \n U.S. Geological Survey data release, https://doi.org/10.5066/P94VL32J.")
+  return(plot)
+}
+```
+
+
+```{r}
+showResults <- function(coc,mcmc_results,cocName) {
+  predictPlot <<- (plot_mcmc_predictions(coc,mcmc_results,cocName))
+  solution_summary<<-(summary(mcmc_results))
+}
+```
+
+#plots 
+##Zinc 
+```{r}
+mod <- Zn
+i <- 1
+
+showResults(codes[i,2],mod,codes[i,1])
+predictPlot
+kable(solution_summary$solutions,format = "html",digits = 3,)
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE)
+```
+
+##Lead
+```{r}
+mod <- Pb
+i <- 2
+
+showResults(codes[i,2],mod,codes[i,1])
+predictPlot
+solution_summary
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE)
+```
+
+##Copper
+```{r}
+mod <- Cu
+i <- 3
+showResults(codes[i,2],mod,codes[i,1])
+predictPlot
+solution_summary
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE)
+```
+
+##Cadmium
+```{r}
+mod <- Cd
+i <- 4
+showResults(codes[i,2],mod,codes[i,1])
+predictPlot
+solution_summary
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE)
+
+```
+ 
+ 
+# Phosphorus
+```{r}
+mod <- TP
+i <- 5
+showResults(codes[i,2],mod,codes[i,1])
+predictPlot
+solution_summary
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE)
+```
+
+
+```{r}
+mod <- TKN
+i <- 6
+showResults(codes[i,2],mod,codes[i,1])
+predictPlot
+solution_summary
+plotTrace(mod$Sol,axes=TRUE,same.limits=FALSE)
+
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+

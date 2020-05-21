@@ -1,0 +1,11 @@
+"0","```r
+sols <- list()
+sols[['Copper']] <-summary(CuModel)$solutions
+sols[['Zinc']] <-summary(ZnModel)$solutions
+sols[['Cadmium']] <-summary(CdModel)$solutions
+sols[['Lead']] <-summary(PbModel)$solutions
+sols[['TP']] <-summary(TPModel)$solutions
+sols[['TKN']] <-summary(TKNModel)$solutions
+sols[['TSS']] <-summary(TSSModel)$solutions
+kable(sols,row.names = TRUE, caption = \"Summary of MCMC model\")
+```"

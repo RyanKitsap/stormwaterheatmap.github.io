@@ -1,0 +1,7 @@
+"0","#simulate with 100 draws  "
+"0","ysim <- (simulate(mod,nsim = 100))"
+"0",""
+"0","df <- (subset(hwyData, `T Pcode` == param.code))"
+"0","#overlay of predictions "
+"0","plot.2<- ppc_dens_overlay(log(df$EMC),t(ysim))+ggplot2::labs(x=""log concentration"",title = param.name, subtitle   = ""Observed (y) vs. simulated draws (yrep)"")"
+"0","plot.2"

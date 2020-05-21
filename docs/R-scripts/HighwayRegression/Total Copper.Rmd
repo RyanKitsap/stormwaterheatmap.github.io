@@ -1,0 +1,108 @@
+# Total Copper - Highway Traffice Regression
+```{r Header Section}
+## Script info ---------------------------
+##
+## Script name:"Highway Database Regression: Total Copper"
+##
+##
+## Author: Christian Nilsen, Geosyntec Consultants 
+## Email: cnilsen@geosyntec.com
+##
+## Date Created: 2019-08-02
+##
+## Copyright (c) Geosyntec Consultants, 2019
+##
+## License---------------------------
+##
+##This program is free software: you can redistribute it and/or modify
+##it under the terms of the GNU General Public License as published by
+##the Free Software Foundation, version 3.0 
+##
+##This program is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU General Public License for more details.
+##For a copy of the GNU General Public License 
+##  see <https://www.gnu.org/licenses/>.
+##
+
+```
+
+
+```{r Load Libraries}
+library(tidyverse)
+```
+
+```{r Get data}
+
+
+library(readr)
+HwyDB <- read_csv("data/HwyDB_ADTvsEMC.csv")
+
+
+## set local parameters - update for each CoC
+units <- 'ug/L'
+CoC = 'Copper, water, unfiltered, recoverable, micrograms per liter'
+
+```
+
+```{r Plot vs AADT}
+#library(dplyr)
+#extract relevant data
+
+data <- HwyDB %>% 
+   dplyr::filter(Parameter == CoC)
+
+#select lower threshold for ADT data
+lowerBound <- 5000
+data <- subset(data, ADT > lowerBound)
+
+plot.title <- paste0(CoC, units)
+
+plot <- ggplot(data, aes(x=`ADT`,y=`EMC Value`)) + 
+  geom_point()+
+  ggtitle(plot.title)
+plot
+
+```
+
+```{r Perform Quantile regression}
+
+# 
+library(quantreg)
+library(MASS)
+library(NADA)
+library(leaps)
+
+
+obs = (data$`EMC Value`)
+censored = data$NonDetectFlag
+KM = Cen(obs, censored, type = 'left')#try without groups first
+data$KM = KM@Surv
+
+cen.quan.reg <- crq(KM ~ ADT, data = data, method = "Portnoy")
+reg.summary <- summary(cen.quan.reg, tau = seq(25, 75, by=25)/100)
+
+#B0 = vector(,3)
+seq <- c(1:3)
+B0 <- c()
+
+#xs <- sort((data$`EMC Value`))
+for (i in seq(1,3) ){
+  B0[[i]] = reg.summary[i][[1]]$coefficients[1]
+}
+  
+B0 <- reg.summary[2][[1]]$coefficients[1]
+B1 <- reg.summary[2][[1]]$coefficients[2]
+plot(data$ADT, (data$`EMC Value`), log = 'y')+abline(B0,B1, untf = TRUE)
+
+
+
+```
+
+```{r plot results}
+
+
+
+```
+

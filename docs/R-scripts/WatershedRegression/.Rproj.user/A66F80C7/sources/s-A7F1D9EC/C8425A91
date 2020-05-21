@@ -1,0 +1,28 @@
+{
+    "id": "C8425A91",
+    "path": "~/repos/stormwaterheatmap-master/R-scripts/WatershedRegression/Part1_stormwater_linear_mixed_models.Rmd",
+    "project_path": "Part1_stormwater_linear_mixed_models.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1588189254473.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "chunk_output_type": "inline",
+        "cursorPosition": "8,17",
+        "scrollLine": "0",
+        "docOutlineSize": "126",
+        "docOutlineVisible": "1",
+        "source_window_id": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1589575739,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1590012529848,
+    "read_only": false,
+    "read_only_alternatives": []
+}

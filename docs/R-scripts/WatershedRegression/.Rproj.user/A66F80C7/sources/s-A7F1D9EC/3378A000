@@ -1,0 +1,32 @@
+{
+    "id": "3378A000",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1588360568787.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "expression": "dfcen",
+        "caption": "dfcen",
+        "totalObservations": "414",
+        "displayedObservations": "414",
+        "variables": "20",
+        "cacheKey": "CAE6DE42",
+        "object": "dfcen",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=dfcen&cache_key=CAE6DE42&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 7165055893173531752,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1588360568787,
+    "read_only": false,
+    "read_only_alternatives": []
+}

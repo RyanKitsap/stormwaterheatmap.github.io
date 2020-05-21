@@ -1,0 +1,31 @@
+"0","```r
+scatter_predict <- function(model_df,predictions) {
+# model_to_predict <- CuModel 
+# coc = params[2]
+# df <- (subset(s8data.wPredictors, parameter == coc)) %>%
+#   add_surv()
+# predictions <- predict(model_to_predict, newdata=df, 
+#          type=\"response\", interval=\"none\", level=0.95, it=NULL, 
+#          posterior=\"all\", verbose=FALSE, approx=\"numerical\")
+# 
+ obs <- log(model_df$concentration)
+ 
+ ggstatsplot::ggscatterstats(
+  data =tibble(p = predictions, obs = obs,L = model_df$Location),
+  x = p,
+  y = obs,
+  type = \"bf\",
+  point.width.jitter = 0.02,
+  #point.height.jitter = 0.1,
+  marginal = FALSE,
+  xlab = \"Predicted log(Âµg/L)\",
+  ylab = \"Observed  log(Âµg/L)\",
+  title = coc,
+  results.subtitle = FALSE,
+  subtitle = \"Predictions vs. Observations\",
+  smooth.line.args = list(size = 1, color = \"blue\"),
+  messages = FALSE
+)
+}
+
+```"

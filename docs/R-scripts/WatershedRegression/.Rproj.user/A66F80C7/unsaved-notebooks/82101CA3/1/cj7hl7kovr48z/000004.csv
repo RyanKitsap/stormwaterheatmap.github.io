@@ -1,0 +1,5 @@
+"0","pbc <- within(pbc, {survival.vector <- Surv(time, status.dichotomous)})
+"
+"2","Error in Surv(time, status.dichotomous) : 
+  object 'status.dichotomous' not found
+"

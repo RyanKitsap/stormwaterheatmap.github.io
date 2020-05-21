@@ -1,0 +1,13 @@
+"0","```r
+getBaseFormula <- function(df.coc) {
+  #Function to make a formula for prediction
+  predictors <- df.coc %>%
+    select_if(is.numeric) %>%
+    dplyr::select(-c(concentration, access_id)) %>%
+    colnames()
+  return(as.formula(paste(
+    \"(concentration) ~\",  (paste((predictors),  collapse = \" + \")), \" + (1|Location)\"
+  )))
+  
+}
+```"

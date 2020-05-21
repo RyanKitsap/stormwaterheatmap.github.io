@@ -1,0 +1,21 @@
+"0","```r
+#function that returns dot-whisker plots
+dotwhiskerplot <- function(model,coc) {
+  return(ggstatsplot::ggcoefstats(
+  x = model,
+  title = coc,
+  #subtitle = \"multivariate generalized linear mixed model\",
+  #conf.method = \"HPDinterval\",
+  
+  meta.analytic.effect = TRUE,
+  exclude.intercept = FALSE,
+  robust = TRUE,
+  meta.type = \"bayes\",
+  bf.message = TRUE
+)+ ggstatsplot::theme_ggstatsplot())}
+
+#funciton for other diagnostic plots 
+diagnostic_plots <- function(chains,coc) {
+  plotTrace(chains,axes=TRUE,same.limits=TRUE)
+  plotDens(chains,main=paste('Posterior Distributions \n',coc),probs=c(0.050,0.950),same.limits=FALSE)}
+```"

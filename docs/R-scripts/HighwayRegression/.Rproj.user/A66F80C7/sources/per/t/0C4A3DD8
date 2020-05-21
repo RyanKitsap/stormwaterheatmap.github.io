@@ -1,0 +1,24 @@
+{
+    "id": "0C4A3DD8",
+    "path": "~/repos/stormwaterheatmap-master/R-scripts/WatershedRegression/Part 2 - stormwater_mcmc_model.Rmd",
+    "project_path": null,
+    "type": "r_markdown",
+    "hash": "4281469435",
+    "contents": "",
+    "dirty": false,
+    "created": 1587342607249.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "cursorPosition": "522,56",
+        "scrollLine": "512"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1586907528,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1587584782074,
+    "read_only": false,
+    "read_only_alternatives": []
+}

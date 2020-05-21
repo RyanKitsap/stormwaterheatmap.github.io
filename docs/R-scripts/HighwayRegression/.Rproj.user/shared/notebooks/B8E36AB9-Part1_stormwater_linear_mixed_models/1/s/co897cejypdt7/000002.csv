@@ -1,0 +1,29 @@
+"0","```r
+show_results <- function(j){
+#get parameter label 
+lab = names(results)[j]
+
+#plot observed 
+print(plots[[j]])
+
+#show variance inflation factors 
+print(kable(vifs[[j]],caption = paste(\"Variance inflation factors\",lab),col.names = c(\"vif\")))
+
+#show raw summary of results 
+models <- results[[j]]
+for (k in 1:2){
+  print((summary(models[[k]])))
+  #plot(models[[k]],,main=paste(lab,\"\n\",\"Resididuals\"))
+  print(qqmath(models[[k]],main=paste(lab,\"\n\",modelLabels[k],\"\n\",\"QQ plot of resididuals\")))
+}
+  
+
+#formatted table of results 
+tabs = (tab_model(models,title=lab,show.aic = TRUE,dv.labels =modelLabels,viewer=FALSE ))
+ return(tabs)
+
+}
+
+
+
+```"

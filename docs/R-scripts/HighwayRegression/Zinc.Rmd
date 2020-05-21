@@ -1,0 +1,192 @@
+
+# Multiple Contaminants Highway Traffic Regression
+```{r Header Section}
+## Script info ---------------------------
+##
+## Script name:"Highway Zinc Regression"
+##
+##
+## Author: Christian Nilsen, Geosyntec Consultants
+## Email: cnilsen@geosyntec.com
+##
+## Date Created: 2019-08-02
+##
+## Copyright (c) Geosyntec Consultants, 2019
+##
+## License---------------------------
+##
+##This program is free software: you can redistribute it and/or modify
+##it under the terms of the GNU General Public License as published by
+##the Free Software Foundation, version 3.0 
+##
+##This program is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU General Public License for more details.
+##For a copy of the GNU General Public License 
+##  see <https://www.gnu.org/licenses/>.
+##
+
+```
+
+```{r Load Libraries}
+library(tidyverse)
+```
+-- Attaching packages --------------------------------------- tidyverse 1.2.1 --
+v ggplot2 3.2.0     v purrr   0.3.2
+v tibble  2.1.3     v dplyr   0.8.3
+v tidyr   0.8.3     v stringr 1.4.0
+v ggplot2 3.2.0     v forcats 0.4.0
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+
+```{r Get data}
+
+library(readr)
+data_D_Zinc <- read_csv("HWYDB/DissolvedZinc.csv")
+data_T_Zinc <- read_csv("HWYDB/TotalZinc.csv")
+Highway <- read_csv("HWYDB/HigwaySites.csv")
+
+data_D_Zinc$ADT <- NA
+data_T_Zinc$ADT <- NA
+
+data_D_Zinc$NonDetectFlag <- NA
+data_T_Zinc$NonDetectFlag <- NA
+
+
+for (x in 1:nrow(data_D_Zinc)){
+  Site <- data_D_Zinc$Site_ID[x]
+  data_D_Zinc$ADT[x] <- Highway$ADT[Site]
+  
+  detectflag = is.na(data_D_Zinc$tEMCQual[x])
+  if (detectflag == 1){
+    data_D_Zinc$NonDetectFlag[x] <- FALSE
+  }
+  else{
+    data_D_Zinc$NonDetectFlag[x] <- TRUE
+  }
+}
+
+for (x in 1:nrow(data_T_Zinc)){
+  Site <- data_T_Zinc$Site_ID[x]
+  data_T_Zinc$ADT[x] <- Highway$ADT[Site]
+  
+  detectflag = is.na(data_T_Zinc$tEMCQual[x])
+  if (detectflag == 1){
+    data_T_Zinc$NonDetectFlag[x] <- FALSE
+  }
+  else{
+    data_T_Zinc$NonDetectFlag[x] <- TRUE
+  }
+}
+
+##Set local parameters - Non-PAH Contaminants
+units <- '[ug/L]'
+
+```
+
+```{r plot EMC vs ADT}
+#Select lower threshold for ADT data
+lowerBound <- 5000
+
+#Filter data below ADT Threshold
+data_T_Zinc <- subset(data_T_Zinc, ADT > lowerBound)
+data_D_Zinc <- subset(data_D_Zinc, ADT > lowerBound)
+
+# Total Zinc Plot
+plot.title <- paste0("Total Zinc Runoff ", units)
+plot <- ggplot(data_T_Zinc, aes(x=`ADT`,y=`EMC Value`)) + 
+  geom_point()+
+  ggtitle(plot.title) +
+  theme(plot.title = element_text(hjust = 0.5))
+plot
+
+# Dissolved Zinc Plot
+plot.title <- paste0("Dissolved Zinc Runoff ", units)
+plot <- ggplot(data_D_Zinc, aes(x=`ADT`,y=`EMC Value`)) + 
+  geom_point()+
+  ggtitle(plot.title) +
+  theme(plot.title = element_text(hjust = 0.5))
+plot
+
+```
+
+
+``` {r performs Theil-Sen line Estimator}
+
+library (NADA)
+
+## Code not working yet
+
+# # Run Thiel-Sen Regression for ach contaminant and print p-value and equation on plot
+# with(data_T_Zinc, cenxyplot(ADT, FALSE,`EMC Value`, NonDetectFlag, xlab = 'ADT', ylab = 'EMC', main = 'Total Zinc Regression'))
+# reg = with(data_T_Zinc, cenken(cen(`EMC Value`, NonDetectFlag) ~ ADT))
+# lines(reg)
+# a <- reg$slope
+# b <- reg$intercept
+# p <- reg$p
+# equation <- sprintf("%f * x", a)
+# equation <- sprintf("%s + %f", equation, b)
+# legend('topright', legend = c(sprintf("Equation = %s", equation), sprintf("P-value = %f", p)))
+# 
+# 
+# with(data_D_Zinc, cenxyplot(ADT, FALSE,`EMC Value`, NonDetectFlag, xlab = 'ADT', ylab = 'EMC', main = 'Dissolved Zinc Regression'))
+# reg = with(data_D_Zinc, cenken(cen(`EMC Value`, NonDetectFlag) ~ ADT))
+# lines(reg)
+# a <- reg$slope
+# b <- reg$intercept
+# p <- reg$p
+# equation <- sprintf("%f * x", a)
+# equation <- sprintf("%s + %f", equation, b)
+# legend('topright', legend = c(sprintf("Equation = %s", equation), sprintf("P-value = %f", p)))
+
+```
+
+```{r Perform Quantile regression based on Thiel Sen regression}
+# 
+library(quantreg)
+library(MASS)
+library(leaps)
+
+# Quantile regression for Total Zinc
+obs = (data_T_Zinc$`EMC Value`)
+censored = data_T_Zinc$NonDetectFlag
+KM = Cen(obs, censored, type = 'left')#try without groups first
+data_T_Zinc$KM = KM@Surv
+
+cen.quan.reg <- crq(KM ~ ADT, data = data_T_Zinc, method = "Portnoy")
+reg.summary <- summary(cen.quan.reg, tau = seq(25, 75, by=25)/100)
+print(reg.summary)
+seq <- c(1:3)
+B0 <- c()
+
+for (i in seq(1,3) ){
+  B0[[i]] = reg.summary[i][[1]]$coefficients[1]
+}
+  
+B0 <- reg.summary[2][[1]]$coefficients[1]
+B1 <- reg.summary[2][[1]]$coefficients[2]
+plot(data_T_Zinc$ADT, (data_T_Zinc$`EMC Value`), log = 'y', main = "Total Zinc Regression", xlab = "ADT", ylab = "EMC")+abline(B0,B1, untf = TRUE)
+
+# Quantile regression for Dissolved Copper
+obs = (data_D_Zinc$`EMC Value`)
+censored = data_D_Zinc$NonDetectFlag
+KM = Cen(obs, censored, type = 'left')#try without groups first
+data_D_Zinc$KM = KM@Surv
+
+cen.quan.reg <- crq(KM ~ ADT, data = data_D_Zinc, method = "Portnoy")
+reg.summary <- summary(cen.quan.reg, tau = seq(25, 75, by=25)/100)
+print(reg.summary)
+seq <- c(1:3)
+B0 <- c()
+
+for (i in seq(1,3) ){
+  B0[[i]] = reg.summary[i][[1]]$coefficients[1]
+}
+  
+B0 <- reg.summary[2][[1]]$coefficients[1]
+B1 <- reg.summary[2][[1]]$coefficients[2]
+plot(data_D_Zinc$ADT, (data_D_Zinc$`EMC Value`), log = 'y', main = "Dissolved Zinc Regression", xlab = "ADT", ylab = "EMC")+abline(B0,B1, untf = TRUE)
+
+```

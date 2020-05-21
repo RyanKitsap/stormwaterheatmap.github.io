@@ -1,0 +1,10 @@
+```{r}
+library(survival)
+
+pbc <- within(pbc, {status.dichotomous <- status > 1
+  survival.vector <- Surv(time, status.dichotomous)})
+
+
+
+
+```

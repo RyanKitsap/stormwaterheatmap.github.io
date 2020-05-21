@@ -1,0 +1,13 @@
+"0","```r
+plot_s8 <- function(coc) {
+    df.coc <- (base::subset(s8data.wPredictors,
+                parameter == coc))
+  #plot the data to inspect 
+  plot <- ggplot(data=(df.coc))+geom_point(aes(x=Location,y=concentration),alpha = 0.5, color = \"#0088a3\")+scale_y_log10()+labs(
+      y = \"Concentration (Âµg/L)\",
+      x = \"Location\",
+      title =  \"Measured Concentrations\",
+      subtitle = coc ) + theme( axis.text.x = element_text(angle=90, size = 9))
+  return(plot)
+}
+```"

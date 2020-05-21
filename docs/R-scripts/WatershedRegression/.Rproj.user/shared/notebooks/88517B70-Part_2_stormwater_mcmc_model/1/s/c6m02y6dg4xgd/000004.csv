@@ -1,0 +1,24 @@
+"0","coc = 'Total Kjeldahl Nitrogen - Water - Total'"
+"0","TKNModel<- mcmc_calc('Total Kjeldahl Nitrogen - Water - Total','rev_logTraffic','log') "
+"0","mod <- TKNModel"
+"0","df <- (subset(s8data.wPredictors, parameter == coc)) %>%"
+"0","  add_surv()"
+"0","bayes_plots(mod,coc,df)"
+"2","The following arguments were unrecognized and ignored: pprob_outer"
+"2","`expand_scale()` is deprecated; use `expansion()` instead."
+"1","[[1]]
+"
+"1","
+"
+"1","[[2]]
+"
+"1","
+"
+"1","[[3]]
+"
+"1","
+"
+"1","[[4]]
+"
+"1","
+"

@@ -1,0 +1,43 @@
+"0","```r
+## *Check VIF
+ 
+check_vif <- function(coc) {
+  df.coc <- (base::subset(s8data.wPredictors,
+                parameter == coc))
+  base_formula <- getBaseFormula(df.coc)#returns a formula with all predictors
+  model.1 <- lmer(base_formula, data = df.coc, na.action = na.omit) #make into a lmer object 
+  v <- sort(vif(model.1),decreasing=TRUE)
+  
+  #if the VIF of the highest ranked predictor is >10 then iteratively remove
+  model_object <- model.1 #start with model object as the base model (all predictors included)
+  
+  
+  for (i in 1:20) {
+    interim_v <- sort(vif(model_object), decreasing = TRUE)
+    if (max(interim_v) < 10) {
+      break
+    }
+    predictor_to_drop = as.name(names(interim_v)[which(interim_v == max(interim_v))])
+    model_object <-
+      stats::update(model_object, paste(\".~ . -\", predictor_to_drop))
+    }
+  
+  m1Terms <- (labels(terms(model.1)))
+  m2Terms <- labels(terms(model_object))
+  
+  #compare the terms to get a list of the dropped terms
+  droppedTerms <- setdiff(m1Terms, m2Terms)
+  
+  #make a list of selected predictors
+  predictors <- m2Terms#colnames(model.frame(model_object)) 
+
+  
+  #filter df.coc to remove dropped terms.
+  df.coc = dplyr::select(df.coc, -(droppedTerms))
+  return(list(\"vif\" = interim_v,\"dropped\" = droppedTerms,\"predictors\" = predictors))
+  #kable(droppedTerms,caption = \"These terms were dropped\")
+  
+  #kable(interim_v,caption=\"Variance Inflation Factors - multicolinear factors dropped\")
+}
+
+```"

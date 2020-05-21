@@ -1,0 +1,22 @@
+"0","```r
+all.S8.data <- read.csv(\"data/S8_data.csv\",
+                        stringsAsFactors = FALSE )
+
+#filter out rejected data
+all.S8.data <- (filter(all.S8.data,!result_data_qualifier %in% 'REJ'))
+
+#filter out replicates 
+all.S8.data <- (filter(all.S8.data,!sample_replicate_flag %in% 'Y'))
+
+#change nondetect warnings to detects
+warnings <- all.S8.data$nondetect_flag == \"WARNING\"
+all.S8.data$nondetect_flag[warnings] <- FALSE 
+
+#Change NA to detect
+all.S8.data$nondetect_flag[is.na(all.S8.data$nondetect_flag)] <- FALSE
+
+#Change season to factor 
+all.S8.data$season <- as.factor(all.S8.data$season)
+
+
+```"

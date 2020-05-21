@@ -1,0 +1,32 @@
+{
+    "id": "BF1000DC",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1588289271159.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "expression": "df.coc",
+        "caption": "df.coc",
+        "totalObservations": "414",
+        "displayedObservations": "414",
+        "variables": "20",
+        "cacheKey": "6A4FF7EA",
+        "object": "df.coc",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=df.coc&cache_key=6A4FF7EA&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2032437960800,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1588289271159,
+    "read_only": false,
+    "read_only_alternatives": []
+}
