@@ -1,0 +1,12 @@
+"0","coc = 'Total Phosphorus - Water - Total'"
+"0","TPModel <- mcmc_calc('Total Phosphorus - Water - Total',c('logtraffic'),'log')"
+"0","mod <- TPModel"
+"0",""
+"0",""
+"0","df <- (subset(s8data.wPredictors, parameter == coc)) %>%"
+"0","  add_surv()"
+"0","#---"
+"0","tpPlots <- bayes_plots(mod,coc,df)"
+"2","Error in mcmc_areas(fit$Sol, prob = 0.8, pprob_outer = 0.95, point_est = ""mean"") : 
+  could not find function ""mcmc_areas""
+"

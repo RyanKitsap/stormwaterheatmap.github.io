@@ -1,0 +1,4 @@
+"0","#function for other diagnostic plots "
+"0","diagnostic_plots <- function(chains,coc) {"
+"0","  plotTrace(chains,axes=TRUE,same.limits=TRUE)"
+"0","  plotDens(chains,main=paste('Posterior Distributions \n',coc),probs=c(0.050,0.950),same.limits=FALSE)}"

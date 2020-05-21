@@ -1,0 +1,5 @@
+"0","coc = 'Copper - Water - Total'"
+"0","CuModel <- mcmc_calc(coc,c("
+"0","'rev_logTraffic','impervious'),'log')"
+"2","Error in eval(inp, data, env) : object 'rev_logTraffic' not found
+"

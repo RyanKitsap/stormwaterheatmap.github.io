@@ -1,0 +1,6 @@
+"0","# "
+"0","coc <- params[1]"
+"0","ZnModel <- mcmc_calc(coc,c('change_year_index'),'log')"
+"2","Error in mcmc_calc(coc, c(""change_year_index""), ""log"") : 
+  could not find function ""mcmc_calc""
+"

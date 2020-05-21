@@ -1,0 +1,4 @@
+"0","j=3"
+"0","  lab=params[j]"
+"0","  kable(vifs[j],"
+"0","      caption = paste(""Variance inflation factors"",lab),col.names = c(""vif""))"

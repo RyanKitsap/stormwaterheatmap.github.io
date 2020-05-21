@@ -35,3 +35,6 @@ ape
 MCMCglmm
 plotMCMC
 modelsummary
+bayesplot
+DBI
+stargazer
