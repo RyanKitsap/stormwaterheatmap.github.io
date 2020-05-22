@@ -1,5 +1,0 @@
-"0","#show uncertainty intervals under esimated posterior density curves 
-plot.1 <- mcmc_areas(fit$Sol,prob = 0.80, pprob_outer = 0.95,point_est=""mean"")+ggplot2::labs(title = coc, subtitle   = ""Posterior distributions with medians and 80% intervals"")
-"
-"2","The following arguments were unrecognized and ignored: pprob_outer"
-"2","`expand_scale()` is deprecated; use `expansion()` instead."

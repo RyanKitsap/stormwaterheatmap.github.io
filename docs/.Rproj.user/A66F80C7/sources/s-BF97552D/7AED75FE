@@ -1,0 +1,28 @@
+{
+    "id": "7AED75FE",
+    "path": "~/repos/stormwaterheatmap.github.io/docs/02-landcover.Rmd",
+    "project_path": "02-landcover.Rmd",
+    "type": "r_markdown",
+    "hash": "592429701",
+    "contents": "",
+    "dirty": false,
+    "created": 1590162235157.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "cursorPosition": "51,0",
+        "scrollLine": "0",
+        "docOutlineSize": "135",
+        "docOutlineVisible": "1",
+        "source_window_id": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1590168606,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1590188437506,
+    "read_only": false,
+    "read_only_alternatives": []
+}

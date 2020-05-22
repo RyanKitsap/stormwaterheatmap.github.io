@@ -1,8 +1,0 @@
-"0","z=2"
-"0",""
-"0","if(is_latex_output()){"
-"0","stargazer(results[params[z]],type=""latex"",header=FALSE,title = params[z])} else{"
-"0","tableSummaryNoSeason(z)"
-"0","tableSummaryYesSeason(z)"
-"0","}"
-"0",""

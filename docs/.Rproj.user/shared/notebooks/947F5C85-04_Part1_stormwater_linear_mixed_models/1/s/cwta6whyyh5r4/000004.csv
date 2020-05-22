@@ -1,8 +1,0 @@
-"0","#---
-tpPlots <- bayes_plots(mod,coc,df)
-"
-"2","The following arguments were unrecognized and ignored: pprob_outer"
-"2","`expand_scale()` is deprecated; use `expansion()` instead."
-"2","Scale for 'colour' is already present. Adding another scale for 'colour', which will replace the existing
-scale.
-"
