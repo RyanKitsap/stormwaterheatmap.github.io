@@ -63,8 +63,9 @@ library(Metrics)
 
 opts_chunk$set(prompt=FALSE,
                message=FALSE,
-               warning=FALSE)
-options(scipen = 1, digits = 3)
+               warning=FALSE,
+               cache=TRUE)
+#options(scipen = 1, digits = 3)
 
 #set seed for reproducibility 
 set.seed(50)

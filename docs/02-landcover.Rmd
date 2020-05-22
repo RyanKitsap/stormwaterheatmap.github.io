@@ -1,7 +1,13 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # High-resolution Land Cover {#Landcover}
 ```{r include=FALSE}
 library(readr)
 library(tidyverse)
+library(knitr)
 library(kableExtra)
 ```
 
@@ -69,24 +75,24 @@ To improve the labels in those inconsistent locations, we used a decision rule a
 
 **Classification Psuedocode**
 
-<!-- >|  **IF** `Rooftop`: -->
-<!-- >|     `label = 7` -->
-<!-- >|  **ELSE IF** `Dirt Road`: -->
-<!-- >|     `label =  4` -->
-<!-- >|  **ELSE IF** `Road`  **OR** `Over-Water Structure`: -->
-<!-- >|    `label =  6` -->
-<!-- >|  **ELSE IF** `Inland waterbody` or `County shoreline`: -->
-<!-- >|    `label = 5` -->
-<!-- >|  **ELSE IF**`1-m Naïve Bayes label` in `(Fine vegetation, Medium vegetation, Coarse vegetation)`: -->
-<!-- >|  `label =  (1, 2, 3)` respectively -->
-<!-- >|  **ELSE IF**` 1-m Naïve Bayes` label = `10-m C-CAP label`: -->
-<!-- >|    `label = C-CAP label` -->
-<!-- >|  **ELSE IF** 10-m radius focal max of `10-m C-CAP` in `(4, 5)`: -->
-<!-- >|   `label = (4,5)` respectively -->
-<!-- >|  **ELSE IF** `1-m Naïve Bayes` = `Dirt/Barren`: -->
-<!-- >|    replace with `10-m C-CAP` -->
-<!-- >|  **ELSE** -->
-<!-- >|   `10-m C-CAP` -->
+|  **IF** `Rooftop`:
+|     `label = 7`
+|  **ELSE IF** `Dirt Road`:
+|     `label =  4`
+|  **ELSE IF** `Road`  **OR** `Over-Water Structure`:
+|    `label =  6`
+|  **ELSE IF** `Inland waterbody` or `County shoreline`:
+|    `label = 5`
+|  **ELSE IF**`1-m Naïve Bayes label` in `(Fine vegetation, Medium vegetation, Coarse vegetation)`:
+|  `label =  (1, 2, 3)` respectively
+|  **ELSE IF**` 1-m Naïve Bayes` label = `10-m C-CAP label`:
+|    `label = C-CAP label`
+|  **ELSE IF** 10-m radius focal max of `10-m C-CAP` in `(4, 5)`:
+|   `label = (4,5)` respectively
+|  **ELSE IF** `1-m Naïve Bayes` = `Dirt/Barren`:
+|    replace with `10-m C-CAP`
+|  **ELSE**
+|   `10-m C-CAP`
 
 
 Our final step with the land cover creation was to limit the data to areas below 1,500-meters elevation to exclude permanent ice, e.g. glaciers on Mt. Rainier, which was not classified or necessary for our stormwater model.
@@ -103,12 +109,12 @@ We produced our ground-truth dataset of 34,699 points using a dataset of points 
 1. Subset the points by filtering out unlabeled points, points located outside our classification area (e.g. marine water), and points with labels that did not match labels of 2015 land cover polygons. This filtering retained 34,699 of the original 44,882 points.
 2. Relabel names to six classes:
 
-<!--     1. `FinalFineVegetation` & `FinalFineVegetation` → `Fine Vegetation` -->
-<!--     2. `FinalMedium` → `Medium Vegetation` -->
-<!--     3. `FinalCoarseVegetation` → `Coarse Vegetation` -->
-<!--     4. `FinalDirt` → `Barren/Dirt` -->
-<!--     5. `FinalWaterFinalWater` → `Water` -->
-<!--     6.  `BuiltConflict` & `FinalBuilt` &  `FinalBuiltBrownRed` → `Impervious Developed` -->
+    1. `FinalFineVegetation` & `FinalFineVegetation` → `Fine Vegetation`
+    2. `FinalMedium` → `Medium Vegetation`
+    3. `FinalCoarseVegetation` → `Coarse Vegetation`
+    4. `FinalDirt` → `Barren/Dirt`
+    5. `FinalWaterFinalWater` → `Water`
+    6.  `BuiltConflict` & `FinalBuilt` &  `FinalBuiltBrownRed` → `Impervious Developed`
 3. In Earth Engine, remap the point labels to produce a second set of point features labeled Pervious and Impervious to also validate the dataset for its ability to map impervious surface.
 4. We randomly selected 3,000 points to use from each of the six classes in the ground-truthed points data to reduce bias towards one or more classes.
 5. At this point, the two datasets were ready for analysis. We refer to them respectively as: Ground-truthed Land Cover and Ground-truthed Impervious Surface.
@@ -120,17 +126,34 @@ Using those ground-truth points and our seven-class land cover product, we calcu
 - The **Four-class** derivative includes only the Fine Vegetation, Coarse Vegetation, Water, and Impervious (Built) classes.
 
 
-```{r landcovertable, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
+```{r landcovertable, echo=FALSE, message=FALSE, warning=FALSE}
 
 accuracy <- read_csv("data/accuracy.csv")
-kable(accuracy, col.names = c("County", "Accuracy", "Kappa",
+lc_table_pandoc <- kable(accuracy, col.names = c("County", "Accuracy", "Kappa",
                               "Accuracy", "Kappa",
                               "Accuracy", "Kappa"),
                               caption = "Accuracy and kappa statistics for three derivatives of the seven-class
                               land cover product.")%>%
 add_header_above(c(" "=1, "Impervious"=2,"Six Classes"=2,"Four Classes"=2))
+
+
+
+
+lc_table_latex <- kable(accuracy, "latex", col.names = c("County", "Accuracy", "Kappa",
+                              "Accuracy", "Kappa",
+                              "Accuracy", "Kappa"),
+                              caption = "Accuracy and kappa statistics for three derivatives of the seven-class
+                              land cover product.")%>%
+add_header_above(c(" "=1, "Impervious"=2,"Six Classes"=2,"Four Classes"=2))
+
 ```
 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+kableOutput <- if(knitr::is_latex_output())
+  lc_table_latex else lc_table_pandoc
+kableOutput
+
+```
 
 
 While the Impervious and Four-class derivatives test extremely well with both Accuracy and Kappa statistics, the Six-class derivative tests considerably lower. The Error (Confusion) matrices produced with the Six-class derivative dataset indicate that the Medium Vegetation and Dirt/Barren classes do not match well between our land cover product and the ground-truth points. Inspection of those matrices tells us that the Medium Vegetation ground-truth points were often labeled Fine or Coarse Vegetation in our predicted set. Similarly, the Dirt ground-truth points were often labeled Built or Fine Vegetation.

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A Appendix A - Regional HSPF Calibration Factors | Stormwater Heatmap Technical Reference</title>
+  <meta name="description" content="A Appendix A - Regional HSPF Calibration Factors | Stormwater Heatmap Technical Reference" />
+  <meta name="generator" content="bookdown 0.18.3 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A Appendix A - Regional HSPF Calibration Factors | Stormwater Heatmap Technical Reference" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://stormwaterheatmap.github.io/" />
+  
+  
+  <meta name="github-repo" content="stormwaterheatmap" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Appendix A - Regional HSPF Calibration Factors | Stormwater Heatmap Technical Reference" />
+  
+  
+  
+
+<meta name="author" content="Christian Nilsen, Geosyntec Consultants, Inc." />
+<meta name="author" content="Emily Howe, The Nature Conservancy" />
+<meta name="author" content="Jamie Robertson, The Nature Conservancy" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="references.html"/>
+<link rel="next" href="appendix-b.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-stormwater"><i class="fa fa-check"></i><b>1.1</b> What is Stormwater?</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#urban-stormwater-runoff-is-a-two-fold-problem-impacting-the-quantity-of-water-pulsing-off-the-land-as-well-as-the-quality-of-that-water."><i class="fa fa-check"></i><b>1.2</b> Urban stormwater runoff is a two-fold problem, impacting the quantity of water pulsing off the land, as well as the quality of that water.</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#water-quantity"><i class="fa fa-check"></i><b>1.2.1</b> Water Quantity</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#water-quality"><i class="fa fa-check"></i><b>1.2.2</b> Water Quality</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#toxic-stormwater-impacts"><i class="fa fa-check"></i><b>1.3</b> Toxic Stormwater Impacts</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#moving-forward--identifying-where-stormwater-pollution-is-generated-on-the-landscape"><i class="fa fa-check"></i><b>1.4</b> Moving forward- identifying where stormwater pollution is generated on the landscape</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#building-an-interactive-tool-to-service-stormwater-manager-needs"><i class="fa fa-check"></i><b>1.5</b> Building an interactive tool to service stormwater manager needs:</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#open-data-helps-us-bound-forward"><i class="fa fa-check"></i><b>1.6</b> Open data helps us bound forward</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="Landcover.html"><a href="Landcover.html"><i class="fa fa-check"></i><b>2</b> High-resolution Land Cover</a><ul>
+<li class="chapter" data-level="2.1" data-path="Landcover.html"><a href="Landcover.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="Landcover.html"><a href="Landcover.html#land-cover-development"><i class="fa fa-check"></i><b>2.2</b> Land Cover Development</a></li>
+<li class="chapter" data-level="2.3" data-path="Landcover.html"><a href="Landcover.html#validation-and-accuracy-assessment"><i class="fa fa-check"></i><b>2.3</b> Validation and Accuracy Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="hydrology.html"><a href="hydrology.html"><i class="fa fa-check"></i><b>3</b> Hydrology</a><ul>
+<li class="chapter" data-level="3.1" data-path="hydrology.html"><a href="hydrology.html#overview-1"><i class="fa fa-check"></i><b>3.1</b> Overview</a></li>
+<li class="chapter" data-level="3.2" data-path="hydrology.html"><a href="hydrology.html#modeling-approach"><i class="fa fa-check"></i><b>3.2</b> Modeling approach</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="hydrology.html"><a href="hydrology.html#hydrologic-response-units"><i class="fa fa-check"></i><b>3.2.1</b> Hydrologic Response Units</a></li>
+<li class="chapter" data-level="3.2.2" data-path="hydrology.html"><a href="hydrology.html#regional-calibrated-parameters"><i class="fa fa-check"></i><b>3.2.2</b> Regional Calibrated Parameters</a></li>
+<li class="chapter" data-level="3.2.3" data-path="hydrology.html"><a href="hydrology.html#python-implementation"><i class="fa fa-check"></i><b>3.2.3</b> Python Implementation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="hydrology.html"><a href="hydrology.html#data-sources"><i class="fa fa-check"></i><b>3.3</b> Data Sources</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="hydrology.html"><a href="hydrology.html#precipitation"><i class="fa fa-check"></i><b>3.3.1</b> Precipitation</a></li>
+<li class="chapter" data-level="3.3.2" data-path="hydrology.html"><a href="hydrology.html#potential-evaporation"><i class="fa fa-check"></i><b>3.3.2</b> Potential Evaporation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="hydrology.html"><a href="hydrology.html#verification-of-results"><i class="fa fa-check"></i><b>3.4</b> Verification of Results</a></li>
+<li class="chapter" data-level="3.5" data-path="hydrology.html"><a href="hydrology.html#spatially-aggregated-results"><i class="fa fa-check"></i><b>3.5</b> Spatially Aggregated Results</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="hydrology.html"><a href="hydrology.html#mean-annual-runoff-1970-1999"><i class="fa fa-check"></i><b>3.5.1</b> Mean Annual Runoff (1970-1999)</a></li>
+<li class="chapter" data-level="3.5.2" data-path="hydrology.html"><a href="hydrology.html#flow-duration-index"><i class="fa fa-check"></i><b>3.5.2</b> Flow Duration Index</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html"><i class="fa fa-check"></i><b>4</b> Water Quality Statistics</a><ul>
+<li class="chapter" data-level="4.1" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#data-sources-1"><i class="fa fa-check"></i><b>4.1</b> Data Sources</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#outfall-data"><i class="fa fa-check"></i><b>4.1.1</b> Outfall Data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#spatial-data"><i class="fa fa-check"></i><b>4.2</b> Spatial data</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#land-use"><i class="fa fa-check"></i><b>4.2.1</b> Land use</a></li>
+<li class="chapter" data-level="4.2.2" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#landscape-data"><i class="fa fa-check"></i><b>4.2.2</b> Landscape data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#methods"><i class="fa fa-check"></i><b>4.3</b> Methods</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#pre-processing-of-spatial-data"><i class="fa fa-check"></i><b>4.3.1</b> Pre-processing of spatial data</a></li>
+<li class="chapter" data-level="4.3.2" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#controlling-for-multicolinearity"><i class="fa fa-check"></i><b>4.3.2</b> Controlling for multicolinearity</a></li>
+<li class="chapter" data-level="4.3.3" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#censored-data"><i class="fa fa-check"></i><b>4.3.3</b> Censored Data</a></li>
+<li class="chapter" data-level="4.3.4" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#model-selection"><i class="fa fa-check"></i><b>4.3.4</b> Model Selection</a></li>
+<li class="chapter" data-level="4.3.5" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#bayesian-regression"><i class="fa fa-check"></i><b>4.3.5</b> Bayesian Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#results"><i class="fa fa-check"></i><b>4.4</b> Results</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#zinc-1"><i class="fa fa-check"></i><b>4.4.1</b> Zinc</a></li>
+<li class="chapter" data-level="4.4.2" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#copper-1"><i class="fa fa-check"></i><b>4.4.2</b> Copper</a></li>
+<li class="chapter" data-level="4.4.3" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#nitrite-nitrate-1"><i class="fa fa-check"></i><b>4.4.3</b> Nitrite-Nitrate</a></li>
+<li class="chapter" data-level="4.4.4" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#lead-1"><i class="fa fa-check"></i><b>4.4.4</b> Lead</a></li>
+<li class="chapter" data-level="4.4.5" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#total-phosphorus-1"><i class="fa fa-check"></i><b>4.4.5</b> Total Phosphorus</a></li>
+<li class="chapter" data-level="4.4.6" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#total-pah-1"><i class="fa fa-check"></i><b>4.4.6</b> Total PAH</a></li>
+<li class="chapter" data-level="4.4.7" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#total-cpah"><i class="fa fa-check"></i><b>4.4.7</b> Total CPAH</a></li>
+<li class="chapter" data-level="4.4.8" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#total-hpah-1"><i class="fa fa-check"></i><b>4.4.8</b> Total HPAH</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#predictions"><i class="fa fa-check"></i><b>4.5</b> Predictions</a></li>
+<li class="chapter" data-level="4.6" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#discussion"><i class="fa fa-check"></i><b>4.6</b> Discussion</a></li>
+<li class="chapter" data-level="4.7" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#generation-of-heatmap-layers"><i class="fa fa-check"></i><b>4.7</b> Generation of heatmap layers</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a-regional-hspf-calibration-factors.html"><a href="appendix-a-regional-hspf-calibration-factors.html"><i class="fa fa-check"></i><b>A</b> Appendix A - Regional HSPF Calibration Factors</a></li>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i>Appendix B</a><ul>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#tabulated-results-via-bigquery"><i class="fa fa-check"></i>Tabulated Results via BigQuery</a><ul>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#schema"><i class="fa fa-check"></i>Schema</a></li>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#querying-tabulated-results"><i class="fa fa-check"></i>Querying Tabulated Results</a></li>
+<li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#querying-geometry"><i class="fa fa-check"></i>Querying Geometry</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stormwater Heatmap Technical Reference</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appendix-a---regional-hspf-calibration-factors" class="section level1">
+<h1><span class="header-section-number">A</span> Appendix A - Regional HSPF Calibration Factors</h1>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["StormwaterHeatmapTechReference.pdf"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

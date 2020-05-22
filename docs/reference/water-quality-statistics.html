@@ -131,7 +131,8 @@
 <li class="chapter" data-level="4.7" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#generation-of-heatmap-layers"><i class="fa fa-check"></i><b>4.7</b> Generation of heatmap layers</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
-<li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i>Appendix A</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a-regional-hspf-calibration-factors.html"><a href="appendix-a-regional-hspf-calibration-factors.html"><i class="fa fa-check"></i><b>A</b> Appendix A - Regional HSPF Calibration Factors</a></li>
 <li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i>Appendix B</a><ul>
 <li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#tabulated-results-via-bigquery"><i class="fa fa-check"></i>Tabulated Results via BigQuery</a><ul>
 <li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#schema"><i class="fa fa-check"></i>Schema</a></li>
@@ -163,73 +164,27 @@
 <h2><span class="header-section-number">4.1</span> Data Sources</h2>
 <div id="outfall-data" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Outfall Data</h3>
-<p>The primary source of measured stormwater data is the S8.D Municipal Stormwater Permit Outfall Data (referred to as the S8 Data in this document) provided by the Washington Department of Ecology <span class="citation">(William Hobbs et al. <a href="water-quality-statistics.html#ref-No2015" role="doc-biblioref">2015</a>)</span>. Special Condition S8.D of the 2007-2012 Phase I Municipal Stormwater Permit required permittees to collect and analyze data to evaluate pollutant loadings of stormwater discharged from different land uses: high density (HD) residential, low density (LD) residential, commercial, and industrial. Phase I Permittees<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> collected water quality and flow data, sediment data, and toxicity information from stormwater discharges during storm events.</p>
+<p>The primary source of measured stormwater data is the S8.D Municipal Stormwater Permit Outfall Data (referred to as the S8 Data in this document) provided by the Washington Department of Ecology <span class="citation">(William Hobbs et al. <a href="references.html#ref-No2015" role="doc-biblioref">2015</a>)</span>. Special Condition S8.D of the 2007-2012 Phase I Municipal Stormwater Permit required permittees to collect and analyze data to evaluate pollutant loadings of stormwater discharged from different land uses: high density (HD) residential, low density (LD) residential, commercial, and industrial. Phase I Permittees<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> collected water quality and flow data, sediment data, and toxicity information from stormwater discharges during storm events.</p>
 <p>The stormwater outfall data is available from Ecology via an open-data api at: <a href="https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-Permit-Outfall-Data/d958-q2ci" class="uri">https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-Permit-Outfall-Data/d958-q2ci</a>.</p>
-<p>COCs analyzed in this study are show in Table <a href="water-quality-statistics.html#tab:selparms">4.1</a>.</p>
-<table>
-<caption>
-<span id="tab:selparms">Table 4.1: </span>Constituents of Concern Analyzed in this Study
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-Constituent
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Zinc - Water - Total
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Copper - Water - Total
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Nitrite-Nitrate - Water - Dissolved
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Lead - Water - Total
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total Phosphorus - Water - Total
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total Suspended Solids - Water - Total
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total Phthalate - Water - Total
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Total PAH - Water - Total
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-CPAH - Water - Total
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-HPAH - Water - Total
-</td>
-</tr>
-</tbody>
-</table>
+<p>COCs analyzed in this study are:</p>
+<ul>
+<li>Zinc - Total<br />
+</li>
+<li>Copper - Total<br />
+</li>
+<li>Nitrite-Nitrate - Dissolved<br />
+</li>
+<li>Lead - Total<br />
+</li>
+<li>Total Phosphorus - Total<br />
+</li>
+<li>Total Suspended Solids</li>
+<li>Total Phthalate<br />
+</li>
+<li>Total Polycyclic Aromatic Hydrocarbons (PAH)</li>
+<li>Total Carcinogenic PAH (CPAH)</li>
+<li>Total High molecular weight PAH (HPAH)</li>
+</ul>
 <p>We extracted data for these COCs, and performed minimal data cleaning. We filtered out rejected data (values with a <code>R</code> or <code>REJ</code> flag), removed replicates, and removed three data points that were obvious outliers. While our analysis is not overly sensitive to outliers, three parameters had reported data that were orders of magnitude higher than the rest of the data. One high-outlier value was removed for each of the following COCs: Total Suspended Solids, Nitrite-Nitrate, and Total Phosphorus.</p>
 <p>Outliers were removed for Figure <a href="water-quality-statistics.html#fig:outlier1">4.1</a> shows data before outliers were removed. Figure <a href="water-quality-statistics.html#fig:outlier2">4.3</a> shows data after outliers were removed.</p>
 <div class="figure"><span id="fig:outlier1"></span>
@@ -343,7 +298,7 @@ Figure 4.3: All observations - outliers removed
 To address multicolinearity, we calculate the variance inflation factor (VIF) and iteratively remove parameters with the highest VIF. We keep removing parameters one at a time until all VIF values are below 10.0. Table <a href="#fig:vifTable"><strong>??</strong></a> shows final VIF factors for Zinc. Similar values were found for all other COCs and are not reported here.
 <table class="kable_wrapper">
 <caption>
-<span id="tab:vifTable">Table 4.2: </span>Variance inflation factors Zinc - Water - Total
+<span id="tab:vifTable">Table 4.1: </span>Variance inflation factors Zinc - Water - Total
 </caption>
 <tbody>
 <tr>
@@ -408,7 +363,7 @@ LU_ratio
 </div>
 <div id="censored-data" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Censored Data</h3>
-<p>All COCs had non-detect (left-censored) data present. Ecology flagged non-detect data and provided the reporting limit for each non-detect value. For purposes of model selection, non-detect values were substituted with the reporting limit. For regression, concentration was modeled as a two-parameter response variable according to the approaches detailed by Hadfield <span class="citation">(<a href="water-quality-statistics.html#ref-hadfield2010mcmc" role="doc-biblioref">2010</a>)</span> and Helsel <span class="citation">(<a href="water-quality-statistics.html#ref-Helsel2012" role="doc-biblioref">2012</a>)</span>. We set the first parameter equal to the measured concentration and the second parameter equal to the reporting limit. We then specified a censored-gaussian prior distribution or censored-log-gaussian prior distribution.</p>
+<p>All COCs had non-detect (left-censored) data present. Ecology flagged non-detect data and provided the reporting limit for each non-detect value. For purposes of model selection, non-detect values were substituted with the reporting limit. For regression, concentration was modeled as a two-parameter response variable according to the approaches detailed by Hadfield <span class="citation">(<a href="references.html#ref-hadfield2010mcmc" role="doc-biblioref">2010</a>)</span> and Helsel <span class="citation">(<a href="references.html#ref-Helsel2012" role="doc-biblioref">2012</a>)</span>. We set the first parameter equal to the measured concentration and the second parameter equal to the reporting limit. We then specified a censored-gaussian prior distribution or censored-log-gaussian prior distribution.</p>
 </div>
 <div id="model-selection" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Model Selection</h3>
@@ -2538,7 +2493,7 @@ AIC
 </div>
 <div id="bayesian-regression" class="section level3">
 <h3><span class="header-section-number">4.3.5</span> Bayesian Regression</h3>
-<p>We performed censored bayesian regression using a Markov chain Monte Carlo approach. We use the the MCMCglmm package in R <span class="citation">(Helsel <a href="water-quality-statistics.html#ref-Helsel2012" role="doc-biblioref">2012</a>)</span> for analysis.</p>
+<p>We performed censored bayesian regression using a Markov chain Monte Carlo approach. We use the the MCMCglmm package in R <span class="citation">(Helsel <a href="references.html#ref-Helsel2012" role="doc-biblioref">2012</a>)</span> for analysis.</p>
 <p>Models were run for 60,000 iterations with a burn-in interval of 10,000 and a thinning interval of 13. For each regression model, we specified either a censored Gaussian or a censored log-Gaussian prior distribution, depending on the model selection results. We specified a simple prior co-variance matrix where covariances between predictors was fixed at 1. We explored other prior variances were not sensitive to these changes.</p>
 </div>
 </div>
@@ -2548,10 +2503,10 @@ AIC
 <h3><span class="header-section-number">4.4.1</span> Zinc</h3>
 <div id="regression-coefficients" class="section level4">
 <h4><span class="header-section-number">4.4.1.1</span> Regression Coefficients</h4>
-Regression results for Total Zinc are summarized in Table <a href="water-quality-statistics.html#tab:znResults">4.3</a>.
+Regression results for Total Zinc are summarized in Table <a href="water-quality-statistics.html#tab:znResults">4.2</a>.
 <table>
 <caption>
-<span id="tab:znResults">Table 4.3: </span>Zinc - Water - Total - Bayseian Regression Results
+<span id="tab:znResults">Table 4.2: </span>Zinc - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -2675,10 +2630,10 @@ residual
 <h3><span class="header-section-number">4.4.2</span> Copper</h3>
 <div id="regression-coefficients-1" class="section level4">
 <h4><span class="header-section-number">4.4.2.1</span> Regression Coefficients</h4>
-Regression results for Total Zinc are summarized in Table <a href="water-quality-statistics.html#tab:curesults">4.4</a>.
+Regression results for Total Zinc are summarized in Table <a href="water-quality-statistics.html#tab:curesults">4.3</a>.
 <table>
 <caption>
-<span id="tab:curesults">Table 4.4: </span>Copper - Water - Total - Bayseian Regression Results
+<span id="tab:curesults">Table 4.3: </span>Copper - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -2822,10 +2777,10 @@ residual
 <h3><span class="header-section-number">4.4.3</span> Nitrite-Nitrate</h3>
 <div id="regression-coefficients-2" class="section level4">
 <h4><span class="header-section-number">4.4.3.1</span> Regression Coefficients</h4>
-Regression results for Nitrite-Nitrate are summarized in Table <a href="water-quality-statistics.html#tab:nnResults">4.5</a>.
+Regression results for Nitrite-Nitrate are summarized in Table <a href="water-quality-statistics.html#tab:nnResults">4.4</a>.
 <table>
 <caption>
-<span id="tab:nnResults">Table 4.5: </span>Nitrite-Nitrate - Water - Dissolved - Bayseian Regression Results
+<span id="tab:nnResults">Table 4.4: </span>Nitrite-Nitrate - Water - Dissolved - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -2949,10 +2904,10 @@ residual
 <h3><span class="header-section-number">4.4.4</span> Lead</h3>
 <div id="regression-coefficients-3" class="section level4">
 <h4><span class="header-section-number">4.4.4.1</span> Regression Coefficients</h4>
-Regression results for Total Lead are summarized in Table <a href="water-quality-statistics.html#tab:pbResults">4.6</a>.
+Regression results for Total Lead are summarized in Table <a href="water-quality-statistics.html#tab:pbResults">4.5</a>.
 <table>
 <caption>
-<span id="tab:pbResults">Table 4.6: </span>Lead - Water - Total - Bayseian Regression Results
+<span id="tab:pbResults">Table 4.5: </span>Lead - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -3074,10 +3029,10 @@ Figure <a href="#fig:pbtrace"><strong>??</strong></a> shows the diagnostic trace
 <h3><span class="header-section-number">4.4.5</span> Total Phosphorus</h3>
 <div id="regression-coefficients-4" class="section level4">
 <h4><span class="header-section-number">4.4.5.1</span> Regression Coefficients</h4>
-Regression results for Total Phosphorus are summarized in Table <a href="water-quality-statistics.html#tab:tpResults">4.7</a>.
+Regression results for Total Phosphorus are summarized in Table <a href="water-quality-statistics.html#tab:tpResults">4.6</a>.
 <table>
 <caption>
-<span id="tab:tpResults">Table 4.7: </span>Total Phosphorus - Water - Total - Bayseian Regression Results
+<span id="tab:tpResults">Table 4.6: </span>Total Phosphorus - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -3197,10 +3152,10 @@ residual
 <img src="StormwaterHeatmapTechReference_files/figure-html/tptrace-1.png" width="672" />
 ### Total Suspended Solids
 #### Regression Coefficients
-Regression results for Total Suspended Solids are summarized in Table <a href="water-quality-statistics.html#tab:tssResults">4.8</a>.</p>
+Regression results for Total Suspended Solids are summarized in Table <a href="water-quality-statistics.html#tab:tssResults">4.7</a>.</p>
 <table>
 <caption>
-<span id="tab:tssResults">Table 4.8: </span>Total Suspended Solids - Water - Total - Bayseian Regression Results
+<span id="tab:tssResults">Table 4.7: </span>Total Suspended Solids - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -3324,10 +3279,10 @@ residual
 <h3><span class="header-section-number">4.4.6</span> Total PAH</h3>
 <div id="regression-coefficients-5" class="section level4">
 <h4><span class="header-section-number">4.4.6.1</span> Regression Coefficients</h4>
-Regression results for Total PAH are summarized in Table <a href="water-quality-statistics.html#tab:pahResults">4.9</a>.
+Regression results for Total PAH are summarized in Table <a href="water-quality-statistics.html#tab:pahResults">4.8</a>.
 <table>
 <caption>
-<span id="tab:pahResults">Table 4.9: </span>Total PAH - Water - Total - Bayseian Regression Results
+<span id="tab:pahResults">Table 4.8: </span>Total PAH - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -3451,10 +3406,10 @@ residual
 <h3><span class="header-section-number">4.4.7</span> Total CPAH</h3>
 <div id="regression-coefficients-6" class="section level4">
 <h4><span class="header-section-number">4.4.7.1</span> Regression Coefficients</h4>
-Regression results for Total CPAH are summarized in Table <a href="water-quality-statistics.html#tab:cpahResults">4.10</a>.
+Regression results for Total CPAH are summarized in Table <a href="water-quality-statistics.html#tab:cpahResults">4.9</a>.
 <table>
 <caption>
-<span id="tab:cpahResults">Table 4.10: </span>CPAH - Water - Total - Bayseian Regression Results
+<span id="tab:cpahResults">Table 4.9: </span>CPAH - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -3600,7 +3555,7 @@ residual
 <h4><span class="header-section-number">4.4.8.1</span> Regression Coefficients</h4>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-26">Table 4.11: </span>HPAH - Water - Total - Bayseian Regression Results
+<span id="tab:unnamed-chunk-27">Table 4.10: </span>HPAH - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -3630,16 +3585,16 @@ effect
 (Intercept)
 </td>
 <td style="text-align:right;">
--2.217
+-2.2172457
 </td>
 <td style="text-align:right;">
--2.939
+-2.9392675
 </td>
 <td style="text-align:right;">
--1.408
+-1.4083642
 </td>
 <td style="text-align:right;">
-0.000
+0.0002599
 </td>
 <td style="text-align:left;">
 fixed
@@ -3650,16 +3605,16 @@ fixed
 LU_ratio
 </td>
 <td style="text-align:right;">
--0.194
+-0.1939536
 </td>
 <td style="text-align:right;">
--0.481
+-0.4814508
 </td>
 <td style="text-align:right;">
-0.092
+0.0923844
 </td>
 <td style="text-align:right;">
-0.172
+0.1715623
 </td>
 <td style="text-align:left;">
 fixed
@@ -3670,13 +3625,13 @@ fixed
 Location
 </td>
 <td style="text-align:right;">
-1.919
+1.9186908
 </td>
 <td style="text-align:right;">
-0.436
+0.4360824
 </td>
 <td style="text-align:right;">
-4.161
+4.1605803
 </td>
 <td style="text-align:right;">
 NA
@@ -3690,13 +3645,13 @@ random
 units
 </td>
 <td style="text-align:right;">
-1.000
+1.0000000
 </td>
 <td style="text-align:right;">
-1.000
+1.0000000
 </td>
 <td style="text-align:right;">
-1.000
+1.0000000
 </td>
 <td style="text-align:right;">
 NA
@@ -3725,23 +3680,23 @@ residual
 <h2><span class="header-section-number">4.5</span> Predictions</h2>
 <p>We used the models developed above to generate predictions of pollutant concentrations to verify regression parameters. We first evaluated the posterior means of the predictors to evaluate data fit. We then simulated 100 draws from the full posterior distributions to evaluate the range of predictions. Results are show below.</p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-2.png" width="672" /></p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-3.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-3.png" width="672" /></p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-4.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-4.png" width="672" /></p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-5.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-5.png" width="672" /></p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-6.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-6.png" width="672" /></p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-7.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-7.png" width="672" /></p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-8.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-8.png" width="672" /></p>
 <pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-9.png" width="672" /></p>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-9.png" width="672" /></p>
 </div>
 <div id="discussion" class="section level2">
 <h2><span class="header-section-number">4.6</span> Discussion</h2>
@@ -3777,120 +3732,6 @@ x_n \\
 <p><span class="math display">\[
 y = \beta_0+\beta_1x_1+...\beta_nx_n 
 \]</span></p>
-<!-- References at the end here.  -->
-<div id="refs">
-<div id="ref-Anan2002">
-<p>Anan, Y; Kunito T, T Ikemoto, R Kubota, I Watanabe, S Tanabe, N Miyazaki, and E Petrov. 2002. “Elevated concentrations of trace elements in Caspian seals (Phoca caspia) found stranded during the mass mortality event in 2000.” <em>Environmental Contamination &amp; Toxicology</em> 42: 354–62.</p>
-</div>
-<div id="ref-Anderson2007">
-<p>Anderson, B, J Hunt, B Phillips, B Thompson, S Lowe, i K Tabersk, and R Carr. 2007. “Patterns and trends in sediment toxicity in the San Francisco Estuary.” <em>Environmental Research</em> 105: 145–55.</p>
-</div>
-<div id="ref-Arkoosh2001">
-<p>Arkoosh, M, E Clemons, P Huffman, A Kagley, E Casillas, N Adams, H Sanborn, T Collier, and J Stein. 2001. “Increased Susceptibility of Juvenile Chinook Salmon to Vibriosis after Exposure to Chlorinated and Aromatic Compounds Found in Contaminated Urban Estuaries.” <em>Journal of Aquatic Animal Health</em> 13 (3): 257–68.</p>
-</div>
-<div id="ref-Baldwin2011">
-<p>Baldwin, D, C Tatara, and N Scholz. 2011. “Copper induced olfactory toxicity in salmon and steelhead: Extrapolation across species and rearing environments.” <em>Aquatic Toxicology.</em> 101 (1): 295–97.</p>
-</div>
-<div id="ref-booth2004reviving">
-<p>Booth, Derek B, James R Karr, Sally Schauman, Christopher P Konrad, Sarah A Morley, Marit G Larson, and Stephen J Burges. 2004. “Reviving urban streams: Land use, hydrology, biology, and human behavior 1.” <em>JAWRA Journal of the American Water Resources Association</em> 40 (5): 1351–64.</p>
-</div>
-<div id="ref-DepartmentofEcology2014">
-<p>Department of Ecology. 2014. “Stormwater Management Manual for Western Washington,” 1192.</p>
-</div>
-<div id="ref-Dinicola1990">
-<p>Dinicola, Richard S. 1990. “Characterization and simulation of rainfall-runoff relations for headwater basins in western King and Snohomish Counties, Washington.” <em>Water-Resources Investigations Report</em> 89-4052: 52 p. <a href="https://pubs.er.usgs.gov/publication/wri894052">https://pubs.er.usgs.gov/publication/wri894052</a>.</p>
-</div>
-<div id="ref-Feist2017">
-<p>Feist, Blake E., Eric R. Buhle, David H. Baldwin, Julann A. Spromberg, Steven E. Damm, Jay W. Davis, and Nathaniel L. Scholz. 2017. “Roads to ruin: Conservation threats to a sentinel species across an urban gradient.” <em>Ecological Applications</em> 27 (8): 2382–96. <a href="https://doi.org/10.1002/eap.1615">https://doi.org/10.1002/eap.1615</a>.</p>
-</div>
-<div id="ref-Gaw2014">
-<p>Gaw, S, K Thomas, and T Hutchinson. 2014. “Sources, impacts and trends of pharmaceuticals in the marine and coastal environment.” <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em> 369: 20130572.</p>
-</div>
-<div id="ref-hadfield2010mcmc">
-<p>Hadfield, Jarrod D, and Others. 2010. “MCMC methods for multi-response generalized linear mixed models: the MCMCglmm R package.” <em>Journal of Statistical Software</em> 33 (2): 1–22.</p>
-</div>
-<div id="ref-Helsel2012">
-<p>Helsel, Denise R. 2012. <em>Statistics for Censored Environmental Data</em>.</p>
-</div>
-<div id="ref-Incardona2011">
-<p>Incardona, J, T Linbo, and N Scholz. 2011. “Cardiac toxicity of 5-ring polycyclic aromatic hydrocarbons is differentially dependent on the aryl hydrocarbon receptor 2 isoform during zebrafish development.” <em>Toxicology and Applied Pharmacology</em> 257 (2): 242–49.</p>
-</div>
-<div id="ref-Jarvis2015">
-<p>Jarvis, T., and G. Bielmyer-Fraser. 2015. “Accumulation and effects of metal mixtures in two seaweed species.” <em>Comparative Biochemistry and Physiology, Part C. Toxicology and Pharmacology</em> 171: 28–33.</p>
-</div>
-<div id="ref-Kayhanian2012">
-<p>Kayhanian, M, B Fructman, J Gulliver, C Montanaro, E Ranieri, and S Wuertz. 2012. “Review of highway runoff characteristics: Comparative analysis and universal implications.” Water Research. Vol. 46, pp.” <em>Water Research</em>, 6609–24.</p>
-</div>
-<div id="ref-County2014">
-<p>King County. 2014. “Development of a Stormwater Retrofit Plan for Water Resources Inventory Area (WRIA) 9: Comprehensive Needs and Cost Assessment and Extrapolation to Puget Sound.” Prepared by Simmonds J; Wright O, King County Department of Natural Resource; Parks, Water; Land Resources Division.</p>
-</div>
-<div id="ref-Lampert2019">
-<p>Lampert, David. 2019. “PyHSPF.” <a href="https://github.com/djlampert/PyHSPF">https://github.com/djlampert/PyHSPF</a>.</p>
-</div>
-<div id="ref-Levin">
-<p>Levin, P, E Howe, and J Robertson. n.d. “Impacts of stormwater on coastal ecosystems: the need to match the scales of management objectives and solutions.” <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em>.</p>
-</div>
-<div id="ref-Lyngby1984">
-<p>Lyngby, J, and H Brix. 1984. “Seasonal and environmental variation in cadmium, copper, lead, and zinc concentrations in eelgrass (Zostera marina L.) in the Limfjord, Denmark.” <em>Aquatic Botany</em> 54: 100–106.</p>
-</div>
-<div id="ref-Jr2018">
-<p>Mauger, G. S., J. S. Won, K. Hegewisch, C. Lynch, R. Lorente Plazas, Salathe, and E. P. Salathé Jr. 2018. “New Projections of Changing Heavy Precipitation in King County.”</p>
-</div>
-<div id="ref-McIntyre2015">
-<p>McIntyre, J, J Davis, C Hinman, K Macneale, B Anulacion, N Scholz, and J Stark. 2015. “Soil bioretention protects juvenile salmon and their prey from the toxic impacts of urban stormwater runoff.” <em>Chemosphere</em> 132: 213–19.</p>
-</div>
-<div id="ref-Meador2006">
-<p>Meador, J, F Sommers, and SC Ylitalo. 2006. “Altered growth and related physiological responses in juvenile Chinook salmon (Oncorhynchus tshawytscha) from dietary exposure to polycyclic aromatic hydrocarbons (PAHs).” <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 63: 2364–76.</p>
-</div>
-<div id="ref-moore2019user">
-<p>Moore, Richard B, Lucinda D McKay, Alan H Rea, Timothy R Bondelid, Curtis V Price, Thomas G Dewald, and Craig M Johnston. 2019. “User’s guide for the national hydrography dataset plus (NHDPlus) high resolution.” US Geological Survey.</p>
-</div>
-<div id="ref-NASAGoddardEarthSciencesDataandInformationServicesCenterGESDISC2019">
-<p>NASA Goddard Earth Sciences Data and Information Services Center (GES DISC). 2019. “NLDAS-2: North American Land Data Assimilation System Forcing Fields.”</p>
-</div>
-<div id="ref-Palmer2019">
-<p>Palmer, Margaret, and Albert Ruhi. 2019. “Linkages between flow regime, biota, and ecosystem processes: Implications for river restoration.” <em>Science</em> 365 (6459): eaaw2087.</p>
-</div>
-<div id="ref-Rice2000">
-<p>Rice, C, M Myers, M Willis, B French, and E Casillas. 2000. “From sediment bioassay to fish biomarker – connecting the dots using simple trophic relationships.” <em>Marine Environmental Research</em> 50: 527–22.</p>
-</div>
-<div id="ref-RossC.W.L.PrihodkoJ.Y.AnchangS.S.KumarW.Ji2018">
-<p>Ross, C.W., L. Prihodko, J.Y. Anchang, S.S. Kumar, W. Ji, N. P. Hanan. 2018. “Global Hydrologic Soil Groups (HYSOGs250m) for Curve Number-Based Runoff Modeling.” <a href="https://doi.org/10.3334/ORNLDAAC/1566">https://doi.org/10.3334/ORNLDAAC/1566</a>.</p>
-</div>
-<div id="ref-Ross2000">
-<p>Ross, P, Ellis G, M Ikonomou, L Barrett-Lennard, and R Addison. 2000. “High PCB concentrations in freeranging Pacific killer whales, Orcinus orca: Effects of age, sex and dietary preference.” <em>Marine Pollution Bulletin</em> 40 (6): 504–15.</p>
-</div>
-<div id="ref-Scholz2011">
-<p>Scholz, N, M Myers, S McCarthy, J Labenia, and J McIntyre. 2011. “Recurrent Die-Offs of Adult Coho Salmon Returning to Spawn in Puget Sound Lowland Urban Streams.” <em>PLoS ONE</em> 6 (12): e28013.</p>
-</div>
-<div id="ref-SoilSurveyStaff2016">
-<p>Soil Survey Staff. 2016. “National Value Added Look Up (valu) Table Database for the Gridded Soil Survey Geographic (gSSURGO) Database for the United States of America and the Territories, Commonwealths, and Island Nations served by the USDA-NRCS.”</p>
-</div>
-<div id="ref-SoilSurveyStaff2018">
-<p>———. 2018. “Gridded Soil Survey Geographic (gSSURGO) Database for Washington.” <a href="https://gdg.sc.egov.usda.gov/">https://gdg.sc.egov.usda.gov/</a>.</p>
-</div>
-<div id="ref-USEPA2019">
-<p>United States Environmental Protection Agency. 2019. “National rivers and streams assessment 2008-2019: A collaborative survey.” U.S. Environmental Protection Agency.</p>
-</div>
-<div id="ref-Walsh2005">
-<p>Walsh, Christopher J., Allison H. Roy, Jack W. Feminella, Peter D. Cottingham, Peter M. Groffman, and Raymond P. Morgan. 2005. “The urban stream syndrome: Current knowledge and the search for a cure.” <em>Journal of the North American Benthological Society</em> 24 (3): 706–23. <a href="https://doi.org/10.1899/04-028.1">https://doi.org/10.1899/04-028.1</a>.</p>
-</div>
-<div id="ref-WashingtonStateDepartmentofEcology2011">
-<p>Washington State Department of Ecology. 2011. “Toxics in Surface Runoff to Puget Sound: Phase 3 Data and Load Estimates.” Prepared by Herrerra Environmental COnsultants, Inc.: Washington Department of Ecology.</p>
-</div>
-<div id="ref-WashingtonStateDepartmentofEcologyandWashingtonDepartmentofHealth2012">
-<p>Washington State Department of Ecology and Washington Department of Health. 2012. “PAH Chemical Action Plan.” Prepared Davies H, Stone A, Grice J, Patora K, Kadlex M, Delistraty D, Norton D,; White J.: Washington Department of Ecology; Washington Department of Health.</p>
-</div>
-<div id="ref-WDFW2011">
-<p>WDFW. 2011. “Toxic Contaminants in Harbor Seal (Phoca vitulina) Pups from Puget Sound.” Prepared by Noell M, Ross P, Jeffries S, Lance M: Washington Department of Fish; Wildlife.</p>
-</div>
-<div id="ref-No2015">
-<p>William Hobbs, Brandi Lubliner, Nataniel Kale, and Evan Newell. 2015. “Western Washington NPDES Phase I Stormwater Permit Final S8 . D Data Characterization.” 15.</p>
-</div>
-<div id="ref-yang2018new">
-<p>Yang, Limin, Suming Jin, Patrick Danielson, Collin Homer, Leila Gass, Stacie M Bender, Adam Case, et al. 2018. “A new generation of the United States National Land Cover Database: Requirements, research priorities, design, and implementation strategies.” <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 146: 108–23.</p>
-</div>
-</div>
 
 </div>
 </div>

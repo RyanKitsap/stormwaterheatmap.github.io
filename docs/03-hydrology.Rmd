@@ -31,11 +31,11 @@ font_add("Roboto Condensed","robotocondensed-regular.ttf")
 
 ### Global options
 
-options(warning = FALSE,message = FALSE,echo=FALSE)
+#options(warning = FALSE,message = FALSE,echo=FALSE)
 opts_chunk$set(echo=FALSE,
                message=FALSE,
-                warning=FALSE)
-opts_knit$set(warning = FALSE,message = FALSE,echo=FALSE)
+                warning=FALSE,cache=TRUE)
+#opts_knit$set(warning = FALSE,message = FALSE,echo=FALSE)
 
 ## ggploting theme
 #theme_set(hrbrthemes::theme_ipsum_rc())
@@ -191,7 +191,7 @@ Results were verified by comparing simulations to measured streamflow for a gage
 Daily streamflow data for the Madsen Creek watershed was provided by King County^[https://green2.kingcounty.gov/hydrology/SummaryDataGraphs.aspx?G_ID=98] for the period 1991-2010. We delineated the watershed above the gaging site using the USGS NHDPLus flow-conditioned raster [@moore2019user]. 
 Using this watershed boundary, we extracted HRUs and associated areas from the stormwater heatmap HRU layer on Google Earth Engine. HRU results and areas are shown in Table \@ref(tab:madsent).
 
-```{r madsent, paged.print=TRUE}
+```{r madsent}
 
 madsen <- read_csv("data/madsen.csv", col_types = cols(hruName_1 = col_skip(), 
     X8 = col_skip(), X9 = col_skip(), X10 = col_skip(), 
@@ -279,7 +279,8 @@ precipCompare(seatac_subset,Cig_renton_Precip)+
 
 
 ```
-## Spatially Aggregated Results 
+
+## Spatially Aggregated Results     
 Since the PyHSPF model is a lumped parameter model, results can be calculated for HRU/precipitation grids individually and then aggregated after calculation. 
 
 The stormwater heatmap contains two spatial aggregates of hydrology results: Mean Annual Runoff for the historic period (1970-1999) and a new index, termed the Flow Duration Index. 

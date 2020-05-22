@@ -6,3 +6,10 @@ language:
   ui:
     chapter_name: "Chapter "  
 abstract: "abstract here"
+rmd_files: ["index.Rmd",
+"01-Introduction.Rmd",
+"02-landcover.Rmd", 
+"03-hydrology.Rmd",
+"04-WQ_Stats.Rmd",
+"05_references.Rmd"]
+

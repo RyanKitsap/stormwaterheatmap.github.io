@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.5.18)  21 MAY 2020 20:38
+This is LuaHBTeX, Version 1.12.0 (TeX Live 2020/W32TeX)  (format=lualatex 2020.5.18)  22 MAY 2020 11:10
  restricted system commands enabled.
 **StormwaterHeatmapTechReference.tex
 (./StormwaterHeatmapTechReference.tex
@@ -576,128 +576,6 @@ Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legacy
 )
 Package grffile Info: This package is an empty stub for compatibility on input l
 ine 40.
-) (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.st
-y
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen168
-\ar@mcellbox=\box53
-\extrarowheight=\dimen169
-\NC@list=\toks24
-\extratabsurround=\skip57
-\backup@length=\skip58
-\ar@cellbox=\box54
-)
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multiro
-w.sty
-Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
-\multirow@colwidth=\skip59
-\multirow@cntb=\count289
-\multirow@dima=\skip60
-\bigstrutjot=\dimen170
-)
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.
-sty
-\wrapoverhang=\dimen171
-\WF@size=\dimen172
-\c@WF@wrappedlines=\count290
-\WF@box=\box55
-\WF@everypar=\toks25
-Package: wrapfig 2003/01/31  v 3.6
-) (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.st
-y
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count291
-\float@exts=\toks26
-\float@box=\box56
-\@float@everytoks=\toks27
-\@floatcapt=\box57
-)
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortb
-l.sty
-Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks28
-\minrowclearance=\skip61
-)
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflsc
-ape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.
-sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-) (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
-
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidt
-h.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box58
-\sift@deathcycles=\count292
-\@vwid@loff=\dimen173
-\@vwid@roff=\dimen174
-)
-\c@taburow=\count293
-\tabu@nbcols=\count294
-\tabu@cnt=\count295
-\tabu@Xcol=\count296
-\tabu@alloc=\count297
-\tabu@nested=\count298
-\tabu@target=\dimen175
-\tabu@spreadtarget=\dimen176
-\tabu@naturalX=\dimen177
-\tabucolX=\dimen178
-\tabu@Xsum=\dimen179
-\extrarowdepth=\dimen180
-\abovetabulinesep=\dimen181
-\belowtabulinesep=\dimen182
-\tabustrutrule=\dimen183
-\tabu@thebody=\toks29
-\tabu@footnotes=\toks30
-\tabu@box=\box59
-\tabu@arstrutbox=\box60
-\tabu@hleads=\box61
-\tabu@vleads=\box62
-\tabu@cellskip=\skip62
-)
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/t
-hreeparttable.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box63
-)
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/
-threeparttablex.sty
-Package: threeparttablex 2013/07/23 v0.3 by daleif
-
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.
-sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trims
-paces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-))
-\TPTL@width=\skip63
-) (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.st
-y
-\UL@box=\box64
-\UL@hyphenbox=\box65
-\UL@skip=\skip64
-\UL@hook=\toks31
-\UL@height=\dimen184
-\UL@pe=\count299
-\UL@pixel=\dimen185
-\ULC@box=\box66
-Package: ulem 2019/11/18
-\ULdepth=\dimen186
-)
-(c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecel
-l.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen187
-\c@nlinenum=\count300
-\TeXr@lab=\toks32
 ) (./StormwaterHeatmapTechReference.aux
 
 LaTeX Warning: Label `' multiply defined.
@@ -729,40 +607,40 @@ LaTeX Warning: Label `' multiply defined.
 )
 \openout1 = StormwaterHeatmapTechReference.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 96.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 96.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 96.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 96.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 96.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 96.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 82.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 96.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 82.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -797,7 +675,7 @@ e;script=math;language=dflt;"
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 96.
+(Font)              scaled to size 10.0pt on input line 82.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -841,17 +719,17 @@ e;script=math;language=dflt;"
 (fontspec)             \__um_luatex_copy_fontdimens: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 96.
+(Font)              scaled to size 10.0pt on input line 82.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 96.
+(Font)              `operators' in the math version `normal' on input line 82.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input 
-line 96.
+line 82.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 96.
+(Font)              `operators' in the math version `bold' on input line 82.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input
- line 96.
+ line 82.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -941,15 +819,15 @@ modern-math.otf]:mode=base;script=math;language=dflt;+ssty=1;"
 (fontspec)             21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 96.
+(Font)              `symbols' in the math version `normal' on input line 82.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input
- line 96.
+ line 82.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 96.
+(Font)              `symbols' in the math version `bold' on input line 82.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input
- line 96.
+ line 82.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -1021,43 +899,43 @@ e;script=math;language=dflt;"
 (fontspec)             \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 96
+(Font)              `largesymbols' in the math version `normal' on input line 82
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input
- line 96.
+ line 82.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 96.
+(Font)              `largesymbols' in the math version `bold' on input line 82.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input
- line 96.
+ line 82.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 96.
+(Font)              scaled to size 7.0pt on input line 82.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 96.
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 96
+(Font)              scaled to size 5.0pt on input line 82.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 82
 .
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 96.
+(Font)              scaled to size 10.00092pt on input line 82.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 96.
+(Font)              scaled to size 7.00064pt on input line 82.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 96.
+(Font)              scaled to size 5.00046pt on input line 82.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 96.
+(Font)              scaled to size 9.99893pt on input line 82.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 96.
+(Font)              scaled to size 6.99925pt on input line 82.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 96.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
+(Font)              scaled to size 4.99947pt on input line 82.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
 
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
 
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1073,8 +951,8 @@ opdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box67
-Package hyperref Info: Link coloring OFF on input line 96.
+\AtBeginShipoutBox=\box53
+Package hyperref Info: Link coloring OFF on input line 82.
 
 (c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref
 .sty
@@ -1088,33 +966,33 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 /gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count301
+\c@section@level=\count289
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
-LaTeX Info: Redefining \nameref on input line 96.
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
 (./StormwaterHeatmapTechReference.out) (./StormwaterHeatmapTechReference.out)
 \@outlinefile=\write3
 
 \openout3 = StormwaterHeatmapTechReference.out
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 84.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 98.
+(Font)              scaled to size 8.0pt on input line 84.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 98.
+(Font)              scaled to size 6.0pt on input line 84.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 98.
+(Font)              scaled to size 12.0011pt on input line 84.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 98.
+(Font)              scaled to size 8.00073pt on input line 84.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 98.
+(Font)              scaled to size 6.00055pt on input line 84.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 98.
+(Font)              scaled to size 11.99872pt on input line 84.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 98.
+(Font)              scaled to size 7.99915pt on input line 84.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 98.
+(Font)              scaled to size 5.99936pt on input line 84.
 [1
 
 {c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdft
@@ -1133,11 +1011,31 @@ Chapter 1.
 [4
 
 ] [5] [6] [7]
-Underfull \hbox (badness 2828) in paragraph at lines 165--165
+Underfull \hbox (badness 2828) in paragraph at lines 151--151
 []\TU/lmr/bx/n/14.4 Build-ing an in-ter-ac-tive tool to ser-vice
  []
 
 [8]
+Underfull \hbox (badness 10000) in paragraph at lines 182--184
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 196--198
 
  []
@@ -1158,32 +1056,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--210
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--212
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 214--215
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--234
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
 
  []
 
@@ -1194,827 +1072,627 @@ Chapter 2.
 ] [12
 Missing character: There is no ⅓ (U+2153) in font [lmroman10-regular]:+tlig;!
 Missing character: There is no ⅓ (U+2153) in font [lmroman10-regular]:+tlig;!
-] [13] [14] [15
-warning  (pdf backend): ignoring duplicate destination with the name 'table.2.2'
-
 ]
+Overfull \hbox (12.94199pt too wide) in paragraph at lines 323--341
+| \TU/lmr/bx/n/10 ELSE IF\TU/lmtt/m/n/10 1-m Naïve Bayes label \TU/lmr/m/n/10 
+in \TU/lmtt/m/n/10 (Fine vegetation, Medium vegetation,
+ []
+
+[13]
+Overfull \hbox (6.90997pt too wide) in paragraph at lines 364--366
+[]\TU/lmtt/m/n/10 FinalFineVegetation \TU/lmr/m/n/10 & \TU/lmtt/m/n/10 FinalFine
+Vegetation \TU/lmr/m/n/10 → \TU/lmtt/m/n/10 Fine Vegetation 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+[]\TU/lmtt/m/n/10 BuiltConflict \TU/lmr/m/n/10 & \TU/lmtt/m/n/10 FinalBuilt \TU
+/lmr/m/n/10 & \TU/lmtt/m/n/10 FinalBuiltBrownRed \TU/lmr/m/n/10 →
+ []
+
+[14] [15] [16]
 Chapter 3.
-[16
+[17
 
 ]
-<images/hspf_perlnd.png, id=327, 397.485pt x 271.76532pt>
+<images/hspf_perlnd.png, id=343, 397.485pt x 271.76532pt>
 File: images/hspf_perlnd.png Graphic file (type png)
 <use images/hspf_perlnd.png>
-Package luatex.def Info: images/hspf_perlnd.png  used on input line 445.
+Package luatex.def Info: images/hspf_perlnd.png  used on input line 460.
 (luatex.def)             Requested size: 397.50221pt x 271.77708pt.
 
-Overfull \hbox (52.50221pt too wide) in paragraph at lines 445--445
-[][]
+Overfull \hbox (52.50221pt too wide) in paragraph at lines 460--460
+[][] 
  []
 
-[17
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.1
-'
-<./images/hspf_perlnd.png>] [18]
-<qgis/for_figure.pdf, id=360, 449.39896pt x 395.10521pt>
+[18<./images/hspf_perlnd.png>] [19]
+<qgis/for_figure.pdf, id=375, 449.39896pt x 395.10521pt>
 File: qgis/for_figure.pdf Graphic file (type pdf)
 <use qgis/for_figure.pdf>
-Package luatex.def Info: qgis/for_figure.pdf  used on input line 490.
+Package luatex.def Info: qgis/for_figure.pdf  used on input line 505.
 (luatex.def)             Requested size: 449.40471pt x 395.11028pt.
 
-Overfull \hbox (104.40471pt too wide) in paragraph at lines 490--490
-[][]
+Overfull \hbox (104.40471pt too wide) in paragraph at lines 505--505
+[][] 
  []
 
-[19] [20
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.2
-'
-<./qgis/for_figure.pdf>] [21
+[20
 Missing character: There is no ⅛ (U+215B) in font [lmroman10-regular]:+tlig;!
-] [22]
-<StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf, id=433, 469.
+] [21] [22<./qgis/for_figure.pdf>] [23] [24] [25] [26] [27] [28]
+<StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf, id=471, 469.
 755pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf Graphic 
 file (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/madse
-nFig-1.pdf  used on input line 654.
+nFig-1.pdf  used on input line 942.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-LaTeX Warning: Reference `fig:precipCompare' on page 23 undefined on input line 
-658.
+LaTeX Warning: Reference `fig:precipCompare' on page 29 undefined on input line 
+946.
 
-<StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf, id=434, 
+<StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf, id=472, 
 469.755pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf Grap
 hic file (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/preci
-pCompare-1.pdf  used on input line 659.
+pCompare-1.pdf  used on input line 947.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Underfull \hbox (badness 1558) in paragraph at lines 658--662
+Underfull \hbox (badness 1558) in paragraph at lines 946--948
 []\TU/lmr/m/n/10 Both the WWHM and PyH-SPF re-sults un-der-pre-dict ac-tual stre
 am-flow
  []
 
 
-Underfull \hbox (badness 1178) in paragraph at lines 658--662
+Underfull \hbox (badness 1178) in paragraph at lines 946--948
 \TU/lmr/m/n/10 pri-marly be-cause base-flow was not sim-u-lated. This is ex-pect
 ed, since
  []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 658--662
+Underfull \hbox (badness 1776) in paragraph at lines 946--948
 \TU/lmr/m/n/10 both mod-els ex-clude ground-wa-ter con-tri-bu-tions. How-ever, 
 the re-sults
  []
 
 
-Underfull \hbox (badness 3354) in paragraph at lines 658--662
+Underfull \hbox (badness 3354) in paragraph at lines 946--948
 \TU/lmr/m/n/10 show good agree-ment be-tween both sim-u-lated datasets over the full
  []
 
 
-Underfull \hbox (badness 1668) in paragraph at lines 658--662
+Underfull \hbox (badness 1668) in paragraph at lines 946--948
 \TU/lmr/m/n/10 du-ra-tion of sim-u-la-tions. Note that the sim-u-la-tions use di
 f-fer-ent pre-
  []
 
 
-Underfull \hbox (badness 2088) in paragraph at lines 658--662
+Underfull \hbox (badness 2088) in paragraph at lines 946--948
 \TU/lmr/m/n/10 cip-i-ta-tion (see Fig-ure [] ) datasets and are not ex-pected to
  match.
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 658--662
-[]
- []
-
-[23] [24
-warning  (pdf backend): ignoring duplicate destination with the name 'table.3.2'
-
-] [25
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.3
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf, id=458, 4
+[29] [30<./StormwaterHeatmapTechReference_files/figure-latex/madsenFig-1.pdf><./
+StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf, id=494, 4
 69.755pt x 578.16pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf Graph
 ic file (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/annua
-lQplots-1.pdf  used on input line 672.
+lQplots-1.pdf  used on input line 963.
 (luatex.def)             Requested size: 344.997pt x 424.61166pt.
-[26<./StormwaterHeatmapTechReference_files/figure-latex/precipCompare-1.pdf>] [
-27<./StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf, id=483, 469.755
+[31] [32<./StormwaterHeatmapTechReference_files/figure-latex/annualQplots-1.pdf>
+]
+<StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf, id=515, 469.755
 pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf Graphic fil
 e (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/fdrfi
-g-1.pdf  used on input line 691.
+g-1.pdf  used on input line 982.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[28
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.4
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf, id=498, 4
+[33<./StormwaterHeatmapTechReference_files/figure-latex/fdrfig-1.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf, id=530, 4
 69.755pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf Graph
 ic file (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/flowI
-ndexfig-1.pdf  used on input line 707.
+ndexfig-1.pdf  used on input line 998.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[29
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.3.5
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf>]
+[34<./StormwaterHeatmapTechReference_files/figure-latex/flowIndexfig-1.pdf>]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 724--725
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
 []$\TU/lmr/m/n/10 https://data.wa.gov/Natural-Resources-Environment/Municipal-St
 ormwater-
  []
 
-[30
+
+Underfull \hbox (badness 10000) in paragraph at lines 1022--1024
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1024--1026
+
+ []
+
+[35
 
 ]
-<StormwaterHeatmapTechReference_files/figure-latex/outlier1-1.pdf, id=529, 469.7
+Underfull \hbox (badness 10000) in paragraph at lines 1026--1028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1028--1030
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1030--1032
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1034--1036
+
+ []
+
+<StormwaterHeatmapTechReference_files/figure-latex/outlier1-1.pdf, id=559, 469.7
 55pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/outlier1-1.pdf Graphic f
 ile (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/outlier1-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/outli
-er1-1.pdf  used on input line 765.
+er1-1.pdf  used on input line 1049.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<StormwaterHeatmapTechReference_files/figure-latex/tidyqqplots-1.pdf, id=531, 46
+<StormwaterHeatmapTechReference_files/figure-latex/tidyqqplots-1.pdf, id=561, 46
 9.755pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/tidyqqplots-1.pdf Graphi
 c file (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/tidyqqplots-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/tidyq
-qplots-1.pdf  used on input line 773.
+qplots-1.pdf  used on input line 1057.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<StormwaterHeatmapTechReference_files/figure-latex/outlier2-1.pdf, id=532, 469.7
+<StormwaterHeatmapTechReference_files/figure-latex/outlier2-1.pdf, id=562, 469.7
 55pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/outlier2-1.pdf Graphic f
 ile (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/outlier2-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/outli
-er2-1.pdf  used on input line 779.
+er2-1.pdf  used on input line 1063.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Underfull \hbox (badness 3503) in paragraph at lines 791--791
+Underfull \hbox (badness 3503) in paragraph at lines 1075--1075
 [][][]\TU/lmr/m/n/8 See: []$https://fortress.wa.gov/ecy/gispublic/DataDownload/E
 CY_CAD_Landuse2010.
  []
 
-[31
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.1'
-
-] [32
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.4.1
-'
+[36] [37<./StormwaterHeatmapTechReference_files/figure-latex/outlier1-1.pdf><./S
+tormwaterHeatmapTechReference_files/figure-latex/tidyqqplots-1.pdf>] [38
 Missing character: There is no μ (U+03BC) in font [lmroman10-regular]:+tlig;!
-<./StormwaterHeatmapTechReference_files/figure-latex/outlier1-1.pdf>]
-
-LaTeX Warning: Reference `fig:vifTable' on page 33 undefined on input line 872.
-
-[33] [34
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.4.2
-'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.3'
-
-<./StormwaterHeatmapTechReference_files/figure-latex/tidyqqplots-1.pdf>] [35
-warning  (pdf backend): ignoring duplicate destination with the name 'figure.4.3
-'
 <./StormwaterHeatmapTechReference_files/figure-latex/outlier2-1.pdf>]
-Overfull \hbox (93.61998pt too wide) in paragraph at lines 926--961
+
+LaTeX Warning: Reference `fig:vifTable' on page 39 undefined on input line 1156.
+
+
+[39] [40]
+Overfull \hbox (93.62006pt too wide) in paragraph at lines 1213--1248
  [][] 
  []
 
 
-Overfull \hbox (93.61998pt too wide) in paragraph at lines 972--1007
+Overfull \hbox (93.62006pt too wide) in paragraph at lines 1259--1294
+ [][] 
+ []
+
+[41]
+Overfull \hbox (88.81006pt too wide) in paragraph at lines 1305--1337
+ [][] 
+ []
+
+[42] [43]
+Overfull \hbox (93.62006pt too wide) in paragraph at lines 1348--1377
  [][] 
  []
 
 
-Overfull \hbox (88.80998pt too wide) in paragraph at lines 1018--1050
+Overfull \hbox (88.81006pt too wide) in paragraph at lines 1388--1420
  [][] 
  []
 
 
-Overfull \hbox (93.61998pt too wide) in paragraph at lines 1061--1090
+Overfull \hbox (93.64993pt too wide) in paragraph at lines 1431--1454
+ [][] 
+ []
+
+[44] [45]
+Overfull \hbox (88.81006pt too wide) in paragraph at lines 1465--1485
  [][] 
  []
 
 
-Overfull \hbox (88.80998pt too wide) in paragraph at lines 1101--1133
+Overfull \hbox (88.81006pt too wide) in paragraph at lines 1496--1528
  [][] 
  []
 
-[36] [37
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.4'
-
-] [38
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.5'
-
-] [39
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.6'
-
-] [40
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.7'
-
-] [41
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.8'
-
-]
-Overfull \hbox (93.64986pt too wide) in paragraph at lines 1144--1167
+[46]
+Overfull \hbox (88.81006pt too wide) in paragraph at lines 1539--1568
  [][] 
  []
 
 
-Overfull \hbox (88.80998pt too wide) in paragraph at lines 1178--1198
+Overfull \hbox (88.81006pt too wide) in paragraph at lines 1579--1602
  [][] 
  []
 
+[47] [48] [49]
 
-Overfull \hbox (88.80998pt too wide) in paragraph at lines 1209--1241
- [][] 
- []
+LaTeX Warning: Reference `fig:znPDC' on page 50 undefined on input line 1687.
 
-
-Overfull \hbox (88.80998pt too wide) in paragraph at lines 1252--1281
- [][] 
- []
-
-[42
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.9'
-
-] [43
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.10
-'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.11
-'
-] [44
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.12
-'
-]
-Overfull \hbox (88.80998pt too wide) in paragraph at lines 1292--1315
- [][] 
- []
-
-
-Overfull \hbox (103.85997pt too wide) in paragraph at lines 1339--1352
- [][] 
- []
-
-[45
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.13
-'
-]
-
-LaTeX Warning: Reference `fig:znPDC' on page 46 undefined on input line 1357.
-
-<StormwaterHeatmapTechReference_files/figure-latex/znPDC-1.pdf, id=704, 469.755p
+<StormwaterHeatmapTechReference_files/figure-latex/znPDC-1.pdf, id=732, 469.755p
 t x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/znPDC-1.pdf Graphic file
  (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/znPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/znPDC
--1.pdf  used on input line 1363.
+-1.pdf  used on input line 1693.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[50]
 
-LaTeX Warning: Reference `fig:zntrace' on page 46 undefined on input line 1368.
+LaTeX Warning: Reference `fig:zntrace' on page 51 undefined on input line 1698.
 
-<StormwaterHeatmapTechReference_files/figure-latex/zntrace-1.pdf, id=705, 469.75
+<StormwaterHeatmapTechReference_files/figure-latex/zntrace-1.pdf, id=740, 469.75
 5pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/zntrace-1.pdf Graphic fi
 le (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/zntrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/zntra
-ce-1.pdf  used on input line 1369.
+ce-1.pdf  used on input line 1699.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[46
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.14
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/znPDC-1.pdf>]
-Overfull \hbox (103.85997pt too wide) in paragraph at lines 1383--1398
- [][] 
- []
+[51<./StormwaterHeatmapTechReference_files/figure-latex/znPDC-1.pdf><./Stormwate
+rHeatmapTechReference_files/figure-latex/zntrace-1.pdf>] [52]
 
+LaTeX Warning: Reference `fig:cuPDC' on page 53 undefined on input line 1786.
 
-LaTeX Warning: Reference `fig:cuPDC' on page 47 undefined on input line 1403.
-
-[47
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.15
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/zntrace-1.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/cuPDC-1.pdf, id=741, 469.755p
+<StormwaterHeatmapTechReference_files/figure-latex/cuPDC-1.pdf, id=766, 469.755p
 t x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/cuPDC-1.pdf Graphic file
  (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/cuPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/cuPDC
--1.pdf  used on input line 1409.
+-1.pdf  used on input line 1792.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-LaTeX Warning: Reference `fig:cutrace' on page 48 undefined on input line 1414.
+LaTeX Warning: Reference `fig:cutrace' on page 53 undefined on input line 1797.
 
-<StormwaterHeatmapTechReference_files/figure-latex/cutrace-1.pdf, id=742, 469.75
+<StormwaterHeatmapTechReference_files/figure-latex/cutrace-1.pdf, id=767, 469.75
 5pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/cutrace-1.pdf Graphic fi
 le (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/cutrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/cutra
-ce-1.pdf  used on input line 1415.
+ce-1.pdf  used on input line 1798.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[48<./StormwaterHeatmapTechReference_files/figure-latex/cuPDC-1.pdf>]
-Overfull \hbox (64.40997pt too wide) in paragraph at lines 1429--1442
- [][] 
- []
+[53<./StormwaterHeatmapTechReference_files/figure-latex/cuPDC-1.pdf>] [54<./Stor
+mwaterHeatmapTechReference_files/figure-latex/cutrace-1.pdf>]
 
+LaTeX Warning: Reference `fig:nnPDC' on page 55 undefined on input line 1873.
 
-LaTeX Warning: Reference `fig:nnPDC' on page 49 undefined on input line 1447.
-
-<StormwaterHeatmapTechReference_files/figure-latex/nnPDC-1.pdf, id=756, 469.755p
+<StormwaterHeatmapTechReference_files/figure-latex/nnPDC-1.pdf, id=796, 469.755p
 t x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/nnPDC-1.pdf Graphic file
  (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/nnPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/nnPDC
--1.pdf  used on input line 1453.
+-1.pdf  used on input line 1879.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[49
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.16
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/cutrace-1.pdf>]
+[55]
 
-LaTeX Warning: Reference `fig:nntrace' on page 50 undefined on input line 1458.
+LaTeX Warning: Reference `fig:nntrace' on page 56 undefined on input line 1884.
 
-<StormwaterHeatmapTechReference_files/figure-latex/nntrace-1.pdf, id=773, 469.75
+<StormwaterHeatmapTechReference_files/figure-latex/nntrace-1.pdf, id=803, 469.75
 5pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/nntrace-1.pdf Graphic fi
 le (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/nntrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/nntra
-ce-1.pdf  used on input line 1459.
+ce-1.pdf  used on input line 1885.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[56<./StormwaterHeatmapTechReference_files/figure-latex/nnPDC-1.pdf><./Stormwate
+rHeatmapTechReference_files/figure-latex/nntrace-1.pdf>] [57]
 
-Overfull \hbox (65.02997pt too wide) in paragraph at lines 1473--1486
- [][] 
- []
+LaTeX Warning: Reference `fig:pbPDC' on page 58 undefined on input line 1960.
 
-[50<./StormwaterHeatmapTechReference_files/figure-latex/nnPDC-1.pdf><./Stormwate
-rHeatmapTechReference_files/figure-latex/nntrace-1.pdf>]
-
-LaTeX Warning: Reference `fig:pbPDC' on page 51 undefined on input line 1491.
-
-<StormwaterHeatmapTechReference_files/figure-latex/pbPDC-1.pdf, id=793, 469.755p
+<StormwaterHeatmapTechReference_files/figure-latex/pbPDC-1.pdf, id=829, 469.755p
 t x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/pbPDC-1.pdf Graphic file
  (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/pbPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/pbPDC
--1.pdf  used on input line 1497.
+-1.pdf  used on input line 1966.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-LaTeX Warning: Reference `fig:pbtrace' on page 51 undefined on input line 1499.
+LaTeX Warning: Reference `fig:pbtrace' on page 58 undefined on input line 1968.
 
-<StormwaterHeatmapTechReference_files/figure-latex/pbtrace-1.pdf, id=794, 469.75
+<StormwaterHeatmapTechReference_files/figure-latex/pbtrace-1.pdf, id=830, 469.75
 5pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/pbtrace-1.pdf Graphic fi
 le (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/pbtrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/pbtra
-ce-1.pdf  used on input line 1500.
+ce-1.pdf  used on input line 1969.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1497--1501
+Underfull \hbox (badness 10000) in paragraph at lines 1966--1970
 [][]
  []
 
-[51
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.17
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/pbPDC-1.pdf>]
-Overfull \hbox (64.40997pt too wide) in paragraph at lines 1514--1527
- [][] 
- []
+[58<./StormwaterHeatmapTechReference_files/figure-latex/pbPDC-1.pdf>] [59<./Stor
+mwaterHeatmapTechReference_files/figure-latex/pbtrace-1.pdf>]
 
+LaTeX Warning: Reference `fig:tpPDC' on page 60 undefined on input line 2044.
 
-LaTeX Warning: Reference `fig:tpPDC' on page 52 undefined on input line 1532.
-
-<StormwaterHeatmapTechReference_files/figure-latex/tpPDC-1.pdf, id=812, 469.755p
+<StormwaterHeatmapTechReference_files/figure-latex/tpPDC-1.pdf, id=856, 469.755p
 t x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/tpPDC-1.pdf Graphic file
  (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/tpPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/tpPDC
--1.pdf  used on input line 1538.
+-1.pdf  used on input line 2050.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[52
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.18
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/pbtrace-1.pdf>]
+[60]
 
-LaTeX Warning: Reference `fig:tptrace' on page 53 undefined on input line 1543.
+LaTeX Warning: Reference `fig:tptrace' on page 61 undefined on input line 2055.
 
-<StormwaterHeatmapTechReference_files/figure-latex/tptrace-1.pdf, id=829, 469.75
+<StormwaterHeatmapTechReference_files/figure-latex/tptrace-1.pdf, id=864, 469.75
 5pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/tptrace-1.pdf Graphic fi
 le (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/tptrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/tptra
-ce-1.pdf  used on input line 1544.
+ce-1.pdf  used on input line 2056.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1543--1548
+Underfull \hbox (badness 10000) in paragraph at lines 2055--2060
 []
  []
 
 
-Underfull \hbox (badness 1038) in paragraph at lines 1543--1548
+Underfull \hbox (badness 1038) in paragraph at lines 2055--2060
 \TU/lmr/m/n/10 ### To-tal Sus-pended Solids #### Re-gres-sion Co-ef-fi-cients Re
 -gres-sion
  []
 
-[53<./StormwaterHeatmapTechReference_files/figure-latex/tpPDC-1.pdf><./Stormwate
+[61<./StormwaterHeatmapTechReference_files/figure-latex/tpPDC-1.pdf><./Stormwate
 rHeatmapTechReference_files/figure-latex/tptrace-1.pdf>]
-Overfull \hbox (64.40997pt too wide) in paragraph at lines 1553--1566
- [][] 
- []
 
+LaTeX Warning: Reference `fig:tssPDC' on page 62 undefined on input line 2126.
 
-LaTeX Warning: Reference `fig:tssPDC' on page 54 undefined on input line 1571.
-
-<StormwaterHeatmapTechReference_files/figure-latex/tssPDC-1.pdf, id=846, 469.755
+[62]
+<StormwaterHeatmapTechReference_files/figure-latex/tssPDC-1.pdf, id=887, 469.755
 pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/tssPDC-1.pdf Graphic fil
 e (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/tssPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/tssPD
-C-1.pdf  used on input line 1577.
+C-1.pdf  used on input line 2132.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-LaTeX Warning: Reference `fig:tsstrace' on page 54 undefined on input line 1582.
+LaTeX Warning: Reference `fig:tsstrace' on page 63 undefined on input line 2137.
 
 
-<StormwaterHeatmapTechReference_files/figure-latex/tsstrace-1.pdf, id=847, 469.7
+<StormwaterHeatmapTechReference_files/figure-latex/tsstrace-1.pdf, id=888, 469.7
 55pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/tsstrace-1.pdf Graphic f
 ile (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/tsstrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/tsstr
-ace-1.pdf  used on input line 1583.
+ace-1.pdf  used on input line 2138.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[54
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.19
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/tssPDC-1.pdf>]
-Overfull \hbox (64.40997pt too wide) in paragraph at lines 1597--1610
- [][] 
- []
+[63<./StormwaterHeatmapTechReference_files/figure-latex/tssPDC-1.pdf>] [64<./Sto
+rmwaterHeatmapTechReference_files/figure-latex/tsstrace-1.pdf>]
 
+LaTeX Warning: Reference `fig:pahPDC' on page 65 undefined on input line 2213.
 
-LaTeX Warning: Reference `fig:pahPDC' on page 55 undefined on input line 1615.
-
-<StormwaterHeatmapTechReference_files/figure-latex/pahPDC-1.pdf, id=864, 469.755
+<StormwaterHeatmapTechReference_files/figure-latex/pahPDC-1.pdf, id=915, 469.755
 pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/pahPDC-1.pdf Graphic fil
 e (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/pahPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/pahPD
-C-1.pdf  used on input line 1621.
+C-1.pdf  used on input line 2219.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[55
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.20
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/tsstrace-1.pdf>]
+[65]
 
-LaTeX Warning: Reference `fig:pahtrace' on page 56 undefined on input line 1626.
+LaTeX Warning: Reference `fig:pahtrace' on page 66 undefined on input line 2224.
 
 
-<StormwaterHeatmapTechReference_files/figure-latex/pahtrace-1.pdf, id=881, 469.7
+<StormwaterHeatmapTechReference_files/figure-latex/pahtrace-1.pdf, id=923, 469.7
 55pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/pahtrace-1.pdf Graphic f
 ile (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/pahtrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/pahtr
-ace-1.pdf  used on input line 1627.
+ace-1.pdf  used on input line 2225.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[66<./StormwaterHeatmapTechReference_files/figure-latex/pahPDC-1.pdf><./Stormwat
+erHeatmapTechReference_files/figure-latex/pahtrace-1.pdf>] [67]
 
-Overfull \hbox (77.59996pt too wide) in paragraph at lines 1641--1656
- [][] 
- []
+LaTeX Warning: Reference `fig:cpahPDC' on page 68 undefined on input line 2312.
 
-[56<./StormwaterHeatmapTechReference_files/figure-latex/pahPDC-1.pdf><./Stormwat
-erHeatmapTechReference_files/figure-latex/pahtrace-1.pdf>]
-
-LaTeX Warning: Reference `fig:cpahPDC' on page 57 undefined on input line 1661.
-
-<StormwaterHeatmapTechReference_files/figure-latex/cpahPDC-1.pdf, id=899, 469.75
+<StormwaterHeatmapTechReference_files/figure-latex/cpahPDC-1.pdf, id=949, 469.75
 5pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/cpahPDC-1.pdf Graphic fi
 le (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/cpahPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/cpahP
-DC-1.pdf  used on input line 1667.
+DC-1.pdf  used on input line 2318.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
 
-LaTeX Warning: Reference `fig:cpahtrace' on page 57 undefined on input line 1672
+LaTeX Warning: Reference `fig:cpahtrace' on page 68 undefined on input line 2323
 .
 
-<StormwaterHeatmapTechReference_files/figure-latex/cpahtrace-1.pdf, id=900, 469.
+<StormwaterHeatmapTechReference_files/figure-latex/cpahtrace-1.pdf, id=950, 469.
 755pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/cpahtrace-1.pdf Graphic 
 file (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/cpahtrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/cpaht
-race-1.pdf  used on input line 1673.
+race-1.pdf  used on input line 2324.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[57
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.21
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/cpahPDC-1.pdf>]
-Overfull \hbox (64.40997pt too wide) in paragraph at lines 1685--1698
- [][] 
- []
+[68<./StormwaterHeatmapTechReference_files/figure-latex/cpahPDC-1.pdf>] [69<./St
+ormwaterHeatmapTechReference_files/figure-latex/cpahtrace-1.pdf>]
 
+LaTeX Warning: Reference `fig:hpahPDC' on page 70 undefined on input line 2397.
 
-LaTeX Warning: Reference `fig:hpahPDC' on page 58 undefined on input line 1703.
-
-<StormwaterHeatmapTechReference_files/figure-latex/hpahPDC-1.pdf, id=919, 469.75
+<StormwaterHeatmapTechReference_files/figure-latex/hpahPDC-1.pdf, id=976, 469.75
 5pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/hpahPDC-1.pdf Graphic fi
 le (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/hpahPDC-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/hpahP
-DC-1.pdf  used on input line 1709.
+DC-1.pdf  used on input line 2403.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[58
-warning  (pdf backend): ignoring duplicate destination with the name 'table.4.22
-'
-<./StormwaterHeatmapTechReference_files/figure-latex/cpahtrace-1.pdf>]
+[70]
 
-LaTeX Warning: Reference `fig:hpahtrace' on page 59 undefined on input line 1714
+LaTeX Warning: Reference `fig:hpahtrace' on page 71 undefined on input line 2408
 .
 
-<StormwaterHeatmapTechReference_files/figure-latex/hpahtrace-1.pdf, id=936, 469.
+<StormwaterHeatmapTechReference_files/figure-latex/hpahtrace-1.pdf, id=984, 469.
 755pt x 325.215pt>
 File: StormwaterHeatmapTechReference_files/figure-latex/hpahtrace-1.pdf Graphic 
 file (type pdf)
 <use StormwaterHeatmapTechReference_files/figure-latex/hpahtrace-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/hpaht
-race-1.pdf  used on input line 1715.
+race-1.pdf  used on input line 2409.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[59<./StormwaterHeatmapTechReference_files/figure-latex/hpahPDC-1.pdf><./Stormwa
+[71<./StormwaterHeatmapTechReference_files/figure-latex/hpahPDC-1.pdf><./Stormwa
 terHeatmapTechReference_files/figure-latex/hpahtrace-1.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-1.pdf, id=95
-3, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-1.pdf G
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-1.pdf, id=10
+01, 469.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-1.pdf G
 raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-1.pdf>
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-1.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-1.pdf  used on input line 1726.
+ed-chunk-28-1.pdf  used on input line 2420.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-2.pdf, id=95
-4, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-2.pdf G
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-2.pdf, id=10
+02, 469.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-2.pdf G
 raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-2.pdf>
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-2.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-2.pdf  used on input line 1732.
+ed-chunk-28-2.pdf  used on input line 2426.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[60<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-1.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-3.pdf, id=96
-9, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-3.pdf G
+[72<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-1.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-3.pdf, id=10
+16, 469.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-3.pdf G
 raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-3.pdf>
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-3.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-3.pdf  used on input line 1738.
+ed-chunk-28-3.pdf  used on input line 2432.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-4.pdf, id=97
-0, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-4.pdf G
-raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-4.pdf>
-Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-4.pdf  used on input line 1744.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[61<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-2.pdf><
-./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-3.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-5.pdf, id=99
-3, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-5.pdf G
-raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-5.pdf>
-Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-5.pdf  used on input line 1750.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-6.pdf, id=99
-4, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-6.pdf G
-raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-6.pdf>
-Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-6.pdf  used on input line 1756.
-(luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[62<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-4.pdf><
-./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-5.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-7.pdf, id=10
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-4.pdf, id=10
 17, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-7.pdf G
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-4.pdf G
 raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-7.pdf>
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-4.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-7.pdf  used on input line 1762.
+ed-chunk-28-4.pdf  used on input line 2438.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-8.pdf, id=10
-18, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-8.pdf G
+[73<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-2.pdf><
+./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-3.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-5.pdf, id=10
+40, 469.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-5.pdf G
 raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-8.pdf>
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-5.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-8.pdf  used on input line 1768.
+ed-chunk-28-5.pdf  used on input line 2444.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[63<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-6.pdf><
-./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-7.pdf>]
-<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-9.pdf, id=10
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-6.pdf, id=10
 41, 469.755pt x 325.215pt>
-File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-9.pdf G
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-6.pdf G
 raphic file (type pdf)
-<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-9.pdf>
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-6.pdf>
 Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
-ed-chunk-27-9.pdf  used on input line 1774.
+ed-chunk-28-6.pdf  used on input line 2450.
 (luatex.def)             Requested size: 344.997pt x 238.84406pt.
-[64<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-8.pdf><
-./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-27-9.pdf>] [6
-5
+[74<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-4.pdf><
+./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-5.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-7.pdf, id=10
+65, 469.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-7.pdf G
+raphic file (type pdf)
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-7.pdf>
+Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
+ed-chunk-28-7.pdf  used on input line 2456.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-8.pdf, id=10
+66, 469.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-8.pdf G
+raphic file (type pdf)
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-8.pdf>
+Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
+ed-chunk-28-8.pdf  used on input line 2462.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[75<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-6.pdf><
+./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-7.pdf>]
+<StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-9.pdf, id=10
+89, 469.755pt x 325.215pt>
+File: StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-9.pdf G
+raphic file (type pdf)
+<use StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-9.pdf>
+Package luatex.def Info: StormwaterHeatmapTechReference_files/figure-latex/unnam
+ed-chunk-28-9.pdf  used on input line 2468.
+(luatex.def)             Requested size: 344.997pt x 238.84406pt.
+[76<./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-8.pdf><
+./StormwaterHeatmapTechReference_files/figure-latex/unnamed-chunk-28-9.pdf>] [7
+7
 Missing character: There is no β (U+03B2) in font [lmroman10-regular]:+tlig;!
-] [66] [67] [68] [69]
+] [78]
 Chapter 5.
+[79
 
-warning  (pdf backend): ignoring duplicate destination with the name 'refs'
+] [80] [81] [82]
+Appendix A.
+[83
 
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Anan20
-02'
+] [84
 
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Anders
-on2007'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Arkoos
-h2001'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Baldwi
-n2011'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-booth2
-004reviving'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Depart
-mentofEcology2014'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Dinico
-la1990'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Feist2
-017'
-[70
-
-]
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Gaw201
-4'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-hadfie
-ld2010mcmc'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Helsel
-2012'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Incard
-ona2011'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Jarvis
-2015'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Kayhan
-ian2012'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-County
-2014'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Lamper
-t2019'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Levin'
-
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Lyngby
-1984'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Jr2018
-'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-McInty
-re2015'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Meador
-2006'
-[71]
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-moore2
-019user'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-NASAGo
-ddardEarthSciencesDataandInformationServicesCenterGESDISC2019'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Palmer
-2019'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Rice20
-00'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-RossC.
-W.L.PrihodkoJ.Y.AnchangS.S.KumarW.Ji2018'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Ross20
-00'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Scholz
-2011'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-SoilSu
-rveyStaff2016'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-SoilSu
-rveyStaff2018'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-USEPA2
-019'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Walsh2
-005'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Washin
-gtonStateDepartmentofEcology2011'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-Washin
-gtonStateDepartmentofEcologyandWashingtonDepartmentofHealth2012'
-[72]
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-WDFW20
-11'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-No2015
-'
-
-warning  (pdf backend): ignoring duplicate destination with the name 'ref-yang20
-18new'
-[73] [74
-
-] [75] [76] [77] [78] [79] [80] [81] [82] [83] [84] [85] [86] [87] [88] [89] [9
-0] [91] [92] [93] [94] [95]
-Overfull \hbox (51.03996pt too wide) in paragraph at lines 3379--3400
- [][] 
- []
-
-[96
-
-
-warning  (pdf backend): ignoring duplicate destination with the name 'table.5.1'
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 3443--3444
+] [85]
+Underfull \hbox (badness 10000) in paragraph at lines 2753--2754
 \TU/lmr/m/n/10 google.com/bigquery/docs/reference/standard-sql/geography_functio
 ns$[] for
  []
 
 
-Overfull \hbox (50.35999pt too wide) in alignment at lines 3447--3451
+Overfull \hbox (50.36003pt too wide) in alignment at lines 2757--2761
  [][][][][] 
  []
 
 
-Overfull \hbox (50.35999pt too wide) in alignment at lines 3451--3457
+Overfull \hbox (50.36003pt too wide) in alignment at lines 2761--2767
  [][][][][] 
  []
 
-[97]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3486.
-[98]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3486.
+[86]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2796.
+[87]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2796.
 (./StormwaterHeatmapTechReference.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3486.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3486.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2796.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2796.
 Package rerunfilecheck Info: File `StormwaterHeatmapTechReference.out' has not c
 hanged.
-(rerunfilecheck)             Checksum: 1C9A36D4B891CF93BE1B68FE88698EAE;5280.
+(rerunfilecheck)             Checksum: 47ACDF477783202C2A97BC76AF5AD9C3;5678.
 
 LaTeX Warning: There were undefined references.
 
@@ -2024,16 +1702,15 @@ LaTeX Warning: There were multiply-defined labels.
 )
 
 Here is how much of LuaTeX's memory you used:
- 19750 strings out of 480883
+ 18330 strings out of 480883
  125171,953878 words of node,token memory allocated
- 824 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 11 glue, 4 kern, 1 glyph, 40 attribute, 61 glue_spe
-c, 40 attribute_list, 1 write, 16 pdf_action nodes
-   avail lists: 1:2,2:4851,3:209,4:40,5:673,6:45,7:8298,8:109,9:1854,10:22,11:39
-7
- 36173 multiletter control sequences out of 65536+600000
- 83 fonts using 16708947 bytes
- 53i,12n,118p,1604b,441s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 761 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 8 glue, 4 kern, 1 glyph, 35 attribute, 59 glue_spec
+, 35 attribute_list, 1 write, 14 pdf_action nodes
+   avail lists: 1:2,2:1859,3:178,4:39,5:280,6:45,7:5178,8:109,9:651,10:22,11:397
+ 34873 multiletter control sequences out of 65536+600000
+ 82 fonts using 16678095 bytes
+ 53i,11n,118p,1604b,446s stack positions out of 5000i,500n,10000p,200000b,100000s
 <c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lm
 roman10-bolditalic.otf><c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/font
 s/opentype/public/lm/lmmono10-regular.otf><c:/Users/cnilsen/AppData/Roaming/Tiny
@@ -2051,10 +1728,10 @@ yTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf><c:/Users/cnilsen/Ap
 pData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
 <c:/Users/cnilsen/AppData/Roaming/TinyTeX/texmf-dist/fonts/opentype/public/lm/lm
 roman17-regular.otf>
-Output written on StormwaterHeatmapTechReference.pdf (99 pages, 6420424 bytes).
+Output written on StormwaterHeatmapTechReference.pdf (88 pages, 6401452 bytes).
 
-PDF statistics: 1349 PDF objects out of 1440 (max. 8388607)
- 1118 compressed objects within 12 object streams
- 385 named destinations out of 1000 (max. 131072)
- 233 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1289 PDF objects out of 1440 (max. 8388607)
+ 1070 compressed objects within 11 object streams
+ 370 named destinations out of 1000 (max. 131072)
+ 241 words of extra memory for PDF output out of 10000 (max. 100000000)
 
