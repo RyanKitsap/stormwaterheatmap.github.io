@@ -134,7 +134,11 @@
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="appendix-a-regional-hspf-calibration-factors.html"><a href="appendix-a-regional-hspf-calibration-factors.html"><i class="fa fa-check"></i><b>A</b> Appendix A - Regional HSPF Calibration Factors</a></li>
 <li class="chapter" data-level="B" data-path="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html"><a href="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html"><i class="fa fa-check"></i><b>B</b> Appendix B - Instructions for Accessing Tabulated Hydrology Results via BigQuery</a><ul>
-<li class="chapter" data-level="" data-path="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html"><a href="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html#tabulated-results-via-bigquery"><i class="fa fa-check"></i>Tabulated Results via BigQuery</a></li>
+<li class="chapter" data-level="" data-path="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html"><a href="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html#tabulated-results-via-bigquery"><i class="fa fa-check"></i>Tabulated Results via BigQuery</a><ul>
+<li class="chapter" data-level="" data-path="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html"><a href="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html#schema"><i class="fa fa-check"></i>Schema</a></li>
+<li class="chapter" data-level="" data-path="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html"><a href="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html#querying-tabulated-results"><i class="fa fa-check"></i>Querying Tabulated Results</a></li>
+<li class="chapter" data-level="" data-path="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html"><a href="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html#querying-geometry"><i class="fa fa-check"></i>Querying Geometry</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -157,7 +161,219 @@
 <h1><span class="header-section-number">B</span> Appendix B - Instructions for Accessing Tabulated Hydrology Results via BigQuery</h1>
 <div id="tabulated-results-via-bigquery" class="section level2 unnumbered">
 <h2>Tabulated Results via BigQuery</h2>
+<p>Tabulated hydrology results are available via <a href="https://cloud.google.com/bigquery">Google BigQuery</a>, a cloud-based relational database that includes a distributed SQL engine. The data are located on the <a href="https://console.cloud.google.com/bigquery?project=tnc-data-v1"><code>tnc-data-v1</code> data bucket</a> (sign-in require). The table is named <code>tnc-data-v1:hydrology.gfdl.</code> BigQuery supports several client libraries. See <a href="https://cloud.google.com/bigquery/docs/reference/libraries" class="uri">https://cloud.google.com/bigquery/docs/reference/libraries</a> for a list of supported clients libraries.</p>
+<p>Using R, the tnc-data-v1 databucket can be accessed through a database connection using the DBI package:</p>
+<div id="schema" class="section level3 unnumbered">
+<h3>Schema</h3>
+<p>The table schema are shown in Table <a href="appendix-b-instructions-for-accessing-tabulated-hydrology-results-via-bigquery.html#tab:schemaTable">B.1</a>.</p>
+<table>
+<caption>
+<span id="tab:schemaTable">Table B.1: </span>BigQuery Table Schema for <code>tnc-data-v1:hydrology.gfdl.</code>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Fieldname
+</th>
+<th style="text-align:left;">
+Type
+</th>
+<th style="text-align:left;">
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+grid
+</td>
+<td style="text-align:left;">
+STRING
+</td>
+<td style="text-align:left;">
+WRF Grid ID Number
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+year
+</td>
+<td style="text-align:left;">
+INTEGER
+</td>
+<td style="text-align:left;">
+Year of Simulation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+month
+</td>
+<td style="text-align:left;">
+INTEGER
+</td>
+<td style="text-align:left;">
+Month of Simulation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+comp
+</td>
+<td style="text-align:left;">
+STRING
+</td>
+<td style="text-align:left;">
+HSPF Runoff component (AGWO, IFWO, SURO)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+hru000 … hru252
+</td>
+<td style="text-align:left;">
+STRING
+</td>
+<td style="text-align:left;">
+Runoff (mm) (one column for each HRU)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Datetime
+</td>
+<td style="text-align:left;">
+TIMESTAMP
+</td>
+<td style="text-align:left;">
+Simulation Hour (UTC)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+simulation_day
+</td>
+<td style="text-align:left;">
+INTEGER
+</td>
+<td style="text-align:left;">
+Day of simulation (01-Jan-1970 = Day 1)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+simulation_day
+</td>
+<td style="text-align:left;">
+INTEGER
+</td>
+<td style="text-align:left;">
+Day of simulation (01-Jan-1970 = Day 1)|
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="querying-tabulated-results" class="section level3 unnumbered">
+<h3>Querying Tabulated Results</h3>
+<p>The data may be queried through Google Cloud Platform directly, or through a number of available software libraries. Queries are performed through standard SQL language. Some example queries are provided below.</p>
+<p>Get all surface flow components from the SeaTac precipitation grid (ID16_V7) for the years 1970-1999:</p>
+<pre><code>SELECT
+  *
+FROM
+  `tnc-data-v1.hydrology.gfdl`
+WHERE
+  grid = &quot;ID16_V7&quot;
+  AND comp IN (&#39;suro&#39;,
+    &#39;ifwo&#39;)
+  AND year BETWEEN 1970
+  AND 1999</code></pre>
+<p>Get the annual peak flow for surface flow components from the SeaTac precipitation grid (ID16_V7) for the years 1970-1999:</p>
+<pre><code>SELECT
+  max(hru250) as peakQ, Year, 
+FROM
+  `tnc-data-v1.hydrology.gfdl`
+WHERE
+  grid = &quot;ID16_V7&quot;
+  AND comp IN (&#39;suro&#39;,
+    &#39;ifwo&#39;)
+  AND year BETWEEN 1970
+  AND 1999
+ Group by Year</code></pre>
+</div>
+<div id="querying-geometry" class="section level3 unnumbered">
+<h3>Querying Geometry</h3>
+<p>Google BigQuery supports PostGIS geometry functions (see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions" class="uri">https://cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions</a> for instructions).</p>
+<p>Grid geometries are available from the <code>tnc-data-v1.gfdl.geometry</code> table on Big Query. The table schema is as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Fieldname</th>
+<th>Type</th>
+<th>Description</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>grid</td>
+<td>STRING</td>
+<td>WRF Grid ID Number</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>xy</td>
+<td>GEOGRAPHY</td>
+<td>Centroid of the grid (PostGIS point) )</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>geohash</td>
+<td>String</td>
+<td>PostGIS geohash string approximating grid boundary</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>geometry</td>
+<td>STRING</td>
+<td>Well known text format of the grid boundary</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>An example query to return the Grid ID covering the Seattle Center:</p>
+<pre><code>WITH
+  SeattleCenter AS (
+  SELECT
+    ST_geogpoint(-122.35,
+      47.62) AS location)
+SELECT
+  grid
+FROM
+  `tnc-data-v1.gfdl.geometry`
+WHERE
+  ST_DWITHIN(ST_GEOGFROMTEXT(geometry),
+    (
+    SELECT
+      location
+    FROM
+      SeattleCenter),
+    0)</code></pre>
+<p>Returns the grid ID pertaining to this location:</p>
+<p>Row|grid
+1|ID16_V9</p>
+<!-- Citations
 
+end chapter
+--->
+
+</div>
 </div>
 </div>
 

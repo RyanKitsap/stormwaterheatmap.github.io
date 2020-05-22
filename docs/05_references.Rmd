@@ -5,8 +5,6 @@
 # (APPENDIX) Appendix {-}
  
 # Appendix A - Regional HSPF Calibration Factors
- 
-
 
 ```{r knitrinitAppendix, echo=FALSE,  message=FALSE, warning=FALSE, cache=FALSE}
 library(knitr)
@@ -32,19 +30,25 @@ opts_knit$set(warning = FALSE,message = FALSE,echo=FALSE)
 #hrbrthemes::update_geom_font_defaults()
 ```
 
-# Appendix B {-}    
 
-**Instructions for Accessing Tabulated Hydrology Results via BigQuery**    
+```{r}
+library(readr)
+soilsparams <- read_csv("data/soilsparams.csv")%>%
+  pivot_wider(names_from = Veg, values_from = Value)
+
+```
+```{r}
+kable(soilsparams)
+```
+
+
+# Appendix B - Instructions for Accessing Tabulated Hydrology Results via BigQuery    
 
 ## Tabulated Results via BigQuery  {-} 
 
 Tabulated hydrology results are available via [Google BigQuery](https://cloud.google.com/bigquery), a cloud-based relational database that includes a distributed SQL engine. The data are located on the [`tnc-data-v1` data bucket](https://console.cloud.google.com/bigquery?project=tnc-data-v1) (sign-in require). The table is named `tnc-data-v1:hydrology.gfdl.` BigQuery supports several client libraries. See https://cloud.google.com/bigquery/docs/reference/libraries for a list of supported clients libraries. 
 
 Using R, the tnc-data-v1 databucket can be accessed through a database connection using the DBI package: 
-
-
-
-
 
 ### Schema  {-} 
 
