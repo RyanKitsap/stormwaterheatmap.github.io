@@ -55,7 +55,7 @@ This guidance calls for the application of continuous simulation models based on
 
 HSPF contains a number of specialized modules that are not used by WWHM. These include modules related to snowmelt, sediment budgets, and specific water quality routines. The primary HSPF routines used by WWHM are designated as ```IWATER``` (water budget for impervious land cover) and ```PWATER``` (water budget for pervious land cover). A graphical schematic of the ```PWATER``` routine is shown in Figure \@ref(fig:hspfFig).
 
-```{r hspfFig, echo=FALSE, fig.cap='HSPF PERLND Conceptual Model', fig.height=6, fig.width=6, warning=FALSE}
+```{r hspfFig, echo=FALSE, fig.cap="HSPF PERLND Conceptual Model", warning=FALSE}
 knitr::include_graphics('images/hspf_perlnd.png')
 ```
 
@@ -437,11 +437,11 @@ ggplot(exampleFlowDuration) +
 
 The flow duration index can be described by Equation \@ref(eq:fdr). 
 
-\begin{equation}
+$$
   \ln\left(\frac{\sum_{ }^{ }q_{current}\Delta t}{\sum_{ }^{ }q_{forest}\Delta t}+1\right) \\
   \text{for: }\left\{ \ 0.06\cdot Q_{2,forest\ }\le\ q\ \le\ Q_{50,forest}\right\}   
   (\#eq:fdr)
-\end{equation}
+$$
 
 Where q~current~ is the simulated discharge for current or altered conditions and q~forest~ is the predevelopment or forested conditions. One is added to this ratio and the logarithm is taken to produce an index that generally falls between 1 and 10. This index is then applied to hru/grid combinations in the stormwater heatmap to produce a spatially explicit mapping of flow alteration. Figure  \@ref(fig:flowIndexfig) shows a summary of flow index values used in the stormwater heatmap.     
 

@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="hydrology.html"/>
-<link rel="next" href="appendix-a.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -123,8 +123,14 @@
 <li class="chapter" data-level="4.4.4" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#lead-1"><i class="fa fa-check"></i><b>4.4.4</b> Lead</a></li>
 <li class="chapter" data-level="4.4.5" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#total-phosphorus-1"><i class="fa fa-check"></i><b>4.4.5</b> Total Phosphorus</a></li>
 <li class="chapter" data-level="4.4.6" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#total-pah-1"><i class="fa fa-check"></i><b>4.4.6</b> Total PAH</a></li>
+<li class="chapter" data-level="4.4.7" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#total-cpah"><i class="fa fa-check"></i><b>4.4.7</b> Total CPAH</a></li>
+<li class="chapter" data-level="4.4.8" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#total-hpah-1"><i class="fa fa-check"></i><b>4.4.8</b> Total HPAH</a></li>
 </ul></li>
+<li class="chapter" data-level="4.5" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#predictions"><i class="fa fa-check"></i><b>4.5</b> Predictions</a></li>
+<li class="chapter" data-level="4.6" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#discussion"><i class="fa fa-check"></i><b>4.6</b> Discussion</a></li>
+<li class="chapter" data-level="4.7" data-path="water-quality-statistics.html"><a href="water-quality-statistics.html#generation-of-heatmap-layers"><i class="fa fa-check"></i><b>4.7</b> Generation of heatmap layers</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References</a></li>
 <li class="chapter" data-level="" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i>Appendix A</a></li>
 <li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i>Appendix B</a><ul>
 <li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#tabulated-results-via-bigquery"><i class="fa fa-check"></i>Tabulated Results via BigQuery</a><ul>
@@ -133,7 +139,6 @@
 <li class="chapter" data-level="" data-path="appendix-b.html"><a href="appendix-b.html#querying-geometry"><i class="fa fa-check"></i>Querying Geometry</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -158,7 +163,7 @@
 <h2><span class="header-section-number">4.1</span> Data Sources</h2>
 <div id="outfall-data" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Outfall Data</h3>
-<p>The primary source of measured stormwater data is the S8.D Municipal Stormwater Permit Outfall Data (referred to as the S8 Data in this document) provided by the Washington Department of Ecology <span class="citation">(William Hobbs et al. <a href="#ref-No2015" role="doc-biblioref">2015</a>)</span>. Special Condition S8.D of the 2007-2012 Phase I Municipal Stormwater Permit required permittees to collect and analyze data to evaluate pollutant loadings of stormwater discharged from different land uses: high density (HD) residential, low density (LD) residential, commercial, and industrial. Phase I Permittees<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> collected water quality and flow data, sediment data, and toxicity information from stormwater discharges during storm events.</p>
+<p>The primary source of measured stormwater data is the S8.D Municipal Stormwater Permit Outfall Data (referred to as the S8 Data in this document) provided by the Washington Department of Ecology <span class="citation">(William Hobbs et al. <a href="water-quality-statistics.html#ref-No2015" role="doc-biblioref">2015</a>)</span>. Special Condition S8.D of the 2007-2012 Phase I Municipal Stormwater Permit required permittees to collect and analyze data to evaluate pollutant loadings of stormwater discharged from different land uses: high density (HD) residential, low density (LD) residential, commercial, and industrial. Phase I Permittees<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> collected water quality and flow data, sediment data, and toxicity information from stormwater discharges during storm events.</p>
 <p>The stormwater outfall data is available from Ecology via an open-data api at: <a href="https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-Permit-Outfall-Data/d958-q2ci" class="uri">https://data.wa.gov/Natural-Resources-Environment/Municipal-Stormwater-Permit-Outfall-Data/d958-q2ci</a>.</p>
 <p>COCs analyzed in this study are show in Table <a href="water-quality-statistics.html#tab:selparms">4.1</a>.</p>
 <table>
@@ -233,7 +238,7 @@ HPAH - Water - Total
 Figure 4.1: All observations - outliers in place
 </p>
 </div>
-Quantile-quantile plots of COCs analyzed are shown in <a href="water-quality-statistics.html#fig:tidyqqplots">4.2</a>
+<p>Quantile-quantile plots of COCs analyzed are shown in <a href="water-quality-statistics.html#fig:tidyqqplots">4.2</a></p>
 <div class="figure"><span id="fig:tidyqqplots"></span>
 <img src="StormwaterHeatmapTechReference_files/figure-html/tidyqqplots-1.png" alt="Quantile-quantile plots of COCs, log scale" width="672" />
 <p class="caption">
@@ -403,7 +408,7 @@ LU_ratio
 </div>
 <div id="censored-data" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Censored Data</h3>
-<p>All COCs had non-detect (left-censored) data present. Ecology flagged non-detect data and provided the reporting limit for each non-detect value. For purposes of model selection, non-detect values were substituted with the reporting limit. For regression, concentration was modeled as a two-parameter response variable according to the approaches detailed by Hadfield <span class="citation">(<a href="#ref-hadfield2010mcmc" role="doc-biblioref">2010</a>)</span> and Helsel <span class="citation">(<a href="#ref-Helsel2012" role="doc-biblioref">2012</a>)</span>. We set the first parameter equal to the measured concentration and the second parameter equal to the reporting limit. We then specified a censored-gaussian prior distribution or censored-log-gaussian prior distribution.</p>
+<p>All COCs had non-detect (left-censored) data present. Ecology flagged non-detect data and provided the reporting limit for each non-detect value. For purposes of model selection, non-detect values were substituted with the reporting limit. For regression, concentration was modeled as a two-parameter response variable according to the approaches detailed by Hadfield <span class="citation">(<a href="water-quality-statistics.html#ref-hadfield2010mcmc" role="doc-biblioref">2010</a>)</span> and Helsel <span class="citation">(<a href="water-quality-statistics.html#ref-Helsel2012" role="doc-biblioref">2012</a>)</span>. We set the first parameter equal to the measured concentration and the second parameter equal to the reporting limit. We then specified a censored-gaussian prior distribution or censored-log-gaussian prior distribution.</p>
 </div>
 <div id="model-selection" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Model Selection</h3>
@@ -429,13 +434,12 @@ LU_ratio
 <!-- show_resultsFun(10) -->
 <!-- ``` -->
 <!-- <!-- ```{r} -->
-<p>–&gt;
 <!-- j=1 -->
 <!-- models <- results[[j]] -->
 <!-- summary(models[[1]]) -->
 <!-- for (k in 2:2){ -->
 <!--   print((summary(models[[k]]))) -->
-<!--   #plot(models[[k]],,main=paste(lab,"\n","Resididuals")) --></p>
+<!--   #plot(models[[k]],,main=paste(lab,"\n","Resididuals")) -->
 <!-- } -->
 <!-- ``` -->
 <p>Linear model results for each COC are shown in the following tables. In general, the model with the lowest AIC was selected to move on to the Bayesian analysis. Only predictors that are statistically significant are shown. In some cases, no predictors were significant. In those cases, only the model intercept is reported.</p>
@@ -692,358 +696,11 @@ AIC
 </td>
 </tr>
 </table>
-Testing out knittr output
-<table style="border-collapse:collapse; border:none;">
-<caption style="font-weight: bold; text-align:left;">
-Zinc - Water - Total - No seasonal efects
-</caption>
-<tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
- 
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
-</th>
-</tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
-Predictors
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-p
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
-p
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-(Intercept)
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-107.10
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-74.47 – 139.73
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>&lt;0.001
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-4.04
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-3.65 – 4.43
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-change_year_index
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-59.22
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-27.58 – 90.87
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>&lt;0.001
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-1.01
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.64 – 1.38
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td colspan="7" style="font-weight:bold; text-align:left; padding-top:.8em;">
-Random Effects
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-σ<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-12497.08
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.47
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-τ<sub>00</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-2989.82 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.47 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-ICC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.19
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.50
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-N
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
-Observations
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-414
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-414
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.163 / 0.325
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.484 / 0.741
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-AIC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-5099.996
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-920.051
-</td>
-</tr>
-</table>
 </div>
 <div id="copper" class="section level4">
 <h4><span class="header-section-number">4.3.4.2</span> Copper</h4>
 <strong>Model with lowest AIC:</strong> <code>log-linear</code><br />
 <strong>Predictors Selected:</strong> <code>logtraffic</code>,<code>change_year_index</code>
-<table style="border-collapse:collapse; border:none;">
-<caption style="font-weight: bold; text-align:left;">
-Copper - Water - Total - No seasonal efects
-</caption>
-<tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
- 
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
-</th>
-</tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
-Predictors
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-p
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
-p
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-(Intercept)
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-67.25
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-48.38 – 86.13
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>&lt;0.001
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-5.07
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-3.46 – 6.67
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-logtraffic
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-34.36
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-22.63 – 46.10
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>&lt;0.001
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-1.86
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.83 – 2.90
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-change_year_index
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.48
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.15 – 0.80
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>0.004</strong>
-</td>
-</tr>
-<tr>
-<td colspan="7" style="font-weight:bold; text-align:left; padding-top:.8em;">
-Random Effects
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-σ<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-70.54
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.44
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-τ<sub>00</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-44.71 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.26 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-ICC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.39
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.37
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-N
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
-Observations
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-438
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-438
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.494 / 0.690
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.532 / 0.703
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-AIC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-3146.801
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-938.998
-</td>
-</tr>
-</table>
 <table style="border-collapse:collapse; border:none;">
 <caption style="font-weight: bold; text-align:left;">
 Copper - Water - Total - With seasonal efects
@@ -1294,169 +951,6 @@ AIC
 <strong>Predictors Selected:</strong> <code>LU_ratio</code>
 <table style="border-collapse:collapse; border:none;">
 <caption style="font-weight: bold; text-align:left;">
-Nitrite-Nitrate - Water - Dissolved - No seasonal efects
-</caption>
-<tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
- 
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
-</th>
-</tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
-Predictors
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-p
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
-p
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-(Intercept)
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-496.14
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-317.88 – 674.39
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>&lt;0.001
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-5.72
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-5.37 – 6.07
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-LU_ratio
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-79.94
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-10.88 – 149.01
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>0.023</strong>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.16
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.02 – 0.30
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>0.023</strong>
-</td>
-</tr>
-<tr>
-<td colspan="7" style="font-weight:bold; text-align:left; padding-top:.8em;">
-Random Effects
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-σ<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-185073.43
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.56
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-τ<sub>00</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-107631.70 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.43 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-ICC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.37
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.43
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-N
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
-Observations
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-406
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-406
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.128 / 0.449
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.147 / 0.517
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-AIC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-6102.003
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-969.788
-</td>
-</tr>
-</table>
-<table style="border-collapse:collapse; border:none;">
-<caption style="font-weight: bold; text-align:left;">
 Nitrite-Nitrate - Water - Dissolved - With seasonal efects
 </caption>
 <tr>
@@ -1694,17 +1188,17 @@ AIC
 <strong>Predictors Selected:</strong> <code>change_year_index</code>,
 <table style="border-collapse:collapse; border:none;">
 <caption style="font-weight: bold; text-align:left;">
-Lead - Water - Total - No seasonal efects
+Lead - Water - Total - With seasonal efects
 </caption>
 <tr>
 <th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
  
 </th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
+linear seasonal
 </th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
+log-linear seasonal
 </th>
 </tr>
 <tr>
@@ -1900,169 +1394,6 @@ AIC
 <h4><span class="header-section-number">4.3.4.5</span> Total Phosphorus</h4>
 <strong>Model with lowest AIC:</strong> <code>log-linear seasonal</code><br />
 <strong>Predictors Selected:</strong> <code>logtraffic</code>
-<table style="border-collapse:collapse; border:none;">
-<caption style="font-weight: bold; text-align:left;">
-Total Phosphorus - Water - Total - No seasonal efects
-</caption>
-<tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
- 
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
-</th>
-</tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
-Predictors
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-p
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
-p
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-(Intercept)
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-478.14
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-315.58 – 640.69
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>&lt;0.001
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-7.21
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-5.87 – 8.54
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-logtraffic
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-214.01
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-112.86 – 315.16
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>&lt;0.001
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-1.69
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.86 – 2.53
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td colspan="7" style="font-weight:bold; text-align:left; padding-top:.8em;">
-Random Effects
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-σ<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-9810.78
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.45
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-τ<sub>00</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-3158.19 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.22 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-ICC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.24
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.33
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-N
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
-Observations
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-424
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-424
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.251 / 0.434
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.289 / 0.524
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-AIC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-5122.122
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-909.735
-</td>
-</tr>
-</table>
 <table style="border-collapse:collapse; border:none;">
 <caption style="font-weight: bold; text-align:left;">
 Total Phosphorus - Water - Total - With seasonal efects
@@ -2470,17 +1801,17 @@ AIC
 <strong>Predictors Selected:</strong> none
 <table style="border-collapse:collapse; border:none;">
 <caption style="font-weight: bold; text-align:left;">
-Total Phthalate - Water - Total - No seasonal efects
+Total Phthalate - Water - Total - With seasonal efects
 </caption>
 <tr>
 <th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
  
 </th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
+linear seasonal
 </th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
+log-linear seasonal
 </th>
 </tr>
 <tr>
@@ -2613,166 +1944,6 @@ AIC
 <h4><span class="header-section-number">4.3.4.8</span> Total PAH</h4>
 <strong>Model with lowest AIC:</strong> <code>log-linear</code><br />
 <strong>Predictors Selected:</strong> <code>LU_ratio</code>
-<table style="border-collapse:collapse; border:none;">
-<caption style="font-weight: bold; text-align:left;">
-Total PAH - Water - Total - No seasonal efects
-</caption>
-<tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
- 
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
-</th>
-</tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
-Predictors
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-p
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
-p
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-(Intercept)
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.59
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.30 – 0.89
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>&lt;0.001
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--1.44
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--1.80 – -1.09
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-LU_ratio
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.16
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.30 – -0.02
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>0.021</strong>
-</td>
-</tr>
-<tr>
-<td colspan="7" style="font-weight:bold; text-align:left; padding-top:.8em;">
-Random Effects
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-σ<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-1.18
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.96
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-τ<sub>00</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.27 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.41 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-ICC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.19
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.30
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-N
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
-Observations
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-412
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-412
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.000 / 0.187
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.122 / 0.387
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-AIC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-1273.036
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-1199.303
-</td>
-</tr>
-</table>
 <table style="border-collapse:collapse; border:none;">
 <caption style="font-weight: bold; text-align:left;">
 Total PAH - Water - Total - With seasonal efects
@@ -3000,206 +2171,6 @@ AIC
 <strong>Predictors Selected:</strong> <code>logPopulation</code>, <code>logtraffic</code>
 <table style="border-collapse:collapse; border:none;">
 <caption style="font-weight: bold; text-align:left;">
-CPAH - Water - Total - No seasonal efects
-</caption>
-<tr>
-<th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
- 
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
-</th>
-<th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
-</th>
-</tr>
-<tr>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  text-align:left; ">
-Predictors
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-p
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-Estimates
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  ">
-CI
-</td>
-<td style=" text-align:center; border-bottom:1px solid; font-style:italic; font-weight:normal;  col7">
-p
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-(Intercept)
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.69
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--1.34 – -0.04
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>0.038</strong>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--2.17
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--2.46 – -1.88
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>&lt;0.001
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-logPopulation
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.18
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-0.07 – 0.29
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>0.002</strong>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-logtraffic
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.64
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--1.06 – -0.22
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-<strong>0.003</strong>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; ">
-LU_ratio
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.19
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  ">
--0.30 – -0.08
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:center;  col7">
-<strong>0.001</strong>
-</td>
-</tr>
-<tr>
-<td colspan="7" style="font-weight:bold; text-align:left; padding-top:.8em;">
-Random Effects
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-σ<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.35
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.89
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-τ<sub>00</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.03 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.27 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-ICC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.08
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.23
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-N
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-14 <sub>Location</sub>
-</td>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm; border-top:1px solid;">
-Observations
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-412
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left; border-top:1px solid;" colspan="3">
-412
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-Marginal R<sup>2</sup> / Conditional R<sup>2</sup>
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.096 / 0.166
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-0.185 / 0.372
-</td>
-</tr>
-<tr>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; text-align:left; padding-top:0.1cm; padding-bottom:0.1cm;">
-AIC
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-764.803
-</td>
-<td style=" padding:0.2cm; text-align:left; vertical-align:top; padding-top:0.1cm; padding-bottom:0.1cm; text-align:left;" colspan="3">
-1165.104
-</td>
-</tr>
-</table>
-<table style="border-collapse:collapse; border:none;">
-<caption style="font-weight: bold; text-align:left;">
 CPAH - Water - Total - With seasonal efects
 </caption>
 <tr>
@@ -3405,17 +2376,17 @@ AIC
 <strong>Predictors Selected:</strong> none
 <table style="border-collapse:collapse; border:none;">
 <caption style="font-weight: bold; text-align:left;">
-HPAH - Water - Total - No seasonal efects
+HPAH - Water - Total - With seasonal efects
 </caption>
 <tr>
 <th style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; ">
  
 </th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-linear
+linear seasonal
 </th>
 <th colspan="3" style="border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; ">
-log-linear
+log-linear seasonal
 </th>
 </tr>
 <tr>
@@ -3567,7 +2538,7 @@ AIC
 </div>
 <div id="bayesian-regression" class="section level3">
 <h3><span class="header-section-number">4.3.5</span> Bayesian Regression</h3>
-<p>We performed censored bayesian regression using a Markov chain Monte Carlo approach. We use the the MCMCglmm package in R <span class="citation">(Helsel <a href="#ref-Helsel2012" role="doc-biblioref">2012</a>)</span> for analysis.</p>
+<p>We performed censored bayesian regression using a Markov chain Monte Carlo approach. We use the the MCMCglmm package in R <span class="citation">(Helsel <a href="water-quality-statistics.html#ref-Helsel2012" role="doc-biblioref">2012</a>)</span> for analysis.</p>
 <p>Models were run for 60,000 iterations with a burn-in interval of 10,000 and a thinning interval of 13. For each regression model, we specified either a censored Gaussian or a censored log-Gaussian prior distribution, depending on the model selection results. We specified a simple prior co-variance matrix where covariances between predictors was fixed at 1. We explored other prior variances were not sensitive to these changes.</p>
 </div>
 </div>
@@ -4472,10 +3443,14 @@ residual
 </div>
 <div id="model-diagnostics-5" class="section level4">
 <h4><span class="header-section-number">4.4.6.3</span> Model Diagnostics</h4>
-Figure <a href="#fig:pahtrace"><strong>??</strong></a> shows the diagnostic trace plot of MCMC draws. This was used to verify prior distribution assumptions.<br />
-<img src="StormwaterHeatmapTechReference_files/figure-html/pahtrace-1.png" width="672" />
-### Total CPAH
-#### Regression Coefficients
+<p>Figure <a href="#fig:pahtrace"><strong>??</strong></a> shows the diagnostic trace plot of MCMC draws. This was used to verify prior distribution assumptions.<br />
+<img src="StormwaterHeatmapTechReference_files/figure-html/pahtrace-1.png" width="672" /></p>
+</div>
+</div>
+<div id="total-cpah" class="section level3">
+<h3><span class="header-section-number">4.4.7</span> Total CPAH</h3>
+<div id="regression-coefficients-6" class="section level4">
+<h4><span class="header-section-number">4.4.7.1</span> Regression Coefficients</h4>
 Regression results for Total CPAH are summarized in Table <a href="water-quality-statistics.html#tab:cpahResults">4.10</a>.
 <table>
 <caption>
@@ -4608,20 +3583,24 @@ residual
 </table>
 </div>
 <div id="posterior-uncertainty-levels-7" class="section level4">
-<h4><span class="header-section-number">4.4.6.4</span> Posterior Uncertainty Levels</h4>
+<h4><span class="header-section-number">4.4.7.2</span> Posterior Uncertainty Levels</h4>
 <p>Estimated posterior density curves with 80% confidence intervals are shown in Figure <a href="#fig:cpahPDC"><strong>??</strong></a>.</p>
 <pre><code>## [[1]]</code></pre>
 <p><img src="StormwaterHeatmapTechReference_files/figure-html/cpahPDC-1.png" width="672" /></p>
 </div>
 <div id="model-diagnostics-6" class="section level4">
-<h4><span class="header-section-number">4.4.6.5</span> Model Diagnostics</h4>
-Figure <a href="#fig:cpahtrace"><strong>??</strong></a> shows the diagnostic trace plot of MCMC draws. This was used to verify prior distribution assumptions.<br />
-<img src="StormwaterHeatmapTechReference_files/figure-html/cpahtrace-1.png" width="672" />
-### Total HPAH<br />
-#### Regression Coefficients
+<h4><span class="header-section-number">4.4.7.3</span> Model Diagnostics</h4>
+<p>Figure <a href="#fig:cpahtrace"><strong>??</strong></a> shows the diagnostic trace plot of MCMC draws. This was used to verify prior distribution assumptions.<br />
+<img src="StormwaterHeatmapTechReference_files/figure-html/cpahtrace-1.png" width="672" /></p>
+</div>
+</div>
+<div id="total-hpah-1" class="section level3">
+<h3><span class="header-section-number">4.4.8</span> Total HPAH</h3>
+<div id="regression-coefficients-7" class="section level4">
+<h4><span class="header-section-number">4.4.8.1</span> Regression Coefficients</h4>
 <table>
 <caption>
-<span id="tab:unnamed-chunk-27">Table 4.11: </span>HPAH - Water - Total - Bayseian Regression Results
+<span id="tab:unnamed-chunk-26">Table 4.11: </span>HPAH - Water - Total - Bayseian Regression Results
 </caption>
 <thead>
 <tr>
@@ -4730,50 +3709,189 @@ residual
 </table>
 </div>
 <div id="posterior-uncertainty-levels-8" class="section level4">
-<h4><span class="header-section-number">4.4.6.6</span> Posterior Uncertainty Levels</h4>
+<h4><span class="header-section-number">4.4.8.2</span> Posterior Uncertainty Levels</h4>
 <p>Estimated posterior density curves with 80% confidence intervals are shown in Figure <a href="#fig:hpahPDC"><strong>??</strong></a>.</p>
 <pre><code>## [[1]]</code></pre>
 <p><img src="StormwaterHeatmapTechReference_files/figure-html/hpahPDC-1.png" width="672" /></p>
 </div>
 <div id="model-diagnostics-7" class="section level4">
-<h4><span class="header-section-number">4.4.6.7</span> Model Diagnostics</h4>
+<h4><span class="header-section-number">4.4.8.3</span> Model Diagnostics</h4>
 <p>Figure <a href="#fig:hpahtrace"><strong>??</strong></a> shows the diagnostic trace plot of MCMC draws. This was used to verify prior distribution assumptions.<br />
-<img src="StormwaterHeatmapTechReference_files/figure-html/hpahtrace-1.png" width="672" />
-## Predictions</p>
-<p>Discussion of predictions goes here.</p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-2.png" width="672" /></p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-3.png" width="672" /></p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-4.png" width="672" /></p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-5.png" width="672" /></p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-6.png" width="672" /></p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-7.png" width="672" /></p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-8.png" width="672" /></p>
-<pre><code>## [[1]]</code></pre>
-<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-28-9.png" width="672" /></p>
-
+<img src="StormwaterHeatmapTechReference_files/figure-html/hpahtrace-1.png" width="672" /></p>
 </div>
 </div>
 </div>
+<div id="predictions" class="section level2">
+<h2><span class="header-section-number">4.5</span> Predictions</h2>
+<p>We used the models developed above to generate predictions of pollutant concentrations to verify regression parameters. We first evaluated the posterior means of the predictors to evaluate data fit. We then simulated 100 draws from the full posterior distributions to evaluate the range of predictions. Results are show below.</p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-3.png" width="672" /></p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-4.png" width="672" /></p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-5.png" width="672" /></p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-6.png" width="672" /></p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-7.png" width="672" /></p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-8.png" width="672" /></p>
+<pre><code>## [[1]]</code></pre>
+<p><img src="StormwaterHeatmapTechReference_files/figure-html/unnamed-chunk-27-9.png" width="672" /></p>
 </div>
-<h3>References</h3>
-<div id="refs" class="references">
+<div id="discussion" class="section level2">
+<h2><span class="header-section-number">4.6</span> Discussion</h2>
+<p>Our models appear to fit both the mean concentrations within each location and capture the full spread of the data within the bounds of the 95% confidence intervals. Model fit appears to be the strongest for metals (Zinc, Copper, Lead) and not as strong for organics (PAH, CPAH and HPAH). These may be improved through specifying a better prior distribution.</p>
+<p>To our knowledge, this work represents the first effort to predict stormwater pollution loading from landscape characteristics, rather than from simple land use categories. In the stormwaterheatmap tool, we use these predictive models to spatially output predicted levels of commonly reported stormwater pollutants.</p>
+</div>
+<div id="generation-of-heatmap-layers" class="section level2">
+<h2><span class="header-section-number">4.7</span> Generation of heatmap layers</h2>
+<p>To produce heatmap layers of pollutant concentration, we use the original spatial predictor layers along with a linear relationship between response and predictors. To avoid extrapolating beyond the available data, we first clamp the predictors to the high and low values observed with monitored watersheds. We then reduce predictor layers into an array-valued image, where each pixel in the model domain contains an array of predictor values. We then multiply this layer by an array that contains the intercept of the regression relationship, along with coefficients.</p>
+<p>For example for each COC, we have a linear regression in the form of:</p>
+<p><span class="math display">\[
+y_{i,j\ }=\ \beta_{0\ }+\beta_1x_1+\ ...\ +\beta_{n\ }+\epsilon_{i,j}
+\]</span></p>
+<p>Where β<sub>0</sub> is the intercept and B<sub>n</sub> are the regression coefficients. We express this as a 1-D array in the form of
+<span class="math display">\[
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+...\\\
+\beta_n
+\end{bmatrix}
+\]</span></p>
+<p>The predictor layer is comprised of pixels with 1-D arrays of predictor values in the form of:
+<span class="math display">\[
+\begin{bmatrix}
+1 \\
+x_1 \\
+...\\
+x_n \\
+\end{bmatrix}
+\]</span></p>
+<p>We then calculate the dot product of the two arrays and reduce the values to a single image. This is expressed in the same manner as the linear regression equation:</p>
+<p><span class="math display">\[
+y = \beta_0+\beta_1x_1+...\beta_nx_n 
+\]</span></p>
+<!-- References at the end here.  -->
+<div id="refs">
+<div id="ref-Anan2002">
+<p>Anan, Y; Kunito T, T Ikemoto, R Kubota, I Watanabe, S Tanabe, N Miyazaki, and E Petrov. 2002. “Elevated concentrations of trace elements in Caspian seals (Phoca caspia) found stranded during the mass mortality event in 2000.” <em>Environmental Contamination &amp; Toxicology</em> 42: 354–62.</p>
+</div>
+<div id="ref-Anderson2007">
+<p>Anderson, B, J Hunt, B Phillips, B Thompson, S Lowe, i K Tabersk, and R Carr. 2007. “Patterns and trends in sediment toxicity in the San Francisco Estuary.” <em>Environmental Research</em> 105: 145–55.</p>
+</div>
+<div id="ref-Arkoosh2001">
+<p>Arkoosh, M, E Clemons, P Huffman, A Kagley, E Casillas, N Adams, H Sanborn, T Collier, and J Stein. 2001. “Increased Susceptibility of Juvenile Chinook Salmon to Vibriosis after Exposure to Chlorinated and Aromatic Compounds Found in Contaminated Urban Estuaries.” <em>Journal of Aquatic Animal Health</em> 13 (3): 257–68.</p>
+</div>
+<div id="ref-Baldwin2011">
+<p>Baldwin, D, C Tatara, and N Scholz. 2011. “Copper induced olfactory toxicity in salmon and steelhead: Extrapolation across species and rearing environments.” <em>Aquatic Toxicology.</em> 101 (1): 295–97.</p>
+</div>
+<div id="ref-booth2004reviving">
+<p>Booth, Derek B, James R Karr, Sally Schauman, Christopher P Konrad, Sarah A Morley, Marit G Larson, and Stephen J Burges. 2004. “Reviving urban streams: Land use, hydrology, biology, and human behavior 1.” <em>JAWRA Journal of the American Water Resources Association</em> 40 (5): 1351–64.</p>
+</div>
+<div id="ref-DepartmentofEcology2014">
+<p>Department of Ecology. 2014. “Stormwater Management Manual for Western Washington,” 1192.</p>
+</div>
+<div id="ref-Dinicola1990">
+<p>Dinicola, Richard S. 1990. “Characterization and simulation of rainfall-runoff relations for headwater basins in western King and Snohomish Counties, Washington.” <em>Water-Resources Investigations Report</em> 89-4052: 52 p. <a href="https://pubs.er.usgs.gov/publication/wri894052">https://pubs.er.usgs.gov/publication/wri894052</a>.</p>
+</div>
+<div id="ref-Feist2017">
+<p>Feist, Blake E., Eric R. Buhle, David H. Baldwin, Julann A. Spromberg, Steven E. Damm, Jay W. Davis, and Nathaniel L. Scholz. 2017. “Roads to ruin: Conservation threats to a sentinel species across an urban gradient.” <em>Ecological Applications</em> 27 (8): 2382–96. <a href="https://doi.org/10.1002/eap.1615">https://doi.org/10.1002/eap.1615</a>.</p>
+</div>
+<div id="ref-Gaw2014">
+<p>Gaw, S, K Thomas, and T Hutchinson. 2014. “Sources, impacts and trends of pharmaceuticals in the marine and coastal environment.” <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em> 369: 20130572.</p>
+</div>
 <div id="ref-hadfield2010mcmc">
 <p>Hadfield, Jarrod D, and Others. 2010. “MCMC methods for multi-response generalized linear mixed models: the MCMCglmm R package.” <em>Journal of Statistical Software</em> 33 (2): 1–22.</p>
 </div>
 <div id="ref-Helsel2012">
 <p>Helsel, Denise R. 2012. <em>Statistics for Censored Environmental Data</em>.</p>
 </div>
+<div id="ref-Incardona2011">
+<p>Incardona, J, T Linbo, and N Scholz. 2011. “Cardiac toxicity of 5-ring polycyclic aromatic hydrocarbons is differentially dependent on the aryl hydrocarbon receptor 2 isoform during zebrafish development.” <em>Toxicology and Applied Pharmacology</em> 257 (2): 242–49.</p>
+</div>
+<div id="ref-Jarvis2015">
+<p>Jarvis, T., and G. Bielmyer-Fraser. 2015. “Accumulation and effects of metal mixtures in two seaweed species.” <em>Comparative Biochemistry and Physiology, Part C. Toxicology and Pharmacology</em> 171: 28–33.</p>
+</div>
+<div id="ref-Kayhanian2012">
+<p>Kayhanian, M, B Fructman, J Gulliver, C Montanaro, E Ranieri, and S Wuertz. 2012. “Review of highway runoff characteristics: Comparative analysis and universal implications.” Water Research. Vol. 46, pp.” <em>Water Research</em>, 6609–24.</p>
+</div>
+<div id="ref-County2014">
+<p>King County. 2014. “Development of a Stormwater Retrofit Plan for Water Resources Inventory Area (WRIA) 9: Comprehensive Needs and Cost Assessment and Extrapolation to Puget Sound.” Prepared by Simmonds J; Wright O, King County Department of Natural Resource; Parks, Water; Land Resources Division.</p>
+</div>
+<div id="ref-Lampert2019">
+<p>Lampert, David. 2019. “PyHSPF.” <a href="https://github.com/djlampert/PyHSPF">https://github.com/djlampert/PyHSPF</a>.</p>
+</div>
+<div id="ref-Levin">
+<p>Levin, P, E Howe, and J Robertson. n.d. “Impacts of stormwater on coastal ecosystems: the need to match the scales of management objectives and solutions.” <em>Philosophical Transactions of the Royal Society B: Biological Sciences</em>.</p>
+</div>
+<div id="ref-Lyngby1984">
+<p>Lyngby, J, and H Brix. 1984. “Seasonal and environmental variation in cadmium, copper, lead, and zinc concentrations in eelgrass (Zostera marina L.) in the Limfjord, Denmark.” <em>Aquatic Botany</em> 54: 100–106.</p>
+</div>
+<div id="ref-Jr2018">
+<p>Mauger, G. S., J. S. Won, K. Hegewisch, C. Lynch, R. Lorente Plazas, Salathe, and E. P. Salathé Jr. 2018. “New Projections of Changing Heavy Precipitation in King County.”</p>
+</div>
+<div id="ref-McIntyre2015">
+<p>McIntyre, J, J Davis, C Hinman, K Macneale, B Anulacion, N Scholz, and J Stark. 2015. “Soil bioretention protects juvenile salmon and their prey from the toxic impacts of urban stormwater runoff.” <em>Chemosphere</em> 132: 213–19.</p>
+</div>
+<div id="ref-Meador2006">
+<p>Meador, J, F Sommers, and SC Ylitalo. 2006. “Altered growth and related physiological responses in juvenile Chinook salmon (Oncorhynchus tshawytscha) from dietary exposure to polycyclic aromatic hydrocarbons (PAHs).” <em>Canadian Journal of Fisheries and Aquatic Sciences</em> 63: 2364–76.</p>
+</div>
+<div id="ref-moore2019user">
+<p>Moore, Richard B, Lucinda D McKay, Alan H Rea, Timothy R Bondelid, Curtis V Price, Thomas G Dewald, and Craig M Johnston. 2019. “User’s guide for the national hydrography dataset plus (NHDPlus) high resolution.” US Geological Survey.</p>
+</div>
+<div id="ref-NASAGoddardEarthSciencesDataandInformationServicesCenterGESDISC2019">
+<p>NASA Goddard Earth Sciences Data and Information Services Center (GES DISC). 2019. “NLDAS-2: North American Land Data Assimilation System Forcing Fields.”</p>
+</div>
+<div id="ref-Palmer2019">
+<p>Palmer, Margaret, and Albert Ruhi. 2019. “Linkages between flow regime, biota, and ecosystem processes: Implications for river restoration.” <em>Science</em> 365 (6459): eaaw2087.</p>
+</div>
+<div id="ref-Rice2000">
+<p>Rice, C, M Myers, M Willis, B French, and E Casillas. 2000. “From sediment bioassay to fish biomarker – connecting the dots using simple trophic relationships.” <em>Marine Environmental Research</em> 50: 527–22.</p>
+</div>
+<div id="ref-RossC.W.L.PrihodkoJ.Y.AnchangS.S.KumarW.Ji2018">
+<p>Ross, C.W., L. Prihodko, J.Y. Anchang, S.S. Kumar, W. Ji, N. P. Hanan. 2018. “Global Hydrologic Soil Groups (HYSOGs250m) for Curve Number-Based Runoff Modeling.” <a href="https://doi.org/10.3334/ORNLDAAC/1566">https://doi.org/10.3334/ORNLDAAC/1566</a>.</p>
+</div>
+<div id="ref-Ross2000">
+<p>Ross, P, Ellis G, M Ikonomou, L Barrett-Lennard, and R Addison. 2000. “High PCB concentrations in freeranging Pacific killer whales, Orcinus orca: Effects of age, sex and dietary preference.” <em>Marine Pollution Bulletin</em> 40 (6): 504–15.</p>
+</div>
+<div id="ref-Scholz2011">
+<p>Scholz, N, M Myers, S McCarthy, J Labenia, and J McIntyre. 2011. “Recurrent Die-Offs of Adult Coho Salmon Returning to Spawn in Puget Sound Lowland Urban Streams.” <em>PLoS ONE</em> 6 (12): e28013.</p>
+</div>
+<div id="ref-SoilSurveyStaff2016">
+<p>Soil Survey Staff. 2016. “National Value Added Look Up (valu) Table Database for the Gridded Soil Survey Geographic (gSSURGO) Database for the United States of America and the Territories, Commonwealths, and Island Nations served by the USDA-NRCS.”</p>
+</div>
+<div id="ref-SoilSurveyStaff2018">
+<p>———. 2018. “Gridded Soil Survey Geographic (gSSURGO) Database for Washington.” <a href="https://gdg.sc.egov.usda.gov/">https://gdg.sc.egov.usda.gov/</a>.</p>
+</div>
+<div id="ref-USEPA2019">
+<p>United States Environmental Protection Agency. 2019. “National rivers and streams assessment 2008-2019: A collaborative survey.” U.S. Environmental Protection Agency.</p>
+</div>
+<div id="ref-Walsh2005">
+<p>Walsh, Christopher J., Allison H. Roy, Jack W. Feminella, Peter D. Cottingham, Peter M. Groffman, and Raymond P. Morgan. 2005. “The urban stream syndrome: Current knowledge and the search for a cure.” <em>Journal of the North American Benthological Society</em> 24 (3): 706–23. <a href="https://doi.org/10.1899/04-028.1">https://doi.org/10.1899/04-028.1</a>.</p>
+</div>
+<div id="ref-WashingtonStateDepartmentofEcology2011">
+<p>Washington State Department of Ecology. 2011. “Toxics in Surface Runoff to Puget Sound: Phase 3 Data and Load Estimates.” Prepared by Herrerra Environmental COnsultants, Inc.: Washington Department of Ecology.</p>
+</div>
+<div id="ref-WashingtonStateDepartmentofEcologyandWashingtonDepartmentofHealth2012">
+<p>Washington State Department of Ecology and Washington Department of Health. 2012. “PAH Chemical Action Plan.” Prepared Davies H, Stone A, Grice J, Patora K, Kadlex M, Delistraty D, Norton D,; White J.: Washington Department of Ecology; Washington Department of Health.</p>
+</div>
+<div id="ref-WDFW2011">
+<p>WDFW. 2011. “Toxic Contaminants in Harbor Seal (Phoca vitulina) Pups from Puget Sound.” Prepared by Noell M, Ross P, Jeffries S, Lance M: Washington Department of Fish; Wildlife.</p>
+</div>
 <div id="ref-No2015">
 <p>William Hobbs, Brandi Lubliner, Nataniel Kale, and Evan Newell. 2015. “Western Washington NPDES Phase I Stormwater Permit Final S8 . D Data Characterization.” 15.</p>
+</div>
+<div id="ref-yang2018new">
+<p>Yang, Limin, Suming Jin, Patrick Danielson, Collin Homer, Leila Gass, Stacie M Bender, Adam Case, et al. 2018. “A new generation of the United States National Land Cover Database: Requirements, research priorities, design, and implementation strategies.” <em>ISPRS Journal of Photogrammetry and Remote Sensing</em> 146: 108–23.</p>
+</div>
+</div>
+
 </div>
 </div>
 <div class="footnotes">
@@ -4789,7 +3907,7 @@ residual
         </div>
       </div>
 <a href="hydrology.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="appendix-a.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
