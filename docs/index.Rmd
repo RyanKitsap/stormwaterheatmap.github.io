@@ -15,6 +15,10 @@ biblio-style: apalike
 link-citations: yes
 github-repo: "stormwaterheatmap"
 url: 'https\://stormwaterheatmap.github.io/'
+fontsize: 8pt
+lof: True
+lot: True
+geometry: "left = 3cm, right = 3cm"
 #always_allow_html: true
 ---
 ```{r message=FALSE, warning=FALSE, include=FALSE}

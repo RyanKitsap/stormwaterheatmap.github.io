@@ -1,0 +1,25 @@
+{
+    "id": "FA839DD8",
+    "path": "~/repos/stormwaterheatmap.github.io/docs/index.Rmd",
+    "project_path": "index.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1590172856406.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "cursorPosition": "29,776",
+        "scrollLine": "0",
+        "docOutlineVisible": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1590174888,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1590174888498,
+    "read_only": false,
+    "read_only_alternatives": []
+}

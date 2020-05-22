@@ -1,0 +1,14 @@
+bookdown::gitbook:
+  config:
+    toc:
+      collapse: none
+    sharing: 
+      facebook: FALSE
+      twitter: FALSE 
+    download: "pdf" 
+bookdown::pdf_book:
+  latex_engine: "lualatex"
+  #citation_package: natbib
+  #extra_dependencies: ["float"]
+...
+  

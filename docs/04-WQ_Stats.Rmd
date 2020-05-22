@@ -604,12 +604,15 @@ Linear model results for each COC are shown in the following tables. In general,
 
 ```{r Zn, fig.cap="Zinc Table",results='asis'}
 z=1
-
+coc = params[z]
+n = 2#which model to use?
+cocMod <- results[coc][[1]]
 if(is_latex_output()){
-stargazer(results[params[z]],type="latex",header=FALSE,title = params[z])
+stargazer(cocMod[[n]]
+  ,type="latex",header=FALSE,title = coc)
 } else{
-tableSummaryNoSeason(z)
-tableSummaryYesSeason(z)
+tab_model(cocMod[[n]]
+  ,   show.aic = TRUE,auto.label = FALSE, title=paste0(coc, " - Selected Model"), dv.labels = c('log(Concentration)'))
 }
 ```
 
@@ -1257,12 +1260,21 @@ $$
 
 Where β~0~ is the intercept and B~n~ are the regression coefficients. We express this as a 1-D array in the form of 
 $$
+{{\tiny Coefficients}\\
 \begin{bmatrix}
 \beta_0 \\
 \beta_1 \\
 ...\\\
 \beta_n
-\end{bmatrix}
+\end{bmatrix}}
+\cdot
+{{\tiny predictors}\\
+\begin{bmatrix}
+1 \\
+x_1 \\
+...\\
+x_n \\
+\end{bmatrix}}
 $$
 
 

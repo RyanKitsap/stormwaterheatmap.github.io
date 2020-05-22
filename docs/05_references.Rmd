@@ -4,7 +4,7 @@
 
 # (APPENDIX) Appendix {-}
  
-# Appendix A - Regional HSPF Calibration Factors
+# Regional HSPF Calibration Factors
 
 ```{r knitrinitAppendix, echo=FALSE,  message=FALSE, warning=FALSE, cache=FALSE}
 library(knitr)
@@ -14,7 +14,6 @@ library(tidyverse)
 library(showtext)
 library(kableExtra)
 font_add("Roboto Condensed","robotocondensed-regular.ttf")
-
 
 ### Global options
 
@@ -42,7 +41,7 @@ kable(soilsparams)
 ```
 
 
-# Appendix B - Instructions for Accessing Tabulated Hydrology Results via BigQuery    
+# Instructions for Accessing Tabulated Hydrology Results via BigQuery    
 
 ## Tabulated Results via BigQuery  {-} 
 
